@@ -2,7 +2,10 @@
 LSTM Encoder for NNCLR Time Series Embedding
 """
 
+
 import torch
+
+import torch._dynamo  # force torch's heavy lazy imports to load before TF/grpc/protobuf
 import torch.nn as nn
 
 

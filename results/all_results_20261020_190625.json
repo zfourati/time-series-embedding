@@ -1,0 +1,4270 @@
+{
+  "event_type_7": {
+    "dataset": "event_type_7",
+    "embedding_results": {
+      "pca": {
+        "time": 0.0011630058288574219,
+        "shape": [
+          276,
+          10
+        ]
+      },
+      "lle": {
+        "time": 0.10785388946533203,
+        "shape": [
+          276,
+          10
+        ]
+      },
+      "wavelet": {
+        "time": 0.00034427642822265625,
+        "shape": [
+          276,
+          8
+        ]
+      },
+      "fft": {
+        "time": 0.003015279769897461,
+        "shape": [
+          276,
+          15
+        ]
+      },
+      "autoencoder": {
+        "time": 4.5302300453186035,
+        "shape": [
+          276,
+          4
+        ]
+      },
+      "graph": {
+        "error": "buffer source array is read-only"
+      },
+      "tda": {
+        "error": "object of type 'NoneType' has no len()"
+      },
+      "umap": {
+        "time": 3.199486494064331,
+        "shape": [
+          276,
+          2
+        ]
+      },
+      "nnclr_cnn": {
+        "time": 0.7260177135467529,
+        "shape": [
+          276,
+          128
+        ]
+      },
+      "nnclr_lstm": {
+        "time": 0.5898466110229492,
+        "shape": [
+          276,
+          128
+        ]
+      }
+    },
+    "classifier_results": {},
+    "combined_results": {
+      "pca": {
+        "logreg": {
+          "accuracy": 0.625,
+          "params": {
+            "C": 0.41405236068062595,
+            "fit_intercept": true,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.7913531948255592
+          },
+          "time": 2.833094358444214
+        },
+        "dt": {
+          "accuracy": 0.5694444444444444,
+          "params": {
+            "max_depth": 8,
+            "criterion": "gini"
+          },
+          "time": 0.41503453254699707
+        },
+        "rf": {
+          "accuracy": 0.5972222222222222,
+          "params": {
+            "n_estimators": 46,
+            "max_depth": 27
+          },
+          "time": 11.304473400115967
+        },
+        "knn": {
+          "accuracy": 0.625,
+          "params": {
+            "n_neighbors": 16,
+            "weights": "distance",
+            "algorithm": "ball_tree"
+          },
+          "time": 0.32831764221191406
+        },
+        "xgboost": {
+          "accuracy": 0.5972222222222222,
+          "params": {
+            "n_estimators": 160,
+            "learning_rate": 0.13670930505258103,
+            "max_depth": 22,
+            "min_child_weight": 5.408944996750764,
+            "subsample": 0.5386260679509848,
+            "colsample_bytree": 0.2157204634973225
+          },
+          "time": 10.256995439529419
+        },
+        "svm": {
+          "accuracy": 0.6111111111111112,
+          "params": {
+            "C": 1,
+            "kernel": "linear",
+            "degree": 2,
+            "gamma": "auto"
+          },
+          "time": 0.5151851177215576
+        },
+        "mlp": {
+          "accuracy": 0.5694444444444444,
+          "params": {
+            "activation": "logistic",
+            "solver": "adam",
+            "alpha": 0.0008023898374532758,
+            "hidden_layer_sizes": [
+              36,
+              22,
+              2
+            ]
+          },
+          "time": 32.80142164230347
+        },
+        "nb": {
+          "accuracy": 0.4722222222222222,
+          "params": {
+            "var_smoothing": 1.260708148665769e-10
+          },
+          "time": 0.23387861251831055
+        }
+      },
+      "lle": {
+        "logreg": {
+          "accuracy": 0.625,
+          "params": {
+            "C": 4.448050973316568,
+            "fit_intercept": true,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.8734282178885499
+          },
+          "time": 2.3329014778137207
+        },
+        "dt": {
+          "accuracy": 0.5694444444444444,
+          "params": {
+            "max_depth": 2,
+            "criterion": "gini"
+          },
+          "time": 0.3945045471191406
+        },
+        "rf": {
+          "accuracy": 0.6111111111111112,
+          "params": {
+            "n_estimators": 187,
+            "max_depth": 6
+          },
+          "time": 12.91295599937439
+        },
+        "knn": {
+          "accuracy": 0.625,
+          "params": {
+            "n_neighbors": 17,
+            "weights": "uniform",
+            "algorithm": "brute"
+          },
+          "time": 0.3596928119659424
+        },
+        "xgboost": {
+          "accuracy": 0.5555555555555556,
+          "params": {
+            "n_estimators": 23,
+            "learning_rate": 0.22110398086809985,
+            "max_depth": 25,
+            "min_child_weight": 8.370181584988917,
+            "subsample": 0.2886506092360823,
+            "colsample_bytree": 0.6138742852807106
+          },
+          "time": 2.8893699645996094
+        },
+        "svm": {
+          "accuracy": 0.6111111111111112,
+          "params": {
+            "C": 1,
+            "kernel": "rbf",
+            "degree": 2,
+            "gamma": "scale"
+          },
+          "time": 0.5268263816833496
+        },
+        "mlp": {
+          "accuracy": 0.5833333333333334,
+          "params": {
+            "activation": "identity",
+            "solver": "adam",
+            "alpha": 0.06650061968634824,
+            "hidden_layer_sizes": [
+              14
+            ]
+          },
+          "time": 16.82233476638794
+        },
+        "nb": {
+          "accuracy": 0.3888888888888889,
+          "params": {
+            "var_smoothing": 7.126279602843071e-07
+          },
+          "time": 0.21970081329345703
+        }
+      },
+      "wavelet": {
+        "logreg": {
+          "accuracy": 0.5972222222222222,
+          "params": {
+            "C": 0.28696001816182726,
+            "fit_intercept": true,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.5785443850619251
+          },
+          "time": 2.3955483436584473
+        },
+        "dt": {
+          "accuracy": 0.5972222222222222,
+          "params": {
+            "max_depth": 9,
+            "criterion": "gini"
+          },
+          "time": 0.3931691646575928
+        },
+        "rf": {
+          "accuracy": 0.6111111111111112,
+          "params": {
+            "n_estimators": 68,
+            "max_depth": 4
+          },
+          "time": 9.24157166481018
+        },
+        "knn": {
+          "accuracy": 0.6111111111111112,
+          "params": {
+            "n_neighbors": 17,
+            "weights": "uniform",
+            "algorithm": "ball_tree"
+          },
+          "time": 0.3451569080352783
+        },
+        "xgboost": {
+          "accuracy": 0.5694444444444444,
+          "params": {
+            "n_estimators": 66,
+            "learning_rate": 0.03052268421179559,
+            "max_depth": 10,
+            "min_child_weight": 6.299717651522334,
+            "subsample": 0.4673486511397697,
+            "colsample_bytree": 0.9809996038518047
+          },
+          "time": 4.177192449569702
+        },
+        "svm": {
+          "accuracy": 0.5833333333333334,
+          "params": {
+            "C": 1,
+            "kernel": "linear",
+            "degree": 2,
+            "gamma": "scale"
+          },
+          "time": 0.4585299491882324
+        },
+        "mlp": {
+          "accuracy": 0.5,
+          "params": {
+            "activation": "tanh",
+            "solver": "adam",
+            "alpha": 1.2637262443862598e-05,
+            "hidden_layer_sizes": [
+              70,
+              35,
+              13
+            ]
+          },
+          "time": 100.28859353065491
+        },
+        "nb": {
+          "accuracy": 0.4305555555555556,
+          "params": {
+            "var_smoothing": 8.328853706265952e-10
+          },
+          "time": 0.21961665153503418
+        }
+      },
+      "fft": {
+        "logreg": {
+          "accuracy": 0.5972222222222222,
+          "params": {
+            "C": 172.29267137376294,
+            "fit_intercept": false,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.5449580583469644
+          },
+          "time": 6.84953761100769
+        },
+        "dt": {
+          "accuracy": 0.5416666666666666,
+          "params": {
+            "max_depth": 3,
+            "criterion": "gini"
+          },
+          "time": 0.4549093246459961
+        },
+        "rf": {
+          "accuracy": 0.625,
+          "params": {
+            "n_estimators": 81,
+            "max_depth": 7
+          },
+          "time": 7.92704963684082
+        },
+        "knn": {
+          "accuracy": 0.6111111111111112,
+          "params": {
+            "n_neighbors": 19,
+            "weights": "distance",
+            "algorithm": "kd_tree"
+          },
+          "time": 0.3407411575317383
+        },
+        "xgboost": {
+          "accuracy": 0.5416666666666666,
+          "params": {
+            "n_estimators": 196,
+            "learning_rate": 0.5922570050451783,
+            "max_depth": 17,
+            "min_child_weight": 8.501664642165604,
+            "subsample": 0.8343281090926498,
+            "colsample_bytree": 0.24277467411627057
+          },
+          "time": 12.585979223251343
+        },
+        "svm": {
+          "accuracy": 0.5972222222222222,
+          "params": {
+            "C": 0.6,
+            "kernel": "linear",
+            "degree": 5,
+            "gamma": "scale"
+          },
+          "time": 0.5435874462127686
+        },
+        "mlp": {
+          "accuracy": 0.5694444444444444,
+          "params": {
+            "activation": "identity",
+            "solver": "sgd",
+            "alpha": 0.0020812331047537365,
+            "hidden_layer_sizes": [
+              12,
+              1
+            ]
+          },
+          "time": 17.061877727508545
+        },
+        "nb": {
+          "accuracy": 0.4444444444444444,
+          "params": {
+            "var_smoothing": 3.350692458156939e-10
+          },
+          "time": 0.22032594680786133
+        }
+      },
+      "autoencoder": {
+        "logreg": {
+          "accuracy": 0.5694444444444444,
+          "params": {
+            "C": 3.7971988749980654e-08,
+            "fit_intercept": true,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.4052432898813828
+          },
+          "time": 2.722730875015259
+        },
+        "dt": {
+          "accuracy": 0.5694444444444444,
+          "params": {
+            "max_depth": 3,
+            "criterion": "log_loss"
+          },
+          "time": 0.29935407638549805
+        },
+        "rf": {
+          "accuracy": 0.5555555555555556,
+          "params": {
+            "n_estimators": 27,
+            "max_depth": 4
+          },
+          "time": 8.119831085205078
+        },
+        "knn": {
+          "accuracy": 0.5694444444444444,
+          "params": {
+            "n_neighbors": 14,
+            "weights": "uniform",
+            "algorithm": "kd_tree"
+          },
+          "time": 0.3281686305999756
+        },
+        "xgboost": {
+          "accuracy": 0.5694444444444444,
+          "params": {
+            "n_estimators": 11,
+            "learning_rate": 0.04049142026696867,
+            "max_depth": 31,
+            "min_child_weight": 3.0148510322554176,
+            "subsample": 0.34739786918647897,
+            "colsample_bytree": 0.5048501630334017
+          },
+          "time": 2.91618013381958
+        },
+        "svm": {
+          "accuracy": 0.5694444444444444,
+          "params": {
+            "C": 0.3,
+            "kernel": "rbf",
+            "degree": 5,
+            "gamma": "scale"
+          },
+          "time": 0.45267367362976074
+        },
+        "mlp": {
+          "accuracy": 0.5694444444444444,
+          "params": {
+            "activation": "relu",
+            "solver": "adam",
+            "alpha": 0.08530352422146342,
+            "hidden_layer_sizes": [
+              56
+            ]
+          },
+          "time": 191.4539954662323
+        },
+        "nb": {
+          "accuracy": 0.2777777777777778,
+          "params": {
+            "var_smoothing": 7.691342953904536e-12
+          },
+          "time": 0.20432686805725098
+        }
+      },
+      "umap": {
+        "logreg": {
+          "accuracy": 0.5694444444444444,
+          "params": {
+            "C": 1.9606176384620663e-05,
+            "fit_intercept": true,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.30028269971681854
+          },
+          "time": 2.0687801837921143
+        },
+        "dt": {
+          "accuracy": 0.625,
+          "params": {
+            "max_depth": 3,
+            "criterion": "gini"
+          },
+          "time": 0.2890746593475342
+        },
+        "rf": {
+          "accuracy": 0.5277777777777778,
+          "params": {
+            "n_estimators": 41,
+            "max_depth": 8
+          },
+          "time": 6.944553852081299
+        },
+        "knn": {
+          "accuracy": 0.6388888888888888,
+          "params": {
+            "n_neighbors": 18,
+            "weights": "distance",
+            "algorithm": "ball_tree"
+          },
+          "time": 0.3140444755554199
+        },
+        "xgboost": {
+          "accuracy": 0.5694444444444444,
+          "params": {
+            "n_estimators": 111,
+            "learning_rate": 0.3047107695323316,
+            "max_depth": 12,
+            "min_child_weight": 5.397413105979092,
+            "subsample": 0.4528632952559366,
+            "colsample_bytree": 0.24841596238555907
+          },
+          "time": 9.934045553207397
+        },
+        "svm": {
+          "accuracy": 0.5833333333333334,
+          "params": {
+            "C": 0.6,
+            "kernel": "rbf",
+            "degree": 5,
+            "gamma": "auto"
+          },
+          "time": 0.4855036735534668
+        },
+        "mlp": {
+          "accuracy": 0.5694444444444444,
+          "params": {
+            "activation": "logistic",
+            "solver": "sgd",
+            "alpha": 0.09195479095387632,
+            "hidden_layer_sizes": [
+              41,
+              19
+            ]
+          },
+          "time": 11.506614208221436
+        },
+        "nb": {
+          "accuracy": 0.5694444444444444,
+          "params": {
+            "var_smoothing": 0.00016185631887579018
+          },
+          "time": 0.22101759910583496
+        }
+      },
+      "nnclr_cnn": {
+        "logreg": {
+          "accuracy": 0.6527777777777778,
+          "params": {
+            "C": 0.9849233431321014,
+            "fit_intercept": false,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.6550913957347084
+          },
+          "time": 62.098509073257446
+        },
+        "dt": {
+          "accuracy": 0.5833333333333334,
+          "params": {
+            "max_depth": 2,
+            "criterion": "gini"
+          },
+          "time": 1.1939120292663574
+        },
+        "rf": {
+          "accuracy": 0.5555555555555556,
+          "params": {
+            "n_estimators": 74,
+            "max_depth": 15
+          },
+          "time": 11.412813901901245
+        },
+        "knn": {
+          "accuracy": 0.6111111111111112,
+          "params": {
+            "n_neighbors": 19,
+            "weights": "uniform",
+            "algorithm": "ball_tree"
+          },
+          "time": 0.7101407051086426
+        },
+        "xgboost": {
+          "accuracy": 0.5416666666666666,
+          "params": {
+            "n_estimators": 136,
+            "learning_rate": 0.5888792533613798,
+            "max_depth": 16,
+            "min_child_weight": 9.184204119713417,
+            "subsample": 0.14153964870407318,
+            "colsample_bytree": 0.8428759029273185
+          },
+          "time": 12.235159397125244
+        },
+        "svm": {
+          "accuracy": 0.625,
+          "params": {
+            "C": 0.6,
+            "kernel": "linear",
+            "degree": 3,
+            "gamma": "auto"
+          },
+          "time": 0.7592601776123047
+        },
+        "mlp": {
+          "accuracy": 0.5694444444444444,
+          "params": {
+            "activation": "logistic",
+            "solver": "lbfgs",
+            "alpha": 0.008430694780317265,
+            "hidden_layer_sizes": [
+              24
+            ]
+          },
+          "time": 227.54454278945923
+        },
+        "nb": {
+          "accuracy": 0.3333333333333333,
+          "params": {
+            "var_smoothing": 0.00789863910180541
+          },
+          "time": 0.4094240665435791
+        }
+      },
+      "nnclr_lstm": {
+        "logreg": {
+          "accuracy": 0.5833333333333334,
+          "params": {
+            "C": 6.393814457108732,
+            "fit_intercept": true,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.3350642770189102
+          },
+          "time": 16.8014919757843
+        },
+        "dt": {
+          "accuracy": 0.6111111111111112,
+          "params": {
+            "max_depth": 3,
+            "criterion": "gini"
+          },
+          "time": 2.0475754737854004
+        },
+        "rf": {
+          "accuracy": 0.5555555555555556,
+          "params": {
+            "n_estimators": 100,
+            "max_depth": 2
+          },
+          "time": 12.600447654724121
+        },
+        "knn": {
+          "accuracy": 0.5833333333333334,
+          "params": {
+            "n_neighbors": 20,
+            "weights": "distance",
+            "algorithm": "auto"
+          },
+          "time": 0.7116787433624268
+        },
+        "xgboost": {
+          "accuracy": 0.5972222222222222,
+          "params": {
+            "n_estimators": 164,
+            "learning_rate": 0.13866758399357737,
+            "max_depth": 3,
+            "min_child_weight": 7.795086848773534,
+            "subsample": 0.29033049115778803,
+            "colsample_bytree": 0.11723473033121426
+          },
+          "time": 23.121660232543945
+        },
+        "svm": {
+          "accuracy": 0.5694444444444444,
+          "params": {
+            "C": 0.3,
+            "kernel": "linear",
+            "degree": 4,
+            "gamma": "scale"
+          },
+          "time": 0.7598440647125244
+        },
+        "mlp": {
+          "accuracy": 0.5694444444444444,
+          "params": {
+            "activation": "relu",
+            "solver": "sgd",
+            "alpha": 1.0032675187209467e-05,
+            "hidden_layer_sizes": [
+              13
+            ]
+          },
+          "time": 118.6534206867218
+        },
+        "nb": {
+          "accuracy": 0.2222222222222222,
+          "params": {
+            "var_smoothing": 2.58309163244206e-10
+          },
+          "time": 0.3873927593231201
+        }
+      }
+    }
+  },
+  "event_type_14": {
+    "dataset": "event_type_14",
+    "embedding_results": {
+      "pca": {
+        "time": 0.001354217529296875,
+        "shape": [
+          276,
+          10
+        ]
+      },
+      "lle": {
+        "time": 0.16886043548583984,
+        "shape": [
+          276,
+          10
+        ]
+      },
+      "wavelet": {
+        "time": 0.0002837181091308594,
+        "shape": [
+          276,
+          15
+        ]
+      },
+      "fft": {
+        "time": 0.0030994415283203125,
+        "shape": [
+          276,
+          29
+        ]
+      },
+      "autoencoder": {
+        "time": 4.124446630477905,
+        "shape": [
+          276,
+          4
+        ]
+      },
+      "graph": {
+        "error": "buffer source array is read-only"
+      },
+      "tda": {
+        "error": "object of type 'NoneType' has no len()"
+      },
+      "umap": {
+        "time": 0.20843267440795898,
+        "shape": [
+          276,
+          2
+        ]
+      },
+      "nnclr_cnn": {
+        "time": 0.3564333915710449,
+        "shape": [
+          276,
+          128
+        ]
+      },
+      "nnclr_lstm": {
+        "time": 0.5618317127227783,
+        "shape": [
+          276,
+          128
+        ]
+      }
+    },
+    "classifier_results": {},
+    "combined_results": {
+      "pca": {
+        "logreg": {
+          "accuracy": 0.6666666666666666,
+          "params": {
+            "C": 92.60041905164582,
+            "fit_intercept": true,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.11137785258547994
+          },
+          "time": 3.3888063430786133
+        },
+        "dt": {
+          "accuracy": 0.625,
+          "params": {
+            "max_depth": 4,
+            "criterion": "entropy"
+          },
+          "time": 0.4419124126434326
+        },
+        "rf": {
+          "accuracy": 0.6527777777777778,
+          "params": {
+            "n_estimators": 175,
+            "max_depth": 13
+          },
+          "time": 13.465428829193115
+        },
+        "knn": {
+          "accuracy": 0.7083333333333334,
+          "params": {
+            "n_neighbors": 16,
+            "weights": "distance",
+            "algorithm": "ball_tree"
+          },
+          "time": 0.3420593738555908
+        },
+        "xgboost": {
+          "accuracy": 0.6527777777777778,
+          "params": {
+            "n_estimators": 189,
+            "learning_rate": 0.598577659047114,
+            "max_depth": 8,
+            "min_child_weight": 7.544024723941209,
+            "subsample": 0.3123596785780096,
+            "colsample_bytree": 0.704007669999316
+          },
+          "time": 8.794000387191772
+        },
+        "svm": {
+          "accuracy": 0.6805555555555556,
+          "params": {
+            "C": 1,
+            "kernel": "rbf",
+            "degree": 5,
+            "gamma": "scale"
+          },
+          "time": 0.5798602104187012
+        },
+        "mlp": {
+          "accuracy": 0.5833333333333334,
+          "params": {
+            "activation": "logistic",
+            "solver": "adam",
+            "alpha": 6.523049326360938e-05,
+            "hidden_layer_sizes": [
+              50,
+              70
+            ]
+          },
+          "time": 62.78710651397705
+        },
+        "nb": {
+          "accuracy": 0.6666666666666666,
+          "params": {
+            "var_smoothing": 2.396412809881702e-07
+          },
+          "time": 0.2500193119049072
+        }
+      },
+      "lle": {
+        "logreg": {
+          "accuracy": 0.6388888888888888,
+          "params": {
+            "C": 91.35494674363262,
+            "fit_intercept": true,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.4962190403824378
+          },
+          "time": 2.554901361465454
+        },
+        "dt": {
+          "accuracy": 0.5833333333333334,
+          "params": {
+            "max_depth": 2,
+            "criterion": "log_loss"
+          },
+          "time": 0.39648914337158203
+        },
+        "rf": {
+          "accuracy": 0.5972222222222222,
+          "params": {
+            "n_estimators": 99,
+            "max_depth": 28
+          },
+          "time": 10.146889448165894
+        },
+        "knn": {
+          "accuracy": 0.6111111111111112,
+          "params": {
+            "n_neighbors": 14,
+            "weights": "distance",
+            "algorithm": "brute"
+          },
+          "time": 0.35762929916381836
+        },
+        "xgboost": {
+          "accuracy": 0.6805555555555556,
+          "params": {
+            "n_estimators": 134,
+            "learning_rate": 0.17281413860800607,
+            "max_depth": 20,
+            "min_child_weight": 5.219472491039365,
+            "subsample": 0.9343414328400016,
+            "colsample_bytree": 0.7539169148593654
+          },
+          "time": 14.738306045532227
+        },
+        "svm": {
+          "accuracy": 0.5972222222222222,
+          "params": {
+            "C": 0.6,
+            "kernel": "rbf",
+            "degree": 3,
+            "gamma": "scale"
+          },
+          "time": 0.47684240341186523
+        },
+        "mlp": {
+          "accuracy": 0.4722222222222222,
+          "params": {
+            "activation": "relu",
+            "solver": "adam",
+            "alpha": 0.0014158970815700527,
+            "hidden_layer_sizes": [
+              45,
+              75,
+              37
+            ]
+          },
+          "time": 23.791626930236816
+        },
+        "nb": {
+          "accuracy": 0.5972222222222222,
+          "params": {
+            "var_smoothing": 1.2416481980240313e-10
+          },
+          "time": 0.23222613334655762
+        }
+      },
+      "wavelet": {
+        "logreg": {
+          "accuracy": 0.6805555555555556,
+          "params": {
+            "C": 1.7845348544525765,
+            "fit_intercept": true,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.49516097712414875
+          },
+          "time": 4.486598968505859
+        },
+        "dt": {
+          "accuracy": 0.6388888888888888,
+          "params": {
+            "max_depth": 4,
+            "criterion": "entropy"
+          },
+          "time": 0.5055477619171143
+        },
+        "rf": {
+          "accuracy": 0.6388888888888888,
+          "params": {
+            "n_estimators": 143,
+            "max_depth": 7
+          },
+          "time": 14.699028015136719
+        },
+        "knn": {
+          "accuracy": 0.6944444444444444,
+          "params": {
+            "n_neighbors": 14,
+            "weights": "distance",
+            "algorithm": "ball_tree"
+          },
+          "time": 0.3392343521118164
+        },
+        "xgboost": {
+          "accuracy": 0.6111111111111112,
+          "params": {
+            "n_estimators": 113,
+            "learning_rate": 0.16206288564496424,
+            "max_depth": 9,
+            "min_child_weight": 3.8843781049144157,
+            "subsample": 0.3462304088460344,
+            "colsample_bytree": 0.2569818692731142
+          },
+          "time": 6.2989795207977295
+        },
+        "svm": {
+          "accuracy": 0.7083333333333334,
+          "params": {
+            "C": 1,
+            "kernel": "rbf",
+            "degree": 4,
+            "gamma": "auto"
+          },
+          "time": 0.5667126178741455
+        },
+        "mlp": {
+          "accuracy": 0.5694444444444444,
+          "params": {
+            "activation": "logistic",
+            "solver": "adam",
+            "alpha": 0.002825787350502964,
+            "hidden_layer_sizes": [
+              49,
+              47,
+              96
+            ]
+          },
+          "time": 50.77388405799866
+        },
+        "nb": {
+          "accuracy": 0.625,
+          "params": {
+            "var_smoothing": 1.8547010344513e-07
+          },
+          "time": 0.22843623161315918
+        }
+      },
+      "fft": {
+        "logreg": {
+          "accuracy": 0.5694444444444444,
+          "params": {
+            "C": 1.7186879879118102e-07,
+            "fit_intercept": true,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.043284846750019756
+          },
+          "time": 3.3795559406280518
+        },
+        "dt": {
+          "accuracy": 0.5138888888888888,
+          "params": {
+            "max_depth": 5,
+            "criterion": "gini"
+          },
+          "time": 0.7118687629699707
+        },
+        "rf": {
+          "accuracy": 0.4583333333333333,
+          "params": {
+            "n_estimators": 15,
+            "max_depth": 6
+          },
+          "time": 8.449409484863281
+        },
+        "knn": {
+          "accuracy": 0.5694444444444444,
+          "params": {
+            "n_neighbors": 5,
+            "weights": "distance",
+            "algorithm": "auto"
+          },
+          "time": 0.3863680362701416
+        },
+        "xgboost": {
+          "accuracy": 0.5833333333333334,
+          "params": {
+            "n_estimators": 75,
+            "learning_rate": 0.26491640605883116,
+            "max_depth": 5,
+            "min_child_weight": 8.6720149254339,
+            "subsample": 0.13349932993149766,
+            "colsample_bytree": 0.1544663136526157
+          },
+          "time": 3.3968005180358887
+        },
+        "svm": {
+          "accuracy": 0.5694444444444444,
+          "params": {
+            "C": 0.3,
+            "kernel": "rbf",
+            "degree": 4,
+            "gamma": "scale"
+          },
+          "time": 0.8062655925750732
+        },
+        "mlp": {
+          "accuracy": 0.4583333333333333,
+          "params": {
+            "activation": "tanh",
+            "solver": "adam",
+            "alpha": 0.07091045837971093,
+            "hidden_layer_sizes": [
+              4,
+              20
+            ]
+          },
+          "time": 90.88778686523438
+        },
+        "nb": {
+          "accuracy": 0.3055555555555556,
+          "params": {
+            "var_smoothing": 0.009830006723751908
+          },
+          "time": 0.2371838092803955
+        }
+      },
+      "autoencoder": {
+        "logreg": {
+          "accuracy": 0.5694444444444444,
+          "params": {
+            "C": 0.007457428372732305,
+            "fit_intercept": false,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.5932208937951486
+          },
+          "time": 6.773036956787109
+        },
+        "dt": {
+          "accuracy": 0.5694444444444444,
+          "params": {
+            "max_depth": 2,
+            "criterion": "log_loss"
+          },
+          "time": 0.2832760810852051
+        },
+        "rf": {
+          "accuracy": 0.5694444444444444,
+          "params": {
+            "n_estimators": 57,
+            "max_depth": 2
+          },
+          "time": 7.2772674560546875
+        },
+        "knn": {
+          "accuracy": 0.5833333333333334,
+          "params": {
+            "n_neighbors": 20,
+            "weights": "uniform",
+            "algorithm": "ball_tree"
+          },
+          "time": 0.33518314361572266
+        },
+        "xgboost": {
+          "accuracy": 0.5694444444444444,
+          "params": {
+            "n_estimators": 12,
+            "learning_rate": 0.1546553530838176,
+            "max_depth": 28,
+            "min_child_weight": 2.1477797573216284,
+            "subsample": 0.4194909191878344,
+            "colsample_bytree": 0.6017721559427666
+          },
+          "time": 2.4254884719848633
+        },
+        "svm": {
+          "accuracy": 0.5694444444444444,
+          "params": {
+            "C": 0.1,
+            "kernel": "rbf",
+            "degree": 2,
+            "gamma": "scale"
+          },
+          "time": 0.4332139492034912
+        },
+        "mlp": {
+          "accuracy": 0.5694444444444444,
+          "params": {
+            "activation": "logistic",
+            "solver": "sgd",
+            "alpha": 0.001430169019101365,
+            "hidden_layer_sizes": [
+              79,
+              58,
+              55
+            ]
+          },
+          "time": 13.944851636886597
+        },
+        "nb": {
+          "accuracy": 0.5833333333333334,
+          "params": {
+            "var_smoothing": 0.005986690063920544
+          },
+          "time": 0.22258329391479492
+        }
+      },
+      "umap": {
+        "logreg": {
+          "accuracy": 0.5694444444444444,
+          "params": {
+            "C": 0.0006405755454845866,
+            "fit_intercept": false,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.20030934066965744
+          },
+          "time": 2.591454267501831
+        },
+        "dt": {
+          "accuracy": 0.625,
+          "params": {
+            "max_depth": 2,
+            "criterion": "log_loss"
+          },
+          "time": 0.31580209732055664
+        },
+        "rf": {
+          "accuracy": 0.6111111111111112,
+          "params": {
+            "n_estimators": 11,
+            "max_depth": 3
+          },
+          "time": 4.745399713516235
+        },
+        "knn": {
+          "accuracy": 0.6111111111111112,
+          "params": {
+            "n_neighbors": 13,
+            "weights": "uniform",
+            "algorithm": "kd_tree"
+          },
+          "time": 0.3183763027191162
+        },
+        "xgboost": {
+          "accuracy": 0.6111111111111112,
+          "params": {
+            "n_estimators": 40,
+            "learning_rate": 0.29649420696881856,
+            "max_depth": 28,
+            "min_child_weight": 4.733872792592453,
+            "subsample": 0.3275903570695263,
+            "colsample_bytree": 0.45954791067196105
+          },
+          "time": 3.2925143241882324
+        },
+        "svm": {
+          "accuracy": 0.6388888888888888,
+          "params": {
+            "C": 0.6,
+            "kernel": "rbf",
+            "degree": 5,
+            "gamma": "auto"
+          },
+          "time": 0.4639780521392822
+        },
+        "mlp": {
+          "accuracy": 0.5694444444444444,
+          "params": {
+            "activation": "relu",
+            "solver": "adam",
+            "alpha": 1.1457543401436687e-05,
+            "hidden_layer_sizes": [
+              2,
+              1,
+              37
+            ]
+          },
+          "time": 29.905378103256226
+        },
+        "nb": {
+          "accuracy": 0.5694444444444444,
+          "params": {
+            "var_smoothing": 4.5947780840770356e-07
+          },
+          "time": 0.21827316284179688
+        }
+      },
+      "nnclr_cnn": {
+        "logreg": {
+          "accuracy": 0.625,
+          "params": {
+            "C": 24.68347024677317,
+            "fit_intercept": true,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.22433811975814982
+          },
+          "time": 53.3102023601532
+        },
+        "dt": {
+          "accuracy": 0.625,
+          "params": {
+            "max_depth": 2,
+            "criterion": "entropy"
+          },
+          "time": 1.3370141983032227
+        },
+        "rf": {
+          "accuracy": 0.6388888888888888,
+          "params": {
+            "n_estimators": 101,
+            "max_depth": 15
+          },
+          "time": 15.686633586883545
+        },
+        "knn": {
+          "accuracy": 0.6805555555555556,
+          "params": {
+            "n_neighbors": 3,
+            "weights": "distance",
+            "algorithm": "ball_tree"
+          },
+          "time": 0.6916451454162598
+        },
+        "xgboost": {
+          "accuracy": 0.625,
+          "params": {
+            "n_estimators": 175,
+            "learning_rate": 0.44184547178635764,
+            "max_depth": 17,
+            "min_child_weight": 1.5533318006454084,
+            "subsample": 0.6736637324135288,
+            "colsample_bytree": 0.9072851792865828
+          },
+          "time": 28.92243480682373
+        },
+        "svm": {
+          "accuracy": 0.6388888888888888,
+          "params": {
+            "C": 0.6,
+            "kernel": "linear",
+            "degree": 3,
+            "gamma": "auto"
+          },
+          "time": 0.6521987915039062
+        },
+        "mlp": {
+          "accuracy": 0.5694444444444444,
+          "params": {
+            "activation": "identity",
+            "solver": "adam",
+            "alpha": 0.0002553251718248385,
+            "hidden_layer_sizes": [
+              88,
+              65,
+              25
+            ]
+          },
+          "time": 290.53573298454285
+        },
+        "nb": {
+          "accuracy": 0.5277777777777778,
+          "params": {
+            "var_smoothing": 0.0025041276451675527
+          },
+          "time": 0.4010324478149414
+        }
+      },
+      "nnclr_lstm": {
+        "logreg": {
+          "accuracy": 0.6666666666666666,
+          "params": {
+            "C": 190.7724167032657,
+            "fit_intercept": false,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.9319462945749988
+          },
+          "time": 194.37305736541748
+        },
+        "dt": {
+          "accuracy": 0.625,
+          "params": {
+            "max_depth": 3,
+            "criterion": "gini"
+          },
+          "time": 2.0260324478149414
+        },
+        "rf": {
+          "accuracy": 0.6944444444444444,
+          "params": {
+            "n_estimators": 185,
+            "max_depth": 2
+          },
+          "time": 21.66923689842224
+        },
+        "knn": {
+          "accuracy": 0.7083333333333334,
+          "params": {
+            "n_neighbors": 9,
+            "weights": "distance",
+            "algorithm": "brute"
+          },
+          "time": 0.6983792781829834
+        },
+        "xgboost": {
+          "accuracy": 0.6388888888888888,
+          "params": {
+            "n_estimators": 161,
+            "learning_rate": 0.12333444868622573,
+            "max_depth": 14,
+            "min_child_weight": 7.3290014854801955,
+            "subsample": 0.48408523693757366,
+            "colsample_bytree": 0.4650196143234038
+          },
+          "time": 22.190571546554565
+        },
+        "svm": {
+          "accuracy": 0.6527777777777778,
+          "params": {
+            "C": 1,
+            "kernel": "rbf",
+            "degree": 5,
+            "gamma": "scale"
+          },
+          "time": 0.710559606552124
+        },
+        "mlp": {
+          "accuracy": 0.5833333333333334,
+          "params": {
+            "activation": "relu",
+            "solver": "adam",
+            "alpha": 0.008570275600906346,
+            "hidden_layer_sizes": [
+              89
+            ]
+          },
+          "time": 218.18714928627014
+        },
+        "nb": {
+          "accuracy": 0.6111111111111112,
+          "params": {
+            "var_smoothing": 1.7997524783404494e-11
+          },
+          "time": 0.4073829650878906
+        }
+      }
+    }
+  },
+  "event_type_30": {
+    "dataset": "event_type_30",
+    "embedding_results": {
+      "pca": {
+        "time": 0.0398557186126709,
+        "shape": [
+          276,
+          10
+        ]
+      },
+      "lle": {
+        "time": 0.12495088577270508,
+        "shape": [
+          276,
+          10
+        ]
+      },
+      "wavelet": {
+        "time": 0.00028443336486816406,
+        "shape": [
+          276,
+          31
+        ]
+      },
+      "fft": {
+        "time": 0.0034863948822021484,
+        "shape": [
+          276,
+          61
+        ]
+      },
+      "autoencoder": {
+        "time": 4.162141799926758,
+        "shape": [
+          276,
+          4
+        ]
+      },
+      "graph": {
+        "error": "buffer source array is read-only"
+      },
+      "tda": {
+        "error": "buffer source array is read-only"
+      },
+      "umap": {
+        "time": 0.2190089225769043,
+        "shape": [
+          276,
+          2
+        ]
+      },
+      "nnclr_cnn": {
+        "time": 0.22052311897277832,
+        "shape": [
+          276,
+          128
+        ]
+      },
+      "nnclr_lstm": {
+        "time": 0.5601444244384766,
+        "shape": [
+          276,
+          128
+        ]
+      }
+    },
+    "classifier_results": {},
+    "combined_results": {
+      "pca": {
+        "logreg": {
+          "accuracy": 0.7083333333333334,
+          "params": {
+            "C": 0.06554246154604323,
+            "fit_intercept": false,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.16528208590152405
+          },
+          "time": 2.852942943572998
+        },
+        "dt": {
+          "accuracy": 0.6805555555555556,
+          "params": {
+            "max_depth": 3,
+            "criterion": "gini"
+          },
+          "time": 0.41025614738464355
+        },
+        "rf": {
+          "accuracy": 0.6527777777777778,
+          "params": {
+            "n_estimators": 119,
+            "max_depth": 18
+          },
+          "time": 14.336793422698975
+        },
+        "knn": {
+          "accuracy": 0.7222222222222222,
+          "params": {
+            "n_neighbors": 11,
+            "weights": "distance",
+            "algorithm": "ball_tree"
+          },
+          "time": 0.3472564220428467
+        },
+        "xgboost": {
+          "accuracy": 0.625,
+          "params": {
+            "n_estimators": 122,
+            "learning_rate": 0.12254923357044521,
+            "max_depth": 11,
+            "min_child_weight": 9.659444693727028,
+            "subsample": 0.8353716696371899,
+            "colsample_bytree": 0.9199183389554481
+          },
+          "time": 14.1565420627594
+        },
+        "svm": {
+          "accuracy": 0.6944444444444444,
+          "params": {
+            "C": 0.3,
+            "kernel": "linear",
+            "degree": 5,
+            "gamma": "auto"
+          },
+          "time": 0.5771472454071045
+        },
+        "mlp": {
+          "accuracy": 0.6666666666666666,
+          "params": {
+            "activation": "relu",
+            "solver": "adam",
+            "alpha": 0.08168473858593982,
+            "hidden_layer_sizes": [
+              12,
+              60
+            ]
+          },
+          "time": 31.236409187316895
+        },
+        "nb": {
+          "accuracy": 0.6388888888888888,
+          "params": {
+            "var_smoothing": 0.008769348313522555
+          },
+          "time": 0.21314740180969238
+        }
+      },
+      "lle": {
+        "logreg": {
+          "accuracy": 0.6944444444444444,
+          "params": {
+            "C": 1.4693715773236986,
+            "fit_intercept": false,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.5898809175085264
+          },
+          "time": 2.5160632133483887
+        },
+        "dt": {
+          "accuracy": 0.6805555555555556,
+          "params": {
+            "max_depth": 3,
+            "criterion": "log_loss"
+          },
+          "time": 0.42122769355773926
+        },
+        "rf": {
+          "accuracy": 0.6805555555555556,
+          "params": {
+            "n_estimators": 55,
+            "max_depth": 2
+          },
+          "time": 9.459020137786865
+        },
+        "knn": {
+          "accuracy": 0.6944444444444444,
+          "params": {
+            "n_neighbors": 13,
+            "weights": "uniform",
+            "algorithm": "ball_tree"
+          },
+          "time": 0.35241270065307617
+        },
+        "xgboost": {
+          "accuracy": 0.6527777777777778,
+          "params": {
+            "n_estimators": 94,
+            "learning_rate": 0.041598778013930277,
+            "max_depth": 4,
+            "min_child_weight": 8.39729752006596,
+            "subsample": 0.8675246518059841,
+            "colsample_bytree": 0.47955115458474534
+          },
+          "time": 7.123028516769409
+        },
+        "svm": {
+          "accuracy": 0.6944444444444444,
+          "params": {
+            "C": 0.3,
+            "kernel": "rbf",
+            "degree": 2,
+            "gamma": "scale"
+          },
+          "time": 0.5036346912384033
+        },
+        "mlp": {
+          "accuracy": 0.5416666666666666,
+          "params": {
+            "activation": "relu",
+            "solver": "adam",
+            "alpha": 0.01306435085789333,
+            "hidden_layer_sizes": [
+              84
+            ]
+          },
+          "time": 34.95113277435303
+        },
+        "nb": {
+          "accuracy": 0.6111111111111112,
+          "params": {
+            "var_smoothing": 8.693330031804583e-08
+          },
+          "time": 0.21596264839172363
+        }
+      },
+      "wavelet": {
+        "logreg": {
+          "accuracy": 0.6944444444444444,
+          "params": {
+            "C": 0.05502839656152437,
+            "fit_intercept": true,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.026424262627881445
+          },
+          "time": 5.216864109039307
+        },
+        "dt": {
+          "accuracy": 0.5833333333333334,
+          "params": {
+            "max_depth": 27,
+            "criterion": "log_loss"
+          },
+          "time": 0.8435072898864746
+        },
+        "rf": {
+          "accuracy": 0.6527777777777778,
+          "params": {
+            "n_estimators": 17,
+            "max_depth": 13
+          },
+          "time": 9.380087852478027
+        },
+        "knn": {
+          "accuracy": 0.7083333333333334,
+          "params": {
+            "n_neighbors": 12,
+            "weights": "uniform",
+            "algorithm": "brute"
+          },
+          "time": 0.39275622367858887
+        },
+        "xgboost": {
+          "accuracy": 0.6944444444444444,
+          "params": {
+            "n_estimators": 84,
+            "learning_rate": 0.3873154219104521,
+            "max_depth": 25,
+            "min_child_weight": 9.95293868505959,
+            "subsample": 0.5320396061373733,
+            "colsample_bytree": 0.9936293609611453
+          },
+          "time": 6.57217001914978
+        },
+        "svm": {
+          "accuracy": 0.6944444444444444,
+          "params": {
+            "C": 1,
+            "kernel": "linear",
+            "degree": 5,
+            "gamma": "scale"
+          },
+          "time": 0.7777457237243652
+        },
+        "mlp": {
+          "accuracy": 0.5694444444444444,
+          "params": {
+            "activation": "logistic",
+            "solver": "lbfgs",
+            "alpha": 4.36848052069027e-05,
+            "hidden_layer_sizes": [
+              3
+            ]
+          },
+          "time": 32.82988929748535
+        },
+        "nb": {
+          "accuracy": 0.625,
+          "params": {
+            "var_smoothing": 7.746836928174206e-10
+          },
+          "time": 0.21726107597351074
+        }
+      },
+      "fft": {
+        "logreg": {
+          "accuracy": 0.5833333333333334,
+          "params": {
+            "C": 0.0025815929274863466,
+            "fit_intercept": false,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.2390562959948145
+          },
+          "time": 9.09855031967163
+        },
+        "dt": {
+          "accuracy": 0.5694444444444444,
+          "params": {
+            "max_depth": 2,
+            "criterion": "gini"
+          },
+          "time": 1.003028392791748
+        },
+        "rf": {
+          "accuracy": 0.5833333333333334,
+          "params": {
+            "n_estimators": 124,
+            "max_depth": 14
+          },
+          "time": 21.82364773750305
+        },
+        "knn": {
+          "accuracy": 0.6388888888888888,
+          "params": {
+            "n_neighbors": 20,
+            "weights": "distance",
+            "algorithm": "brute"
+          },
+          "time": 0.4349706172943115
+        },
+        "xgboost": {
+          "accuracy": 0.6111111111111112,
+          "params": {
+            "n_estimators": 171,
+            "learning_rate": 0.2567716746015941,
+            "max_depth": 22,
+            "min_child_weight": 1.618279625031598,
+            "subsample": 0.6794943018174832,
+            "colsample_bytree": 0.4616887243566028
+          },
+          "time": 33.827409505844116
+        },
+        "svm": {
+          "accuracy": 0.5694444444444444,
+          "params": {
+            "C": 0.6,
+            "kernel": "rbf",
+            "degree": 4,
+            "gamma": "auto"
+          },
+          "time": 2.5056347846984863
+        },
+        "mlp": {
+          "accuracy": 0.5277777777777778,
+          "params": {
+            "activation": "tanh",
+            "solver": "adam",
+            "alpha": 0.005886917000027716,
+            "hidden_layer_sizes": [
+              80,
+              52,
+              29
+            ]
+          },
+          "time": 244.457124710083
+        },
+        "nb": {
+          "accuracy": 0.375,
+          "params": {
+            "var_smoothing": 8.453899705244007e-10
+          },
+          "time": 0.24757647514343262
+        }
+      },
+      "autoencoder": {
+        "logreg": {
+          "accuracy": 0.6944444444444444,
+          "params": {
+            "C": 0.7197247598958547,
+            "fit_intercept": false,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.9197128030050847
+          },
+          "time": 3.3482115268707275
+        },
+        "dt": {
+          "accuracy": 0.625,
+          "params": {
+            "max_depth": 5,
+            "criterion": "gini"
+          },
+          "time": 0.3439757823944092
+        },
+        "rf": {
+          "accuracy": 0.6666666666666666,
+          "params": {
+            "n_estimators": 80,
+            "max_depth": 20
+          },
+          "time": 6.804362535476685
+        },
+        "knn": {
+          "accuracy": 0.7222222222222222,
+          "params": {
+            "n_neighbors": 14,
+            "weights": "uniform",
+            "algorithm": "brute"
+          },
+          "time": 0.34634876251220703
+        },
+        "xgboost": {
+          "accuracy": 0.625,
+          "params": {
+            "n_estimators": 15,
+            "learning_rate": 0.9130442455035945,
+            "max_depth": 19,
+            "min_child_weight": 3.599725758454549,
+            "subsample": 0.22887021610994293,
+            "colsample_bytree": 0.2093565159939282
+          },
+          "time": 3.3160550594329834
+        },
+        "svm": {
+          "accuracy": 0.6388888888888888,
+          "params": {
+            "C": 1,
+            "kernel": "rbf",
+            "degree": 4,
+            "gamma": "scale"
+          },
+          "time": 0.4589505195617676
+        },
+        "mlp": {
+          "accuracy": 0.625,
+          "params": {
+            "activation": "identity",
+            "solver": "adam",
+            "alpha": 0.00011587003709515606,
+            "hidden_layer_sizes": [
+              89,
+              32,
+              95
+            ]
+          },
+          "time": 36.45746159553528
+        },
+        "nb": {
+          "accuracy": 0.5416666666666666,
+          "params": {
+            "var_smoothing": 1.3078228176153757e-05
+          },
+          "time": 0.2183825969696045
+        }
+      },
+      "umap": {
+        "logreg": {
+          "accuracy": 0.6666666666666666,
+          "params": {
+            "C": 0.3230580157979429,
+            "fit_intercept": true,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.2436358239652146
+          },
+          "time": 10.366439819335938
+        },
+        "dt": {
+          "accuracy": 0.625,
+          "params": {
+            "max_depth": 2,
+            "criterion": "entropy"
+          },
+          "time": 0.30112385749816895
+        },
+        "rf": {
+          "accuracy": 0.6944444444444444,
+          "params": {
+            "n_estimators": 29,
+            "max_depth": 2
+          },
+          "time": 8.32501769065857
+        },
+        "knn": {
+          "accuracy": 0.7222222222222222,
+          "params": {
+            "n_neighbors": 18,
+            "weights": "uniform",
+            "algorithm": "kd_tree"
+          },
+          "time": 0.3226799964904785
+        },
+        "xgboost": {
+          "accuracy": 0.6527777777777778,
+          "params": {
+            "n_estimators": 99,
+            "learning_rate": 0.4234573310949758,
+            "max_depth": 7,
+            "min_child_weight": 8.687950858465479,
+            "subsample": 0.7202026361560102,
+            "colsample_bytree": 0.7483352242698109
+          },
+          "time": 3.735511302947998
+        },
+        "svm": {
+          "accuracy": 0.6944444444444444,
+          "params": {
+            "C": 0.6,
+            "kernel": "rbf",
+            "degree": 5,
+            "gamma": "auto"
+          },
+          "time": 0.4413299560546875
+        },
+        "mlp": {
+          "accuracy": 0.6527777777777778,
+          "params": {
+            "activation": "identity",
+            "solver": "lbfgs",
+            "alpha": 0.05754307792568357,
+            "hidden_layer_sizes": [
+              74,
+              100
+            ]
+          },
+          "time": 89.74768495559692
+        },
+        "nb": {
+          "accuracy": 0.6388888888888888,
+          "params": {
+            "var_smoothing": 0.000985277888075644
+          },
+          "time": 0.23220467567443848
+        }
+      },
+      "nnclr_cnn": {
+        "logreg": {
+          "accuracy": 0.6111111111111112,
+          "params": {
+            "C": 34.075907074910845,
+            "fit_intercept": true,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.5047046565099869
+          },
+          "time": 59.203399658203125
+        },
+        "dt": {
+          "accuracy": 0.6805555555555556,
+          "params": {
+            "max_depth": 3,
+            "criterion": "gini"
+          },
+          "time": 1.1210575103759766
+        },
+        "rf": {
+          "accuracy": 0.6111111111111112,
+          "params": {
+            "n_estimators": 130,
+            "max_depth": 8
+          },
+          "time": 12.987658023834229
+        },
+        "knn": {
+          "accuracy": 0.6527777777777778,
+          "params": {
+            "n_neighbors": 20,
+            "weights": "uniform",
+            "algorithm": "brute"
+          },
+          "time": 0.6979377269744873
+        },
+        "xgboost": {
+          "accuracy": 0.625,
+          "params": {
+            "n_estimators": 178,
+            "learning_rate": 0.30094014230534216,
+            "max_depth": 4,
+            "min_child_weight": 3.744435872486126,
+            "subsample": 0.2923354909537096,
+            "colsample_bytree": 0.4245669752949156
+          },
+          "time": 21.64672875404358
+        },
+        "svm": {
+          "accuracy": 0.625,
+          "params": {
+            "C": 1,
+            "kernel": "linear",
+            "degree": 4,
+            "gamma": "scale"
+          },
+          "time": 0.6385619640350342
+        },
+        "mlp": {
+          "accuracy": 0.5972222222222222,
+          "params": {
+            "activation": "identity",
+            "solver": "adam",
+            "alpha": 0.00570167232230185,
+            "hidden_layer_sizes": [
+              85,
+              95,
+              48
+            ]
+          },
+          "time": 413.16722083091736
+        },
+        "nb": {
+          "accuracy": 0.5138888888888888,
+          "params": {
+            "var_smoothing": 3.2300210102997657e-07
+          },
+          "time": 0.3981914520263672
+        }
+      },
+      "nnclr_lstm": {
+        "logreg": {
+          "accuracy": 0.5694444444444444,
+          "params": {
+            "C": 583.6167302154107,
+            "fit_intercept": false,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.862551214654427
+          },
+          "time": 255.07260751724243
+        },
+        "dt": {
+          "accuracy": 0.6805555555555556,
+          "params": {
+            "max_depth": 2,
+            "criterion": "gini"
+          },
+          "time": 1.8962013721466064
+        },
+        "rf": {
+          "accuracy": 0.6111111111111112,
+          "params": {
+            "n_estimators": 39,
+            "max_depth": 2
+          },
+          "time": 10.316853761672974
+        },
+        "knn": {
+          "accuracy": 0.625,
+          "params": {
+            "n_neighbors": 15,
+            "weights": "uniform",
+            "algorithm": "auto"
+          },
+          "time": 0.6783032417297363
+        },
+        "xgboost": {
+          "accuracy": 0.5972222222222222,
+          "params": {
+            "n_estimators": 119,
+            "learning_rate": 0.874295981457571,
+            "max_depth": 7,
+            "min_child_weight": 8.624980308172535,
+            "subsample": 0.8309518618010654,
+            "colsample_bytree": 0.9841280620287292
+          },
+          "time": 24.373671770095825
+        },
+        "svm": {
+          "accuracy": 0.6111111111111112,
+          "params": {
+            "C": 0.3,
+            "kernel": "rbf",
+            "degree": 2,
+            "gamma": "scale"
+          },
+          "time": 0.7454628944396973
+        },
+        "mlp": {
+          "accuracy": 0.625,
+          "params": {
+            "activation": "identity",
+            "solver": "lbfgs",
+            "alpha": 0.00011953844888290439,
+            "hidden_layer_sizes": [
+              32
+            ]
+          },
+          "time": 539.5484874248505
+        },
+        "nb": {
+          "accuracy": 0.5972222222222222,
+          "params": {
+            "var_smoothing": 1.7568309141474209e-09
+          },
+          "time": 0.39818787574768066
+        }
+      }
+    }
+  },
+  "Continent_7": {
+    "dataset": "Continent_7",
+    "embedding_results": {
+      "pca": {
+        "time": 0.0011816024780273438,
+        "shape": [
+          271,
+          10
+        ]
+      },
+      "lle": {
+        "time": 0.09753608703613281,
+        "shape": [
+          271,
+          10
+        ]
+      },
+      "wavelet": {
+        "time": 0.000270843505859375,
+        "shape": [
+          271,
+          8
+        ]
+      },
+      "fft": {
+        "time": 0.002725362777709961,
+        "shape": [
+          271,
+          15
+        ]
+      },
+      "autoencoder": {
+        "time": 4.129927635192871,
+        "shape": [
+          271,
+          4
+        ]
+      },
+      "graph": {
+        "error": "buffer source array is read-only"
+      },
+      "tda": {
+        "error": "object of type 'NoneType' has no len()"
+      },
+      "umap": {
+        "time": 0.20842957496643066,
+        "shape": [
+          271,
+          2
+        ]
+      },
+      "nnclr_cnn": {
+        "time": 0.21791601181030273,
+        "shape": [
+          271,
+          128
+        ]
+      },
+      "nnclr_lstm": {
+        "time": 0.38191652297973633,
+        "shape": [
+          271,
+          128
+        ]
+      }
+    },
+    "classifier_results": {},
+    "combined_results": {
+      "pca": {
+        "logreg": {
+          "accuracy": 0.5194805194805194,
+          "params": {
+            "C": 0.08575350707393582,
+            "fit_intercept": true,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.17677167459673349
+          },
+          "time": 4.6571946144104
+        },
+        "dt": {
+          "accuracy": 0.4155844155844156,
+          "params": {
+            "max_depth": 4,
+            "criterion": "gini"
+          },
+          "time": 0.4380030632019043
+        },
+        "rf": {
+          "accuracy": 0.4155844155844156,
+          "params": {
+            "n_estimators": 123,
+            "max_depth": 22
+          },
+          "time": 13.579254627227783
+        },
+        "knn": {
+          "accuracy": 0.4805194805194805,
+          "params": {
+            "n_neighbors": 17,
+            "weights": "distance",
+            "algorithm": "kd_tree"
+          },
+          "time": 0.35036659240722656
+        },
+        "xgboost": {
+          "accuracy": 0.4025974025974026,
+          "params": {
+            "n_estimators": 33,
+            "learning_rate": 0.34105311320575954,
+            "max_depth": 14,
+            "min_child_weight": 1.1674204729367446,
+            "subsample": 0.9533930386351558,
+            "colsample_bytree": 0.2866317902210325
+          },
+          "time": 10.531278371810913
+        },
+        "svm": {
+          "accuracy": 0.5194805194805194,
+          "params": {
+            "C": 1,
+            "kernel": "linear",
+            "degree": 2,
+            "gamma": "scale"
+          },
+          "time": 0.5944995880126953
+        },
+        "mlp": {
+          "accuracy": 0.5194805194805194,
+          "params": {
+            "activation": "identity",
+            "solver": "lbfgs",
+            "alpha": 0.003673775686491077,
+            "hidden_layer_sizes": [
+              23,
+              63
+            ]
+          },
+          "time": 166.29412817955017
+        },
+        "nb": {
+          "accuracy": 0.4155844155844156,
+          "params": {
+            "var_smoothing": 3.535649229031363e-10
+          },
+          "time": 0.2530505657196045
+        }
+      },
+      "lle": {
+        "logreg": {
+          "accuracy": 0.4805194805194805,
+          "params": {
+            "C": 2.4648262255753375,
+            "fit_intercept": true,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.05237312521151783
+          },
+          "time": 2.5578465461730957
+        },
+        "dt": {
+          "accuracy": 0.45454545454545453,
+          "params": {
+            "max_depth": 2,
+            "criterion": "entropy"
+          },
+          "time": 0.46613407135009766
+        },
+        "rf": {
+          "accuracy": 0.44155844155844154,
+          "params": {
+            "n_estimators": 28,
+            "max_depth": 21
+          },
+          "time": 11.297011375427246
+        },
+        "knn": {
+          "accuracy": 0.5064935064935064,
+          "params": {
+            "n_neighbors": 11,
+            "weights": "distance",
+            "algorithm": "auto"
+          },
+          "time": 0.3480815887451172
+        },
+        "xgboost": {
+          "accuracy": 0.42857142857142855,
+          "params": {
+            "n_estimators": 133,
+            "learning_rate": 0.17713542504751129,
+            "max_depth": 25,
+            "min_child_weight": 6.918725754561225,
+            "subsample": 0.1799653385736561,
+            "colsample_bytree": 0.83045565070422
+          },
+          "time": 4.8677215576171875
+        },
+        "svm": {
+          "accuracy": 0.4675324675324675,
+          "params": {
+            "C": 1,
+            "kernel": "linear",
+            "degree": 4,
+            "gamma": "scale"
+          },
+          "time": 0.5299246311187744
+        },
+        "mlp": {
+          "accuracy": 0.4675324675324675,
+          "params": {
+            "activation": "relu",
+            "solver": "adam",
+            "alpha": 0.00023028348075570067,
+            "hidden_layer_sizes": [
+              25,
+              18
+            ]
+          },
+          "time": 24.793126821517944
+        },
+        "nb": {
+          "accuracy": 0.2597402597402597,
+          "params": {
+            "var_smoothing": 7.709084009184195e-06
+          },
+          "time": 0.2580716609954834
+        }
+      },
+      "wavelet": {
+        "logreg": {
+          "accuracy": 0.4935064935064935,
+          "params": {
+            "C": 0.037204976566895004,
+            "fit_intercept": true,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.1145510777343346
+          },
+          "time": 3.1864123344421387
+        },
+        "dt": {
+          "accuracy": 0.4675324675324675,
+          "params": {
+            "max_depth": 2,
+            "criterion": "entropy"
+          },
+          "time": 0.4142463207244873
+        },
+        "rf": {
+          "accuracy": 0.44155844155844154,
+          "params": {
+            "n_estimators": 157,
+            "max_depth": 23
+          },
+          "time": 11.484252691268921
+        },
+        "knn": {
+          "accuracy": 0.4805194805194805,
+          "params": {
+            "n_neighbors": 20,
+            "weights": "distance",
+            "algorithm": "brute"
+          },
+          "time": 0.37862229347229004
+        },
+        "xgboost": {
+          "accuracy": 0.4675324675324675,
+          "params": {
+            "n_estimators": 64,
+            "learning_rate": 0.23094901026590367,
+            "max_depth": 22,
+            "min_child_weight": 8.422481129290768,
+            "subsample": 0.1394829519212589,
+            "colsample_bytree": 0.24399411322237208
+          },
+          "time": 4.466388463973999
+        },
+        "svm": {
+          "accuracy": 0.4675324675324675,
+          "params": {
+            "C": 0.3,
+            "kernel": "rbf",
+            "degree": 3,
+            "gamma": "auto"
+          },
+          "time": 0.5626790523529053
+        },
+        "mlp": {
+          "accuracy": 0.4935064935064935,
+          "params": {
+            "activation": "identity",
+            "solver": "sgd",
+            "alpha": 0.0006128618440360882,
+            "hidden_layer_sizes": [
+              27,
+              65,
+              29
+            ]
+          },
+          "time": 23.298913955688477
+        },
+        "nb": {
+          "accuracy": 0.3246753246753247,
+          "params": {
+            "var_smoothing": 1.884165475735634e-10
+          },
+          "time": 0.25254130363464355
+        }
+      },
+      "fft": {
+        "logreg": {
+          "accuracy": 0.4675324675324675,
+          "params": {
+            "C": 9.408025953731409e-05,
+            "fit_intercept": true,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.725022778543907
+          },
+          "time": 3.164743185043335
+        },
+        "dt": {
+          "accuracy": 0.4935064935064935,
+          "params": {
+            "max_depth": 4,
+            "criterion": "entropy"
+          },
+          "time": 0.5873904228210449
+        },
+        "rf": {
+          "accuracy": 0.4025974025974026,
+          "params": {
+            "n_estimators": 51,
+            "max_depth": 21
+          },
+          "time": 7.319590330123901
+        },
+        "knn": {
+          "accuracy": 0.4935064935064935,
+          "params": {
+            "n_neighbors": 6,
+            "weights": "uniform",
+            "algorithm": "brute"
+          },
+          "time": 0.35176563262939453
+        },
+        "xgboost": {
+          "accuracy": 0.42857142857142855,
+          "params": {
+            "n_estimators": 171,
+            "learning_rate": 0.24046299286050227,
+            "max_depth": 22,
+            "min_child_weight": 5.218133632841654,
+            "subsample": 0.1902069013495172,
+            "colsample_bytree": 0.5315967499723988
+          },
+          "time": 12.599510431289673
+        },
+        "svm": {
+          "accuracy": 0.4805194805194805,
+          "params": {
+            "C": 1,
+            "kernel": "rbf",
+            "degree": 4,
+            "gamma": "auto"
+          },
+          "time": 0.689643383026123
+        },
+        "mlp": {
+          "accuracy": 0.4675324675324675,
+          "params": {
+            "activation": "relu",
+            "solver": "sgd",
+            "alpha": 0.00646290718391847,
+            "hidden_layer_sizes": [
+              10,
+              83,
+              24
+            ]
+          },
+          "time": 29.10873818397522
+        },
+        "nb": {
+          "accuracy": 0.3116883116883117,
+          "params": {
+            "var_smoothing": 1.3579009623156743e-12
+          },
+          "time": 0.2387559413909912
+        }
+      },
+      "autoencoder": {
+        "logreg": {
+          "accuracy": 0.4675324675324675,
+          "params": {
+            "C": 178.63788601158473,
+            "fit_intercept": true,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.2567199561276743
+          },
+          "time": 6.287508964538574
+        },
+        "dt": {
+          "accuracy": 0.4675324675324675,
+          "params": {
+            "max_depth": 20,
+            "criterion": "log_loss"
+          },
+          "time": 0.33666181564331055
+        },
+        "rf": {
+          "accuracy": 0.45454545454545453,
+          "params": {
+            "n_estimators": 162,
+            "max_depth": 5
+          },
+          "time": 10.744699239730835
+        },
+        "knn": {
+          "accuracy": 0.4805194805194805,
+          "params": {
+            "n_neighbors": 20,
+            "weights": "uniform",
+            "algorithm": "ball_tree"
+          },
+          "time": 0.3286569118499756
+        },
+        "xgboost": {
+          "accuracy": 0.4675324675324675,
+          "params": {
+            "n_estimators": 12,
+            "learning_rate": 0.8796090486969047,
+            "max_depth": 17,
+            "min_child_weight": 8.163836802662106,
+            "subsample": 0.1795325937349188,
+            "colsample_bytree": 0.6257051819228591
+          },
+          "time": 2.762655735015869
+        },
+        "svm": {
+          "accuracy": 0.4675324675324675,
+          "params": {
+            "C": 0.1,
+            "kernel": "linear",
+            "degree": 2,
+            "gamma": "scale"
+          },
+          "time": 0.5570461750030518
+        },
+        "mlp": {
+          "accuracy": 0.4675324675324675,
+          "params": {
+            "activation": "tanh",
+            "solver": "sgd",
+            "alpha": 0.0006330581344368093,
+            "hidden_layer_sizes": [
+              48,
+              60,
+              12
+            ]
+          },
+          "time": 92.48609018325806
+        },
+        "nb": {
+          "accuracy": 0.4675324675324675,
+          "params": {
+            "var_smoothing": 0.0026145031356477094
+          },
+          "time": 0.2340097427368164
+        }
+      },
+      "umap": {
+        "logreg": {
+          "accuracy": 0.4675324675324675,
+          "params": {
+            "C": 3.6170712197192887e-10,
+            "fit_intercept": true,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.5430122384078125
+          },
+          "time": 2.8129963874816895
+        },
+        "dt": {
+          "accuracy": 0.4805194805194805,
+          "params": {
+            "max_depth": 2,
+            "criterion": "gini"
+          },
+          "time": 0.28102636337280273
+        },
+        "rf": {
+          "accuracy": 0.4675324675324675,
+          "params": {
+            "n_estimators": 138,
+            "max_depth": 3
+          },
+          "time": 9.934765338897705
+        },
+        "knn": {
+          "accuracy": 0.4155844155844156,
+          "params": {
+            "n_neighbors": 20,
+            "weights": "uniform",
+            "algorithm": "kd_tree"
+          },
+          "time": 0.3334376811981201
+        },
+        "xgboost": {
+          "accuracy": 0.35064935064935066,
+          "params": {
+            "n_estimators": 176,
+            "learning_rate": 0.930835377421164,
+            "max_depth": 2,
+            "min_child_weight": 7.815022770408207,
+            "subsample": 0.11178674377095442,
+            "colsample_bytree": 0.7454177652137102
+          },
+          "time": 8.048183679580688
+        },
+        "svm": {
+          "accuracy": 0.4675324675324675,
+          "params": {
+            "C": 0.1,
+            "kernel": "rbf",
+            "degree": 4,
+            "gamma": "auto"
+          },
+          "time": 0.46269822120666504
+        },
+        "mlp": {
+          "accuracy": 0.4675324675324675,
+          "params": {
+            "activation": "identity",
+            "solver": "adam",
+            "alpha": 0.001751476204326865,
+            "hidden_layer_sizes": [
+              25,
+              63,
+              55
+            ]
+          },
+          "time": 10.834005355834961
+        },
+        "nb": {
+          "accuracy": 0.4675324675324675,
+          "params": {
+            "var_smoothing": 5.410818087716663e-12
+          },
+          "time": 0.22642230987548828
+        }
+      },
+      "nnclr_cnn": {
+        "logreg": {
+          "accuracy": 0.4675324675324675,
+          "params": {
+            "C": 5.17746925505287e-07,
+            "fit_intercept": false,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.270075709648414
+          },
+          "time": 10.130099534988403
+        },
+        "dt": {
+          "accuracy": 0.4155844155844156,
+          "params": {
+            "max_depth": 26,
+            "criterion": "log_loss"
+          },
+          "time": 1.9995248317718506
+        },
+        "rf": {
+          "accuracy": 0.37662337662337664,
+          "params": {
+            "n_estimators": 54,
+            "max_depth": 31
+          },
+          "time": 9.15762734413147
+        },
+        "knn": {
+          "accuracy": 0.4675324675324675,
+          "params": {
+            "n_neighbors": 18,
+            "weights": "distance",
+            "algorithm": "brute"
+          },
+          "time": 0.7526893615722656
+        },
+        "xgboost": {
+          "accuracy": 0.4155844155844156,
+          "params": {
+            "n_estimators": 75,
+            "learning_rate": 0.06659341488907702,
+            "max_depth": 15,
+            "min_child_weight": 8.402159050922249,
+            "subsample": 0.61384210905179,
+            "colsample_bytree": 0.6529779243824237
+          },
+          "time": 8.782337665557861
+        },
+        "svm": {
+          "accuracy": 0.4675324675324675,
+          "params": {
+            "C": 0.6,
+            "kernel": "rbf",
+            "degree": 4,
+            "gamma": "auto"
+          },
+          "time": 0.8775451183319092
+        },
+        "mlp": {
+          "accuracy": 0.4675324675324675,
+          "params": {
+            "activation": "logistic",
+            "solver": "sgd",
+            "alpha": 0.0004148390616957016,
+            "hidden_layer_sizes": [
+              99,
+              1
+            ]
+          },
+          "time": 140.2957980632782
+        },
+        "nb": {
+          "accuracy": 0.2597402597402597,
+          "params": {
+            "var_smoothing": 1.7446237303384112e-05
+          },
+          "time": 0.4152092933654785
+        }
+      },
+      "nnclr_lstm": {
+        "logreg": {
+          "accuracy": 0.4805194805194805,
+          "params": {
+            "C": 232.19631743610077,
+            "fit_intercept": true,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.0006880231994515831
+          },
+          "time": 142.86436009407043
+        },
+        "dt": {
+          "accuracy": 0.4675324675324675,
+          "params": {
+            "max_depth": 2,
+            "criterion": "entropy"
+          },
+          "time": 2.434262990951538
+        },
+        "rf": {
+          "accuracy": 0.42857142857142855,
+          "params": {
+            "n_estimators": 26,
+            "max_depth": 2
+          },
+          "time": 16.370339393615723
+        },
+        "knn": {
+          "accuracy": 0.45454545454545453,
+          "params": {
+            "n_neighbors": 6,
+            "weights": "uniform",
+            "algorithm": "ball_tree"
+          },
+          "time": 0.6817915439605713
+        },
+        "xgboost": {
+          "accuracy": 0.4675324675324675,
+          "params": {
+            "n_estimators": 31,
+            "learning_rate": 0.014543662618577057,
+            "max_depth": 25,
+            "min_child_weight": 1.002688440817859,
+            "subsample": 0.395103117445782,
+            "colsample_bytree": 0.8138084061915465
+          },
+          "time": 20.78303599357605
+        },
+        "svm": {
+          "accuracy": 0.4675324675324675,
+          "params": {
+            "C": 1,
+            "kernel": "rbf",
+            "degree": 4,
+            "gamma": "auto"
+          },
+          "time": 0.978330135345459
+        },
+        "mlp": {
+          "accuracy": 0.4675324675324675,
+          "params": {
+            "activation": "identity",
+            "solver": "lbfgs",
+            "alpha": 0.0011539707827202242,
+            "hidden_layer_sizes": [
+              5,
+              95,
+              90
+            ]
+          },
+          "time": 591.5011415481567
+        },
+        "nb": {
+          "accuracy": 0.15584415584415584,
+          "params": {
+            "var_smoothing": 1.2608935145233537e-09
+          },
+          "time": 0.4074740409851074
+        }
+      }
+    }
+  },
+  "Continent_14": {
+    "dataset": "Continent_14",
+    "embedding_results": {
+      "pca": {
+        "time": 0.0014297962188720703,
+        "shape": [
+          271,
+          10
+        ]
+      },
+      "lle": {
+        "time": 0.32456493377685547,
+        "shape": [
+          271,
+          10
+        ]
+      },
+      "wavelet": {
+        "time": 0.0002892017364501953,
+        "shape": [
+          271,
+          15
+        ]
+      },
+      "fft": {
+        "time": 0.0029833316802978516,
+        "shape": [
+          271,
+          29
+        ]
+      },
+      "autoencoder": {
+        "time": 4.205439329147339,
+        "shape": [
+          271,
+          4
+        ]
+      },
+      "graph": {
+        "error": "buffer source array is read-only"
+      },
+      "tda": {
+        "error": "object of type 'NoneType' has no len()"
+      },
+      "umap": {
+        "time": 0.20119142532348633,
+        "shape": [
+          271,
+          2
+        ]
+      },
+      "nnclr_cnn": {
+        "time": 0.3648052215576172,
+        "shape": [
+          271,
+          128
+        ]
+      },
+      "nnclr_lstm": {
+        "time": 0.345883846282959,
+        "shape": [
+          271,
+          128
+        ]
+      }
+    },
+    "classifier_results": {},
+    "combined_results": {
+      "pca": {
+        "logreg": {
+          "accuracy": 0.4675324675324675,
+          "params": {
+            "C": 3.4104185122784184e-10,
+            "fit_intercept": true,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.9632132167904601
+          },
+          "time": 2.3429574966430664
+        },
+        "dt": {
+          "accuracy": 0.4805194805194805,
+          "params": {
+            "max_depth": 4,
+            "criterion": "gini"
+          },
+          "time": 0.42507028579711914
+        },
+        "rf": {
+          "accuracy": 0.4935064935064935,
+          "params": {
+            "n_estimators": 168,
+            "max_depth": 11
+          },
+          "time": 7.874229907989502
+        },
+        "knn": {
+          "accuracy": 0.4805194805194805,
+          "params": {
+            "n_neighbors": 15,
+            "weights": "distance",
+            "algorithm": "ball_tree"
+          },
+          "time": 0.3523871898651123
+        },
+        "xgboost": {
+          "accuracy": 0.42857142857142855,
+          "params": {
+            "n_estimators": 157,
+            "learning_rate": 0.8712792001089767,
+            "max_depth": 12,
+            "min_child_weight": 1.902123285857635,
+            "subsample": 0.7853828065862611,
+            "colsample_bytree": 0.34884400583587755
+          },
+          "time": 14.596429109573364
+        },
+        "svm": {
+          "accuracy": 0.4935064935064935,
+          "params": {
+            "C": 0.6,
+            "kernel": "linear",
+            "degree": 2,
+            "gamma": "scale"
+          },
+          "time": 0.6273891925811768
+        },
+        "mlp": {
+          "accuracy": 0.4935064935064935,
+          "params": {
+            "activation": "identity",
+            "solver": "adam",
+            "alpha": 4.964696914694631e-05,
+            "hidden_layer_sizes": [
+              85
+            ]
+          },
+          "time": 26.456393718719482
+        },
+        "nb": {
+          "accuracy": 0.4675324675324675,
+          "params": {
+            "var_smoothing": 0.0039426343831786516
+          },
+          "time": 0.24398446083068848
+        }
+      },
+      "lle": {
+        "logreg": {
+          "accuracy": 0.4675324675324675,
+          "params": {
+            "C": 1.7303554008507849e-06,
+            "fit_intercept": true,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.4059138265163288
+          },
+          "time": 2.1781136989593506
+        },
+        "dt": {
+          "accuracy": 0.4935064935064935,
+          "params": {
+            "max_depth": 3,
+            "criterion": "gini"
+          },
+          "time": 0.4251539707183838
+        },
+        "rf": {
+          "accuracy": 0.4155844155844156,
+          "params": {
+            "n_estimators": 26,
+            "max_depth": 24
+          },
+          "time": 8.944948673248291
+        },
+        "knn": {
+          "accuracy": 0.4675324675324675,
+          "params": {
+            "n_neighbors": 7,
+            "weights": "distance",
+            "algorithm": "ball_tree"
+          },
+          "time": 0.3373246192932129
+        },
+        "xgboost": {
+          "accuracy": 0.38961038961038963,
+          "params": {
+            "n_estimators": 160,
+            "learning_rate": 0.7680080471185301,
+            "max_depth": 5,
+            "min_child_weight": 1.2872042678208877,
+            "subsample": 0.5538292685322044,
+            "colsample_bytree": 0.8276902668506141
+          },
+          "time": 11.693278312683105
+        },
+        "svm": {
+          "accuracy": 0.4675324675324675,
+          "params": {
+            "C": 0.6,
+            "kernel": "linear",
+            "degree": 4,
+            "gamma": "auto"
+          },
+          "time": 0.49225592613220215
+        },
+        "mlp": {
+          "accuracy": 0.4675324675324675,
+          "params": {
+            "activation": "logistic",
+            "solver": "adam",
+            "alpha": 3.03926066851348e-05,
+            "hidden_layer_sizes": [
+              82
+            ]
+          },
+          "time": 27.22581124305725
+        },
+        "nb": {
+          "accuracy": 0.33766233766233766,
+          "params": {
+            "var_smoothing": 1.1564618195207176e-10
+          },
+          "time": 0.22009944915771484
+        }
+      },
+      "wavelet": {
+        "logreg": {
+          "accuracy": 0.5064935064935064,
+          "params": {
+            "C": 0.23422903444155932,
+            "fit_intercept": true,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.2820957285065335
+          },
+          "time": 8.88027310371399
+        },
+        "dt": {
+          "accuracy": 0.4675324675324675,
+          "params": {
+            "max_depth": 3,
+            "criterion": "log_loss"
+          },
+          "time": 0.5386407375335693
+        },
+        "rf": {
+          "accuracy": 0.4025974025974026,
+          "params": {
+            "n_estimators": 154,
+            "max_depth": 14
+          },
+          "time": 15.722416400909424
+        },
+        "knn": {
+          "accuracy": 0.5454545454545454,
+          "params": {
+            "n_neighbors": 8,
+            "weights": "distance",
+            "algorithm": "auto"
+          },
+          "time": 0.3546445369720459
+        },
+        "xgboost": {
+          "accuracy": 0.4025974025974026,
+          "params": {
+            "n_estimators": 137,
+            "learning_rate": 0.6159282571564426,
+            "max_depth": 20,
+            "min_child_weight": 7.310651519100233,
+            "subsample": 0.41192917647037763,
+            "colsample_bytree": 0.668275145394908
+          },
+          "time": 5.2100830078125
+        },
+        "svm": {
+          "accuracy": 0.4935064935064935,
+          "params": {
+            "C": 1,
+            "kernel": "rbf",
+            "degree": 2,
+            "gamma": "auto"
+          },
+          "time": 0.6555562019348145
+        },
+        "mlp": {
+          "accuracy": 0.45454545454545453,
+          "params": {
+            "activation": "identity",
+            "solver": "adam",
+            "alpha": 1.847330976452671e-05,
+            "hidden_layer_sizes": [
+              7,
+              14
+            ]
+          },
+          "time": 26.57563018798828
+        },
+        "nb": {
+          "accuracy": 0.2727272727272727,
+          "params": {
+            "var_smoothing": 6.191839531538442e-07
+          },
+          "time": 0.24147796630859375
+        }
+      },
+      "fft": {
+        "logreg": {
+          "accuracy": 0.4675324675324675,
+          "params": {
+            "C": 1.656163145847946e-06,
+            "fit_intercept": false,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.4665057753925186
+          },
+          "time": 4.774482727050781
+        },
+        "dt": {
+          "accuracy": 0.4805194805194805,
+          "params": {
+            "max_depth": 3,
+            "criterion": "entropy"
+          },
+          "time": 0.7955131530761719
+        },
+        "rf": {
+          "accuracy": 0.44155844155844154,
+          "params": {
+            "n_estimators": 132,
+            "max_depth": 2
+          },
+          "time": 9.964950799942017
+        },
+        "knn": {
+          "accuracy": 0.44155844155844154,
+          "params": {
+            "n_neighbors": 12,
+            "weights": "distance",
+            "algorithm": "auto"
+          },
+          "time": 0.39731693267822266
+        },
+        "xgboost": {
+          "accuracy": 0.45454545454545453,
+          "params": {
+            "n_estimators": 23,
+            "learning_rate": 0.11236051100912006,
+            "max_depth": 30,
+            "min_child_weight": 4.364260549101993,
+            "subsample": 0.9693913481765553,
+            "colsample_bytree": 0.14649170101030648
+          },
+          "time": 7.9313623905181885
+        },
+        "svm": {
+          "accuracy": 0.4675324675324675,
+          "params": {
+            "C": 0.3,
+            "kernel": "rbf",
+            "degree": 5,
+            "gamma": "auto"
+          },
+          "time": 0.9326467514038086
+        },
+        "mlp": {
+          "accuracy": 0.4675324675324675,
+          "params": {
+            "activation": "logistic",
+            "solver": "adam",
+            "alpha": 0.01556847328250755,
+            "hidden_layer_sizes": [
+              67,
+              29,
+              69
+            ]
+          },
+          "time": 41.9679651260376
+        },
+        "nb": {
+          "accuracy": 0.3116883116883117,
+          "params": {
+            "var_smoothing": 0.008245784487040515
+          },
+          "time": 0.24345684051513672
+        }
+      },
+      "autoencoder": {
+        "logreg": {
+          "accuracy": 0.4805194805194805,
+          "params": {
+            "C": 2.555441157375922,
+            "fit_intercept": true,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.8361267235632427
+          },
+          "time": 11.561442852020264
+        },
+        "dt": {
+          "accuracy": 0.4675324675324675,
+          "params": {
+            "max_depth": 7,
+            "criterion": "log_loss"
+          },
+          "time": 0.34886860847473145
+        },
+        "rf": {
+          "accuracy": 0.5714285714285714,
+          "params": {
+            "n_estimators": 182,
+            "max_depth": 10
+          },
+          "time": 13.150940656661987
+        },
+        "knn": {
+          "accuracy": 0.5714285714285714,
+          "params": {
+            "n_neighbors": 3,
+            "weights": "uniform",
+            "algorithm": "auto"
+          },
+          "time": 0.34102654457092285
+        },
+        "xgboost": {
+          "accuracy": 0.4805194805194805,
+          "params": {
+            "n_estimators": 65,
+            "learning_rate": 0.3758027674241041,
+            "max_depth": 30,
+            "min_child_weight": 7.188896736751502,
+            "subsample": 0.20005447054378706,
+            "colsample_bytree": 0.5712103085685337
+          },
+          "time": 4.966902732849121
+        },
+        "svm": {
+          "accuracy": 0.4935064935064935,
+          "params": {
+            "C": 1,
+            "kernel": "rbf",
+            "degree": 3,
+            "gamma": "auto"
+          },
+          "time": 0.5409865379333496
+        },
+        "mlp": {
+          "accuracy": 0.45454545454545453,
+          "params": {
+            "activation": "relu",
+            "solver": "lbfgs",
+            "alpha": 0.0013521423470888344,
+            "hidden_layer_sizes": [
+              91
+            ]
+          },
+          "time": 75.18076038360596
+        },
+        "nb": {
+          "accuracy": 0.5064935064935064,
+          "params": {
+            "var_smoothing": 0.005586624048386645
+          },
+          "time": 0.23060274124145508
+        }
+      },
+      "umap": {
+        "logreg": {
+          "accuracy": 0.4675324675324675,
+          "params": {
+            "C": 0.019116730035943958,
+            "fit_intercept": false,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.46199798105428935
+          },
+          "time": 3.2542684078216553
+        },
+        "dt": {
+          "accuracy": 0.44155844155844154,
+          "params": {
+            "max_depth": 4,
+            "criterion": "log_loss"
+          },
+          "time": 0.312694787979126
+        },
+        "rf": {
+          "accuracy": 0.4675324675324675,
+          "params": {
+            "n_estimators": 34,
+            "max_depth": 3
+          },
+          "time": 6.20076322555542
+        },
+        "knn": {
+          "accuracy": 0.4805194805194805,
+          "params": {
+            "n_neighbors": 20,
+            "weights": "uniform",
+            "algorithm": "auto"
+          },
+          "time": 0.33199548721313477
+        },
+        "xgboost": {
+          "accuracy": 0.4935064935064935,
+          "params": {
+            "n_estimators": 92,
+            "learning_rate": 0.28882534477114913,
+            "max_depth": 5,
+            "min_child_weight": 9.355617399337973,
+            "subsample": 0.5880607904524866,
+            "colsample_bytree": 0.15727245203404105
+          },
+          "time": 6.2417731285095215
+        },
+        "svm": {
+          "accuracy": 0.4675324675324675,
+          "params": {
+            "C": 0.3,
+            "kernel": "linear",
+            "degree": 5,
+            "gamma": "scale"
+          },
+          "time": 0.5034372806549072
+        },
+        "mlp": {
+          "accuracy": 0.4675324675324675,
+          "params": {
+            "activation": "logistic",
+            "solver": "lbfgs",
+            "alpha": 6.974286461469493e-05,
+            "hidden_layer_sizes": [
+              80,
+              36,
+              56
+            ]
+          },
+          "time": 93.00474238395691
+        },
+        "nb": {
+          "accuracy": 0.37662337662337664,
+          "params": {
+            "var_smoothing": 5.633081805150367e-11
+          },
+          "time": 0.24649739265441895
+        }
+      },
+      "nnclr_cnn": {
+        "logreg": {
+          "accuracy": 0.4935064935064935,
+          "params": {
+            "C": 0.3763783579751984,
+            "fit_intercept": false,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.6209739065770182
+          },
+          "time": 58.362868785858154
+        },
+        "dt": {
+          "accuracy": 0.5064935064935064,
+          "params": {
+            "max_depth": 6,
+            "criterion": "gini"
+          },
+          "time": 1.6530380249023438
+        },
+        "rf": {
+          "accuracy": 0.4675324675324675,
+          "params": {
+            "n_estimators": 20,
+            "max_depth": 11
+          },
+          "time": 15.199301481246948
+        },
+        "knn": {
+          "accuracy": 0.5194805194805194,
+          "params": {
+            "n_neighbors": 20,
+            "weights": "distance",
+            "algorithm": "brute"
+          },
+          "time": 0.7187423706054688
+        },
+        "xgboost": {
+          "accuracy": 0.42857142857142855,
+          "params": {
+            "n_estimators": 21,
+            "learning_rate": 0.4207682167864217,
+            "max_depth": 23,
+            "min_child_weight": 7.402314396137383,
+            "subsample": 0.315314902000398,
+            "colsample_bytree": 0.8351585446162821
+          },
+          "time": 10.95237398147583
+        },
+        "svm": {
+          "accuracy": 0.4805194805194805,
+          "params": {
+            "C": 1,
+            "kernel": "rbf",
+            "degree": 5,
+            "gamma": "scale"
+          },
+          "time": 0.8717293739318848
+        },
+        "mlp": {
+          "accuracy": 0.5194805194805194,
+          "params": {
+            "activation": "tanh",
+            "solver": "adam",
+            "alpha": 0.0697883144853413,
+            "hidden_layer_sizes": [
+              70,
+              37,
+              87
+            ]
+          },
+          "time": 269.1858148574829
+        },
+        "nb": {
+          "accuracy": 0.22077922077922077,
+          "params": {
+            "var_smoothing": 0.009269944076593028
+          },
+          "time": 0.4105393886566162
+        }
+      },
+      "nnclr_lstm": {
+        "logreg": {
+          "accuracy": 0.4805194805194805,
+          "params": {
+            "C": 3.755590899018501,
+            "fit_intercept": true,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.877380360242109
+          },
+          "time": 36.305824279785156
+        },
+        "dt": {
+          "accuracy": 0.4805194805194805,
+          "params": {
+            "max_depth": 2,
+            "criterion": "log_loss"
+          },
+          "time": 2.5146219730377197
+        },
+        "rf": {
+          "accuracy": 0.44155844155844154,
+          "params": {
+            "n_estimators": 45,
+            "max_depth": 30
+          },
+          "time": 11.787710666656494
+        },
+        "knn": {
+          "accuracy": 0.5324675324675324,
+          "params": {
+            "n_neighbors": 20,
+            "weights": "distance",
+            "algorithm": "brute"
+          },
+          "time": 0.7285287380218506
+        },
+        "xgboost": {
+          "accuracy": 0.44155844155844154,
+          "params": {
+            "n_estimators": 174,
+            "learning_rate": 0.4864812982983696,
+            "max_depth": 6,
+            "min_child_weight": 3.117524201482226,
+            "subsample": 0.5300603238210841,
+            "colsample_bytree": 0.4712660136125619
+          },
+          "time": 41.005021810531616
+        },
+        "svm": {
+          "accuracy": 0.4805194805194805,
+          "params": {
+            "C": 1,
+            "kernel": "rbf",
+            "degree": 5,
+            "gamma": "scale"
+          },
+          "time": 1.0267176628112793
+        },
+        "mlp": {
+          "accuracy": 0.4675324675324675,
+          "params": {
+            "activation": "relu",
+            "solver": "adam",
+            "alpha": 0.0010437372630575001,
+            "hidden_layer_sizes": [
+              58,
+              75
+            ]
+          },
+          "time": 567.5551617145538
+        },
+        "nb": {
+          "accuracy": 0.12987012987012986,
+          "params": {
+            "var_smoothing": 1.9237096218791365e-10
+          },
+          "time": 0.41840267181396484
+        }
+      }
+    }
+  },
+  "Continent_30": {
+    "dataset": "Continent_30",
+    "embedding_results": {
+      "pca": {
+        "time": 0.06181454658508301,
+        "shape": [
+          271,
+          10
+        ]
+      },
+      "lle": {
+        "time": 0.14983797073364258,
+        "shape": [
+          271,
+          10
+        ]
+      },
+      "wavelet": {
+        "time": 0.00031447410583496094,
+        "shape": [
+          271,
+          31
+        ]
+      },
+      "fft": {
+        "time": 0.003421783447265625,
+        "shape": [
+          271,
+          61
+        ]
+      },
+      "autoencoder": {
+        "time": 4.255588531494141,
+        "shape": [
+          271,
+          4
+        ]
+      },
+      "graph": {
+        "error": "buffer source array is read-only"
+      },
+      "tda": {
+        "error": "buffer source array is read-only"
+      },
+      "umap": {
+        "time": 0.202345609664917,
+        "shape": [
+          271,
+          2
+        ]
+      },
+      "nnclr_cnn": {
+        "time": 0.2743682861328125,
+        "shape": [
+          271,
+          128
+        ]
+      },
+      "nnclr_lstm": {
+        "time": 0.46320319175720215,
+        "shape": [
+          271,
+          128
+        ]
+      }
+    },
+    "classifier_results": {},
+    "combined_results": {
+      "pca": {
+        "logreg": {
+          "accuracy": 0.5194805194805194,
+          "params": {
+            "C": 0.045197320735137596,
+            "fit_intercept": true,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.2316535845922455
+          },
+          "time": 11.732238292694092
+        },
+        "dt": {
+          "accuracy": 0.4675324675324675,
+          "params": {
+            "max_depth": 2,
+            "criterion": "log_loss"
+          },
+          "time": 0.4204564094543457
+        },
+        "rf": {
+          "accuracy": 0.5324675324675324,
+          "params": {
+            "n_estimators": 73,
+            "max_depth": 31
+          },
+          "time": 9.864314317703247
+        },
+        "knn": {
+          "accuracy": 0.5844155844155844,
+          "params": {
+            "n_neighbors": 15,
+            "weights": "distance",
+            "algorithm": "brute"
+          },
+          "time": 0.3571460247039795
+        },
+        "xgboost": {
+          "accuracy": 0.4805194805194805,
+          "params": {
+            "n_estimators": 137,
+            "learning_rate": 0.04607795768035756,
+            "max_depth": 20,
+            "min_child_weight": 6.325384094475391,
+            "subsample": 0.36296658637812207,
+            "colsample_bytree": 0.5673975764511119
+          },
+          "time": 13.970849752426147
+        },
+        "svm": {
+          "accuracy": 0.5194805194805194,
+          "params": {
+            "C": 1,
+            "kernel": "linear",
+            "degree": 4,
+            "gamma": "auto"
+          },
+          "time": 0.7118175029754639
+        },
+        "mlp": {
+          "accuracy": 0.4935064935064935,
+          "params": {
+            "activation": "tanh",
+            "solver": "adam",
+            "alpha": 0.006030000574493595,
+            "hidden_layer_sizes": [
+              33,
+              87
+            ]
+          },
+          "time": 68.47042870521545
+        },
+        "nb": {
+          "accuracy": 0.42857142857142855,
+          "params": {
+            "var_smoothing": 0.004507133768140783
+          },
+          "time": 0.23194265365600586
+        }
+      },
+      "lle": {
+        "logreg": {
+          "accuracy": 0.4935064935064935,
+          "params": {
+            "C": 5.67597086925952,
+            "fit_intercept": true,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.4816166926538695
+          },
+          "time": 3.2169859409332275
+        },
+        "dt": {
+          "accuracy": 0.4805194805194805,
+          "params": {
+            "max_depth": 4,
+            "criterion": "log_loss"
+          },
+          "time": 0.47089505195617676
+        },
+        "rf": {
+          "accuracy": 0.5064935064935064,
+          "params": {
+            "n_estimators": 84,
+            "max_depth": 2
+          },
+          "time": 10.328015089035034
+        },
+        "knn": {
+          "accuracy": 0.5194805194805194,
+          "params": {
+            "n_neighbors": 16,
+            "weights": "distance",
+            "algorithm": "auto"
+          },
+          "time": 0.3662295341491699
+        },
+        "xgboost": {
+          "accuracy": 0.45454545454545453,
+          "params": {
+            "n_estimators": 16,
+            "learning_rate": 0.14432803914194892,
+            "max_depth": 17,
+            "min_child_weight": 5.9273060898125545,
+            "subsample": 0.37514109545726815,
+            "colsample_bytree": 0.6050166262980197
+          },
+          "time": 4.98314094543457
+        },
+        "svm": {
+          "accuracy": 0.5064935064935064,
+          "params": {
+            "C": 1,
+            "kernel": "rbf",
+            "degree": 4,
+            "gamma": "scale"
+          },
+          "time": 0.5767014026641846
+        },
+        "mlp": {
+          "accuracy": 0.4935064935064935,
+          "params": {
+            "activation": "identity",
+            "solver": "adam",
+            "alpha": 0.009689517405325148,
+            "hidden_layer_sizes": [
+              93,
+              64
+            ]
+          },
+          "time": 94.70039391517639
+        },
+        "nb": {
+          "accuracy": 0.18181818181818182,
+          "params": {
+            "var_smoothing": 7.199524882510653e-06
+          },
+          "time": 0.23927617073059082
+        }
+      },
+      "wavelet": {
+        "logreg": {
+          "accuracy": 0.5064935064935064,
+          "params": {
+            "C": 0.044623262199995434,
+            "fit_intercept": true,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.35106189599048865
+          },
+          "time": 6.256716728210449
+        },
+        "dt": {
+          "accuracy": 0.4805194805194805,
+          "params": {
+            "max_depth": 2,
+            "criterion": "log_loss"
+          },
+          "time": 0.7668929100036621
+        },
+        "rf": {
+          "accuracy": 0.5714285714285714,
+          "params": {
+            "n_estimators": 166,
+            "max_depth": 24
+          },
+          "time": 19.488253116607666
+        },
+        "knn": {
+          "accuracy": 0.5974025974025974,
+          "params": {
+            "n_neighbors": 17,
+            "weights": "distance",
+            "algorithm": "ball_tree"
+          },
+          "time": 0.39759039878845215
+        },
+        "xgboost": {
+          "accuracy": 0.4805194805194805,
+          "params": {
+            "n_estimators": 67,
+            "learning_rate": 0.20779151799747342,
+            "max_depth": 16,
+            "min_child_weight": 7.116531208459207,
+            "subsample": 0.9425112121059401,
+            "colsample_bytree": 0.9300035928844402
+          },
+          "time": 7.2959301471710205
+        },
+        "svm": {
+          "accuracy": 0.5454545454545454,
+          "params": {
+            "C": 1,
+            "kernel": "rbf",
+            "degree": 2,
+            "gamma": "auto"
+          },
+          "time": 0.8265347480773926
+        },
+        "mlp": {
+          "accuracy": 0.5194805194805194,
+          "params": {
+            "activation": "identity",
+            "solver": "lbfgs",
+            "alpha": 0.0034843710542602807,
+            "hidden_layer_sizes": [
+              84,
+              39
+            ]
+          },
+          "time": 514.5848627090454
+        },
+        "nb": {
+          "accuracy": 0.2727272727272727,
+          "params": {
+            "var_smoothing": 1.8328558400213494e-05
+          },
+          "time": 0.2525632381439209
+        }
+      },
+      "fft": {
+        "logreg": {
+          "accuracy": 0.4805194805194805,
+          "params": {
+            "C": 0.017787333624307948,
+            "fit_intercept": true,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.7916737386909564
+          },
+          "time": 36.4232382774353
+        },
+        "dt": {
+          "accuracy": 0.4805194805194805,
+          "params": {
+            "max_depth": 3,
+            "criterion": "entropy"
+          },
+          "time": 1.3087613582611084
+        },
+        "rf": {
+          "accuracy": 0.4025974025974026,
+          "params": {
+            "n_estimators": 27,
+            "max_depth": 7
+          },
+          "time": 11.93625545501709
+        },
+        "knn": {
+          "accuracy": 0.45454545454545453,
+          "params": {
+            "n_neighbors": 2,
+            "weights": "uniform",
+            "algorithm": "brute"
+          },
+          "time": 0.4054749011993408
+        },
+        "xgboost": {
+          "accuracy": 0.45454545454545453,
+          "params": {
+            "n_estimators": 16,
+            "learning_rate": 0.428175019215251,
+            "max_depth": 17,
+            "min_child_weight": 3.8967169173251257,
+            "subsample": 0.37408376977878127,
+            "colsample_bytree": 0.9868628819790397
+          },
+          "time": 7.084950685501099
+        },
+        "svm": {
+          "accuracy": 0.4805194805194805,
+          "params": {
+            "C": 1,
+            "kernel": "rbf",
+            "degree": 2,
+            "gamma": "auto"
+          },
+          "time": 3.1026196479797363
+        },
+        "mlp": {
+          "accuracy": 0.4805194805194805,
+          "params": {
+            "activation": "tanh",
+            "solver": "sgd",
+            "alpha": 0.00024225582305504952,
+            "hidden_layer_sizes": [
+              67,
+              87
+            ]
+          },
+          "time": 129.59901690483093
+        },
+        "nb": {
+          "accuracy": 0.33766233766233766,
+          "params": {
+            "var_smoothing": 0.009586887100154238
+          },
+          "time": 0.24617934226989746
+        }
+      },
+      "autoencoder": {
+        "logreg": {
+          "accuracy": 0.5064935064935064,
+          "params": {
+            "C": 24.4243202648877,
+            "fit_intercept": true,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.18969428203929828
+          },
+          "time": 5.8026039600372314
+        },
+        "dt": {
+          "accuracy": 0.4935064935064935,
+          "params": {
+            "max_depth": 2,
+            "criterion": "gini"
+          },
+          "time": 0.3024451732635498
+        },
+        "rf": {
+          "accuracy": 0.5064935064935064,
+          "params": {
+            "n_estimators": 98,
+            "max_depth": 2
+          },
+          "time": 7.516633987426758
+        },
+        "knn": {
+          "accuracy": 0.5194805194805194,
+          "params": {
+            "n_neighbors": 11,
+            "weights": "distance",
+            "algorithm": "ball_tree"
+          },
+          "time": 0.35498809814453125
+        },
+        "xgboost": {
+          "accuracy": 0.5064935064935064,
+          "params": {
+            "n_estimators": 129,
+            "learning_rate": 0.00729042562583339,
+            "max_depth": 22,
+            "min_child_weight": 1.699333071217997,
+            "subsample": 0.6477687443516196,
+            "colsample_bytree": 0.8363111689333039
+          },
+          "time": 21.47864580154419
+        },
+        "svm": {
+          "accuracy": 0.5064935064935064,
+          "params": {
+            "C": 1,
+            "kernel": "rbf",
+            "degree": 5,
+            "gamma": "auto"
+          },
+          "time": 0.5165109634399414
+        },
+        "mlp": {
+          "accuracy": 0.44155844155844154,
+          "params": {
+            "activation": "relu",
+            "solver": "lbfgs",
+            "alpha": 0.003785018091003513,
+            "hidden_layer_sizes": [
+              41,
+              67
+            ]
+          },
+          "time": 92.84688425064087
+        },
+        "nb": {
+          "accuracy": 0.4805194805194805,
+          "params": {
+            "var_smoothing": 4.913458018269085e-12
+          },
+          "time": 0.2699704170227051
+        }
+      },
+      "umap": {
+        "logreg": {
+          "accuracy": 0.4675324675324675,
+          "params": {
+            "C": 5.058886700346814e-08,
+            "fit_intercept": true,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.4802687632775414
+          },
+          "time": 3.0654468536376953
+        },
+        "dt": {
+          "accuracy": 0.4935064935064935,
+          "params": {
+            "max_depth": 3,
+            "criterion": "gini"
+          },
+          "time": 0.28945016860961914
+        },
+        "rf": {
+          "accuracy": 0.4675324675324675,
+          "params": {
+            "n_estimators": 103,
+            "max_depth": 2
+          },
+          "time": 10.004538297653198
+        },
+        "knn": {
+          "accuracy": 0.4155844155844156,
+          "params": {
+            "n_neighbors": 16,
+            "weights": "uniform",
+            "algorithm": "kd_tree"
+          },
+          "time": 0.3375284671783447
+        },
+        "xgboost": {
+          "accuracy": 0.4805194805194805,
+          "params": {
+            "n_estimators": 50,
+            "learning_rate": 0.2964003297976683,
+            "max_depth": 23,
+            "min_child_weight": 6.434642556899579,
+            "subsample": 0.13378556282635207,
+            "colsample_bytree": 0.3429710342225407
+          },
+          "time": 6.630130767822266
+        },
+        "svm": {
+          "accuracy": 0.4675324675324675,
+          "params": {
+            "C": 0.1,
+            "kernel": "rbf",
+            "degree": 3,
+            "gamma": "scale"
+          },
+          "time": 0.4804093837738037
+        },
+        "mlp": {
+          "accuracy": 0.4675324675324675,
+          "params": {
+            "activation": "tanh",
+            "solver": "sgd",
+            "alpha": 0.00046797191098434153,
+            "hidden_layer_sizes": [
+              7
+            ]
+          },
+          "time": 37.5433554649353
+        },
+        "nb": {
+          "accuracy": 0.36363636363636365,
+          "params": {
+            "var_smoothing": 4.560629751438819e-08
+          },
+          "time": 0.22832798957824707
+        }
+      },
+      "nnclr_cnn": {
+        "logreg": {
+          "accuracy": 0.5194805194805194,
+          "params": {
+            "C": 0.8547011870177198,
+            "fit_intercept": false,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.8687678107736206
+          },
+          "time": 26.869072198867798
+        },
+        "dt": {
+          "accuracy": 0.4805194805194805,
+          "params": {
+            "max_depth": 5,
+            "criterion": "gini"
+          },
+          "time": 1.377120018005371
+        },
+        "rf": {
+          "accuracy": 0.4675324675324675,
+          "params": {
+            "n_estimators": 16,
+            "max_depth": 14
+          },
+          "time": 8.631084442138672
+        },
+        "knn": {
+          "accuracy": 0.5064935064935064,
+          "params": {
+            "n_neighbors": 11,
+            "weights": "uniform",
+            "algorithm": "kd_tree"
+          },
+          "time": 0.7362875938415527
+        },
+        "xgboost": {
+          "accuracy": 0.44155844155844154,
+          "params": {
+            "n_estimators": 14,
+            "learning_rate": 0.3749240933519762,
+            "max_depth": 32,
+            "min_child_weight": 1.1990978062007824,
+            "subsample": 0.35466526797126663,
+            "colsample_bytree": 0.31710810564128894
+          },
+          "time": 9.962104558944702
+        },
+        "svm": {
+          "accuracy": 0.4805194805194805,
+          "params": {
+            "C": 1,
+            "kernel": "linear",
+            "degree": 5,
+            "gamma": "auto"
+          },
+          "time": 0.8117799758911133
+        },
+        "mlp": {
+          "accuracy": 0.4675324675324675,
+          "params": {
+            "activation": "relu",
+            "solver": "adam",
+            "alpha": 0.022144528300683468,
+            "hidden_layer_sizes": [
+              76,
+              38,
+              7
+            ]
+          },
+          "time": 225.96625638008118
+        },
+        "nb": {
+          "accuracy": 0.2077922077922078,
+          "params": {
+            "var_smoothing": 1.0191138755910888e-07
+          },
+          "time": 0.4119837284088135
+        }
+      },
+      "nnclr_lstm": {
+        "logreg": {
+          "accuracy": 0.5194805194805194,
+          "params": {
+            "C": 1.4479970501312651,
+            "fit_intercept": false,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.6480524331949645
+          },
+          "time": 126.66657948493958
+        },
+        "dt": {
+          "accuracy": 0.4935064935064935,
+          "params": {
+            "max_depth": 2,
+            "criterion": "log_loss"
+          },
+          "time": 2.591658115386963
+        },
+        "rf": {
+          "accuracy": 0.5064935064935064,
+          "params": {
+            "n_estimators": 133,
+            "max_depth": 5
+          },
+          "time": 15.527047872543335
+        },
+        "knn": {
+          "accuracy": 0.5064935064935064,
+          "params": {
+            "n_neighbors": 7,
+            "weights": "uniform",
+            "algorithm": "ball_tree"
+          },
+          "time": 0.7101199626922607
+        },
+        "xgboost": {
+          "accuracy": 0.45454545454545453,
+          "params": {
+            "n_estimators": 97,
+            "learning_rate": 0.2001053112649381,
+            "max_depth": 30,
+            "min_child_weight": 5.941156949003149,
+            "subsample": 0.5221210928913467,
+            "colsample_bytree": 0.7176281283759913
+          },
+          "time": 26.340749263763428
+        },
+        "svm": {
+          "accuracy": 0.4935064935064935,
+          "params": {
+            "C": 0.6,
+            "kernel": "rbf",
+            "degree": 5,
+            "gamma": "scale"
+          },
+          "time": 1.0043349266052246
+        },
+        "mlp": {
+          "accuracy": 0.4675324675324675,
+          "params": {
+            "activation": "identity",
+            "solver": "adam",
+            "alpha": 0.00037840030815643286,
+            "hidden_layer_sizes": [
+              80,
+              63,
+              25
+            ]
+          },
+          "time": 167.4032974243164
+        },
+        "nb": {
+          "accuracy": 0.22077922077922077,
+          "params": {
+            "var_smoothing": 0.00011439242803846489
+          },
+          "time": 0.3894338607788086
+        }
+      }
+    }
+  }
+}

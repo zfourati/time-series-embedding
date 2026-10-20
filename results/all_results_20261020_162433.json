@@ -1,0 +1,386 @@
+{
+  "event_type_7": {
+    "dataset": "event_type_7",
+    "embedding_results": {
+      "pca": {
+        "time": 0.001468658447265625,
+        "shape": [
+          276,
+          10
+        ]
+      },
+      "lle": {
+        "time": 0.03850102424621582,
+        "shape": [
+          276,
+          10
+        ]
+      }
+    },
+    "classifier_results": {},
+    "combined_results": {
+      "pca": {
+        "logreg": {
+          "accuracy": 0.625,
+          "params": {
+            "C": 0.47366762115641065,
+            "fit_intercept": true,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.9766566122402467
+          },
+          "time": 2.5937018394470215
+        },
+        "dt": {
+          "accuracy": 0.5694444444444444,
+          "params": {
+            "max_depth": 7,
+            "criterion": "gini"
+          },
+          "time": 0.42163681983947754
+        }
+      },
+      "lle": {
+        "logreg": {
+          "accuracy": 0.625,
+          "params": {
+            "C": 6.979240593895394,
+            "fit_intercept": true,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.7665563954505975
+          },
+          "time": 2.368065357208252
+        },
+        "dt": {
+          "accuracy": 0.5694444444444444,
+          "params": {
+            "max_depth": 2,
+            "criterion": "log_loss"
+          },
+          "time": 0.4105229377746582
+        }
+      }
+    }
+  },
+  "event_type_14": {
+    "dataset": "event_type_14",
+    "embedding_results": {
+      "pca": {
+        "time": 0.0013747215270996094,
+        "shape": [
+          276,
+          10
+        ]
+      },
+      "lle": {
+        "time": 0.16214966773986816,
+        "shape": [
+          276,
+          10
+        ]
+      }
+    },
+    "classifier_results": {},
+    "combined_results": {
+      "pca": {
+        "logreg": {
+          "accuracy": 0.6666666666666666,
+          "params": {
+            "C": 975.8053296403607,
+            "fit_intercept": true,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.5919955462275694
+          },
+          "time": 3.471282482147217
+        },
+        "dt": {
+          "accuracy": 0.625,
+          "params": {
+            "max_depth": 4,
+            "criterion": "entropy"
+          },
+          "time": 0.45325207710266113
+        }
+      },
+      "lle": {
+        "logreg": {
+          "accuracy": 0.6388888888888888,
+          "params": {
+            "C": 130.63709447958684,
+            "fit_intercept": true,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.07316579006614765
+          },
+          "time": 2.31673264503479
+        },
+        "dt": {
+          "accuracy": 0.5833333333333334,
+          "params": {
+            "max_depth": 2,
+            "criterion": "entropy"
+          },
+          "time": 0.40161657333374023
+        }
+      }
+    }
+  },
+  "event_type_30": {
+    "dataset": "event_type_30",
+    "embedding_results": {
+      "pca": {
+        "time": 0.04221224784851074,
+        "shape": [
+          276,
+          10
+        ]
+      },
+      "lle": {
+        "time": 0.16999125480651855,
+        "shape": [
+          276,
+          10
+        ]
+      }
+    },
+    "classifier_results": {},
+    "combined_results": {
+      "pca": {
+        "logreg": {
+          "accuracy": 0.7222222222222222,
+          "params": {
+            "C": 0.3901942919491585,
+            "fit_intercept": false,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.8630810801414951
+          },
+          "time": 2.456646203994751
+        },
+        "dt": {
+          "accuracy": 0.6805555555555556,
+          "params": {
+            "max_depth": 3,
+            "criterion": "gini"
+          },
+          "time": 0.3768460750579834
+        }
+      },
+      "lle": {
+        "logreg": {
+          "accuracy": 0.7083333333333334,
+          "params": {
+            "C": 0.44942226518166506,
+            "fit_intercept": false,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.19259875270631666
+          },
+          "time": 2.1337311267852783
+        },
+        "dt": {
+          "accuracy": 0.6805555555555556,
+          "params": {
+            "max_depth": 3,
+            "criterion": "log_loss"
+          },
+          "time": 0.3938260078430176
+        }
+      }
+    }
+  },
+  "Continent_7": {
+    "dataset": "Continent_7",
+    "embedding_results": {
+      "pca": {
+        "time": 0.0011830329895019531,
+        "shape": [
+          271,
+          10
+        ]
+      },
+      "lle": {
+        "time": 0.039188385009765625,
+        "shape": [
+          271,
+          10
+        ]
+      }
+    },
+    "classifier_results": {},
+    "combined_results": {
+      "pca": {
+        "logreg": {
+          "accuracy": 0.5194805194805194,
+          "params": {
+            "C": 0.117398024745117,
+            "fit_intercept": true,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.30620346808258847
+          },
+          "time": 2.944267749786377
+        },
+        "dt": {
+          "accuracy": 0.4155844155844156,
+          "params": {
+            "max_depth": 4,
+            "criterion": "gini"
+          },
+          "time": 0.44170188903808594
+        }
+      },
+      "lle": {
+        "logreg": {
+          "accuracy": 0.4675324675324675,
+          "params": {
+            "C": 0.002301945501878399,
+            "fit_intercept": false,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.0065766859027827085
+          },
+          "time": 2.109304904937744
+        },
+        "dt": {
+          "accuracy": 0.45454545454545453,
+          "params": {
+            "max_depth": 2,
+            "criterion": "log_loss"
+          },
+          "time": 0.45899224281311035
+        }
+      }
+    }
+  },
+  "Continent_14": {
+    "dataset": "Continent_14",
+    "embedding_results": {
+      "pca": {
+        "time": 0.0013816356658935547,
+        "shape": [
+          271,
+          10
+        ]
+      },
+      "lle": {
+        "time": 0.10919475555419922,
+        "shape": [
+          271,
+          10
+        ]
+      }
+    },
+    "classifier_results": {},
+    "combined_results": {
+      "pca": {
+        "logreg": {
+          "accuracy": 0.4675324675324675,
+          "params": {
+            "C": 1.1248599765812997e-07,
+            "fit_intercept": false,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.010743551416983244
+          },
+          "time": 2.7554969787597656
+        },
+        "dt": {
+          "accuracy": 0.4805194805194805,
+          "params": {
+            "max_depth": 4,
+            "criterion": "gini"
+          },
+          "time": 0.4220085144042969
+        }
+      },
+      "lle": {
+        "logreg": {
+          "accuracy": 0.4675324675324675,
+          "params": {
+            "C": 0.0006402403813129343,
+            "fit_intercept": false,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.1899347013761572
+          },
+          "time": 2.314445972442627
+        },
+        "dt": {
+          "accuracy": 0.4935064935064935,
+          "params": {
+            "max_depth": 3,
+            "criterion": "gini"
+          },
+          "time": 0.4294164180755615
+        }
+      }
+    }
+  },
+  "Continent_30": {
+    "dataset": "Continent_30",
+    "embedding_results": {
+      "pca": {
+        "time": 0.006829738616943359,
+        "shape": [
+          271,
+          10
+        ]
+      },
+      "lle": {
+        "time": 0.11231851577758789,
+        "shape": [
+          271,
+          10
+        ]
+      }
+    },
+    "classifier_results": {},
+    "combined_results": {
+      "pca": {
+        "logreg": {
+          "accuracy": 0.5194805194805194,
+          "params": {
+            "C": 0.1184751990512929,
+            "fit_intercept": true,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.9674693553201973
+          },
+          "time": 13.236063241958618
+        },
+        "dt": {
+          "accuracy": 0.4675324675324675,
+          "params": {
+            "max_depth": 2,
+            "criterion": "entropy"
+          },
+          "time": 0.45249104499816895
+        }
+      },
+      "lle": {
+        "logreg": {
+          "accuracy": 0.4675324675324675,
+          "params": {
+            "C": 8.74508777011022e-06,
+            "fit_intercept": false,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.15720860727674602
+          },
+          "time": 2.1253936290740967
+        },
+        "dt": {
+          "accuracy": 0.4805194805194805,
+          "params": {
+            "max_depth": 4,
+            "criterion": "log_loss"
+          },
+          "time": 0.45882463455200195
+        }
+      }
+    }
+  }
+}

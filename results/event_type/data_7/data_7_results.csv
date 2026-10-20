@@ -1,0 +1,2 @@
+,embedding,classifier,accuracy,time,params
+0,pca,logreg,0.625,2.5670695304870605,"{'C': 0.26778783698227765, 'fit_intercept': True, 'solver': 'saga', 'penalty': 'elasticnet', 'l1_ratio': 0.2201383266002156}"

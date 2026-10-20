@@ -6,8 +6,8 @@ for generating high-quality embeddings from time series data.
 
 Supports three encoder types: CNN, LSTM, and Transformer
 """
-
 import torch
+import torch._dynamo  # force torch's heavy lazy imports to load before TF/grpc/protobuf
 import torch.nn as nn
 import torch.optim as optim
 from torch.utils.data import TensorDataset, DataLoader
@@ -242,6 +242,7 @@ def nnclr_embedding_base(
     """
     if device is None:
         device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    print(f'device is {device}')
 
     # Convert to numpy if pandas DataFrame / Series
     if hasattr(x_train, 'values'):
@@ -356,7 +357,7 @@ def nnclr_cnn_embedding_with_timing(x_train_df, x_val_df, x_test_df,
     return nnclr_embedding_base(
         x_train_df, x_val_df, x_test_df, y_train_df, y_val_df, y_test_df,
         embedding_dim=width, encoder_type='cnn', n_classes=n_classes,
-        return_timing=True
+        return_timing=False
     )
 
 
@@ -367,7 +368,7 @@ def nnclr_lstm_embedding_with_timing(x_train_df, x_val_df, x_test_df,
     return nnclr_embedding_base(
         x_train_df, x_val_df, x_test_df, y_train_df, y_val_df, y_test_df,
         embedding_dim=width, encoder_type='lstm', n_classes=n_classes,
-        return_timing=True
+        return_timing=False
     )
 
 
@@ -378,5 +379,5 @@ def nnclr_transformer_embedding_with_timing(x_train_df, x_val_df, x_test_df,
     return nnclr_embedding_base(
         x_train_df, x_val_df, x_test_df, y_train_df, y_val_df, y_test_df,
         embedding_dim=width, encoder_type='transformer', n_classes=n_classes,
-        return_timing=True
+        return_timing=False
     )

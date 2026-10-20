@@ -10,13 +10,14 @@ import umap
 import matplotlib.pyplot as plt
 import numpy as np
 import time
+import os
 from ..embeddings import umap_embedding
 
 # Plotting with seaborn (if you prefer more sophisticated plots)
 cp = ["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#eb5b42"]
 event_colors_dict = {'conflict': 'tomato', 'cyclone': 'cadetblue', 'earthquake': 'mediumseagreen', 'flood': 'dodgerblue'}
 #%%
-def umap_plt(train_emb, val_emb, test_emb, ny_train, ny_val, ny_test, name):
+def umap_plt(train_emb, val_emb, test_emb, ny_train, ny_val, ny_test, name, colors, filename):
     """
     Create and save a UMAP projection plot of embeddings.
     
@@ -44,18 +45,18 @@ def umap_plt(train_emb, val_emb, test_emb, ny_train, ny_val, ny_test, name):
     """
     # To get the umap embedding
     train_um, val_um, test_um = umap_embedding(train_emb, val_emb, test_emb)
-    embedding = test_um
+    embedding = train_um
     
     # Ensure all classes are in the legend by specifying hue_order
-    hue_order = sorted(np.unique(ny_test.values))
+    hue_order = sorted(np.unique(ny_test))
     plt.figure(figsize=(12, 8))
     
     # Adjusting the text size for the plot
     sns.scatterplot(
         x=embedding[:, 0], 
         y=embedding[:, 1], 
-        hue=ny_test.values.flatten(), 
-        palette=event_colors_dict,
+        hue=ny_train, 
+        palette=colors,
         s=50,
         hue_order=hue_order
     )
@@ -76,7 +77,7 @@ def umap_plt(train_emb, val_emb, test_emb, ny_train, ny_val, ny_test, name):
     )
     
     # Save the figure
-    plt.savefig(title_name + ".png", format="png", dpi=600, bbox_inches="tight")
+    plt.savefig(filename, dpi=600, bbox_inches="tight")
     
     # Display the plot
     plt.show()
