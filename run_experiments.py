@@ -17,22 +17,22 @@ import seaborn as sns
 from sklearn.metrics import accuracy_score, precision_recall_fscore_support
 
 # Import from our project
-from embeddings import (
+from src.embeddings import (
     pca_embedding, lle_embedding, umap_embedding, 
     wavelet_embedding, fft_embedding, AE_embedding,
     graph_embedding, tda_embedding, 
     nnclr_cnn_embedding, nnclr_lstm_embedding
 )
-from classifiers import (
+from src.classifiers import (
     optimize_LOGRG, optimize_DT, optimize_RF, optimize_KNN, 
     optimize_XGBOOST, optimize_SVM, optimize_MLP, optimize_NB
 )
-from utils.preprocessing import load_dataset, split_data, normalize_data
-from utils.evaluation import (
+from src.utils.preprocessing import load_dataset, prepare_dataset
+from src.utils.evaluation import (
     evaluate_embeddings, visualize_embeddings, 
     compare_classifiers, generate_classification_report
 )
-from utils.visualization import umap_plt, plot_embedding_comparison
+from src.utils.visualization import umap_plt, plot_embedding_comparison
 
 
 def run_embedding_experiment(X_train, X_val, X_test, y_train, y_val, y_test, embedding_method, **kwargs):

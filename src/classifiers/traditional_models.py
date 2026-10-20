@@ -67,7 +67,7 @@ def optimize_LOGRG(x_train, x_val, x_test, y_train, y_val, y_test, namee):
     classification_rep = classification_report(y_test, y_pred)
 
     current_time = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-    filename = f"{namee}_classification_report_{current_time}.txt"
+    filename = f"{namee}_classification_report.txt"
     with open(filename, 'w') as file:
         file.write(classification_rep)
 
@@ -109,7 +109,7 @@ def optimize_DT(x_train, x_val, x_test, y_train, y_val, y_test,namee):
     print(end-start, " seconds")
     classification_rep = classification_report(y_test, y_pred)
     current_time = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-    filename = f"{namee}_classification_report_{current_time}.txt"
+    filename = f"{namee}_classification_report.txt"
     with open(filename, 'w') as file:
         file.write(classification_rep)
 
@@ -148,7 +148,7 @@ def optimize_RF(x_train, x_val, x_test, y_train, y_val, y_test,namee):
     print(end-start, " seconds")
     classification_rep = classification_report(y_test, y_pred)
     current_time = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-    filename = f"{namee}_classification_report_{current_time}.txt"
+    filename = f"{namee}_classification_report.txt"
     with open(filename, 'w') as file:
         file.write(classification_rep)
 
@@ -186,7 +186,7 @@ def optimize_KNN(x_train, x_val, x_test, y_train, y_val, y_test,namee):
     print(end-start, " seconds")
     classification_rep = classification_report(y_test, y_pred)
     current_time = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-    filename = f"{namee}_classification_report_{current_time}.txt"
+    filename = f"{namee}_classification_report.txt"
     with open(filename, 'w') as file:
         file.write(classification_rep)
 
@@ -236,7 +236,7 @@ def optimize_XGBOOST(x_train, x_val, x_test, y_train, y_val, y_test,namee):
     print(end-start, " seconds")
     classification_rep = classification_report(y_test, y_pred)
     current_time = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-    filename = f"{namee}_classification_report_{current_time}.txt"
+    filename = f"{namee}_classification_report.txt"
     with open(filename, 'w') as file:
         file.write(classification_rep)
 
@@ -277,7 +277,7 @@ def optimize_SVM(x_train, x_val, x_test, y_train, y_val, y_test, namee):
     
     classification_rep = classification_report(y_test, y_pred)
     current_time = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-    filename = f"{namee}_classification_report_{current_time}.txt"
+    filename = f"{namee}_classification_report.txt"
     with open(filename, 'w') as file:
         file.write(classification_rep)
 
@@ -287,7 +287,7 @@ def optimize_SVM(x_train, x_val, x_test, y_train, y_val, y_test, namee):
 
 
 
-def NB_CLFY(x_train, x_test, y_train, y_test):
+def NB_CLFY(x_train, x_test, y_train, y_test, namee):
     #naive bayesian
     y_train = np.array(y_train)
     
@@ -301,7 +301,7 @@ def NB_CLFY(x_train, x_test, y_train, y_test):
     print(end-start, " seconds")
     classification_rep = classification_report(y_test, y_pred)
     current_time = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-    filename = f"{namee}_classification_report_{current_time}.txt"
+    filename = f"{namee}_classification_report.txt"
     with open(filename, 'w') as file:
         file.write(classification_rep)
 
@@ -310,7 +310,7 @@ def NB_CLFY(x_train, x_test, y_train, y_test):
 
 
 
-def optimize_MLP(x_train, x_val, x_test, y_train, y_val, y_test):
+def optimize_MLP(x_train, x_val, x_test, y_train, y_val, y_test, namee):
     # multi-layer perceptron
     #Just import libraries
     encoder = OneHotEncoder(sparse=False)
@@ -358,7 +358,7 @@ def optimize_MLP(x_train, x_val, x_test, y_train, y_val, y_test):
     print(end-start, " seconds")
     classification_rep = classification_report(y_test, y_pred)
     current_time = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-    filename = f"{namee}_classification_report_{current_time}.txt"
+    filename = f"{namee}_classification_report.txt"
     with open(filename, 'w') as file:
         file.write(classification_rep)
 

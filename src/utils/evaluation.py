@@ -64,7 +64,7 @@ def evaluate_embeddings(embeddings, original_data, method='correlation'):
     return metrics
 
 
-def visualize_embeddings(embeddings, labels=None, method='tsne', figsize=(10, 8), 
+def visualize_embeddings(embeddings, colors, labels=None, method='tsne', figsize=(10, 8), 
                         title='Embedding Visualization', filename=None):
     """
     Visualize embeddings in 2D.
@@ -112,12 +112,12 @@ def visualize_embeddings(embeddings, labels=None, method='tsne', figsize=(10, 8)
     # Plot with labels if provided
     if labels is not None:
         unique_labels = np.unique(labels)
-        colors = plt.cm.viridis(np.linspace(0, 1, len(unique_labels)))
+        #colors = plt.cm.viridis(np.linspace(0, 1, len(unique_labels)))
         
         for i, label in enumerate(unique_labels):
             mask = labels == label
             ax.scatter(embed_2d[mask, 0], embed_2d[mask, 1], 
-                      color=colors[i], label=f'Class {label}',
+                      color=colors[label], label=f'Class {label}',
                       alpha=0.7, edgecolors='w', linewidths=0.5)
         
         ax.legend()

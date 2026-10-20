@@ -13,8 +13,9 @@ import time
 from ..embeddings import umap_embedding
 
 # Plotting with seaborn (if you prefer more sophisticated plots)
-cp = ["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd"]
-
+cp = ["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#eb5b42"]
+event_colors_dict = {'conflict': 'tomato', 'cyclone': 'cadetblue', 'earthquake': 'mediumseagreen', 'flood': 'dodgerblue'}
+#%%
 def umap_plt(train_emb, val_emb, test_emb, ny_train, ny_val, ny_test, name):
     """
     Create and save a UMAP projection plot of embeddings.
@@ -54,7 +55,7 @@ def umap_plt(train_emb, val_emb, test_emb, ny_train, ny_val, ny_test, name):
         x=embedding[:, 0], 
         y=embedding[:, 1], 
         hue=ny_test.values.flatten(), 
-        palette=cp,
+        palette=event_colors_dict,
         s=50,
         hue_order=hue_order
     )
