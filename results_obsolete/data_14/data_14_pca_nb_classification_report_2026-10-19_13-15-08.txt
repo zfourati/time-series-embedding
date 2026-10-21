@@ -1,0 +1,10 @@
+              precision    recall  f1-score   support
+
+    conflict       0.72      0.80      0.76        41
+     cyclone       0.57      0.50      0.53        16
+  earthquake       0.60      0.50      0.55         6
+       flood       0.57      0.44      0.50         9
+
+    accuracy                           0.67        72
+   macro avg       0.62      0.56      0.58        72
+weighted avg       0.66      0.67      0.66        72
