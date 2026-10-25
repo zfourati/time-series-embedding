@@ -1,0 +1,3782 @@
+{
+  "event_type_7": {
+    "dataset": "event_type_7",
+    "embedding_results": {
+      "pca": {
+        "time": 0.0011925697326660156,
+        "shape": [
+          396,
+          10
+        ]
+      },
+      "lle": {
+        "time": 0.05213809013366699,
+        "shape": [
+          396,
+          10
+        ]
+      },
+      "wavelet": {
+        "time": 0.00026297569274902344,
+        "shape": [
+          396,
+          8
+        ]
+      },
+      "fft": {
+        "time": 0.004322052001953125,
+        "shape": [
+          396,
+          15
+        ]
+      },
+      "autoencoder": {
+        "time": 4.286800384521484,
+        "shape": [
+          396,
+          4
+        ]
+      },
+      "graph": {
+        "error": "buffer source array is read-only"
+      },
+      "tda": {
+        "error": "object of type 'NoneType' has no len()"
+      },
+      "umap": {
+        "time": 0.32845282554626465,
+        "shape": [
+          396,
+          2
+        ]
+      },
+      "nnclr_cnn": {
+        "time": 0.3046700954437256,
+        "shape": [
+          396,
+          128
+        ]
+      },
+      "nnclr_lstm": {
+        "time": 0.7614850997924805,
+        "shape": [
+          396,
+          128
+        ]
+      }
+    },
+    "classifier_results": {},
+    "combined_results": {
+      "pca": {
+        "logreg": {
+          "accuracy": 0.5833333333333334,
+          "params": {
+            "C": 0.014914672053545254,
+            "fit_intercept": true,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.8668725550269514
+          },
+          "time": 5.483836889266968
+        },
+        "dt": {
+          "accuracy": 0.6018518518518519,
+          "params": {
+            "max_depth": 6,
+            "criterion": "entropy"
+          },
+          "time": 0.5757853984832764
+        },
+        "rf": {
+          "accuracy": 0.6111111111111112,
+          "params": {
+            "n_estimators": 63,
+            "max_depth": 14
+          },
+          "time": 8.839630842208862
+        },
+        "knn": {
+          "accuracy": 0.6018518518518519,
+          "params": {
+            "n_neighbors": 18,
+            "weights": "uniform",
+            "algorithm": "auto"
+          },
+          "time": 0.36669492721557617
+        },
+        "xgboost": {
+          "accuracy": 0.5370370370370371,
+          "params": {
+            "n_estimators": 23,
+            "learning_rate": 0.24014746671976195,
+            "max_depth": 19,
+            "min_child_weight": 7.529166817236385,
+            "subsample": 0.7209871257758144,
+            "colsample_bytree": 0.28559533955161315
+          },
+          "time": 6.147300958633423
+        },
+        "svm": {
+          "accuracy": 0.5648148148148148,
+          "params": {
+            "C": 1,
+            "kernel": "linear",
+            "degree": 3,
+            "gamma": "scale"
+          },
+          "time": 0.9037606716156006
+        },
+        "mlp": {
+          "error": "OneHotEncoder.__init__() got an unexpected keyword argument 'sparse'"
+        },
+        "nb": {
+          "accuracy": 0.46296296296296297,
+          "params": {
+            "var_smoothing": 1.943270749153266e-07
+          },
+          "time": 0.19788670539855957
+        }
+      },
+      "lle": {
+        "logreg": {
+          "accuracy": 0.5092592592592593,
+          "params": {
+            "C": 6.161195201631819,
+            "fit_intercept": true,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.25411210103566406
+          },
+          "time": 2.377365827560425
+        },
+        "dt": {
+          "accuracy": 0.46296296296296297,
+          "params": {
+            "max_depth": 2,
+            "criterion": "gini"
+          },
+          "time": 0.4919106960296631
+        },
+        "rf": {
+          "accuracy": 0.4537037037037037,
+          "params": {
+            "n_estimators": 18,
+            "max_depth": 7
+          },
+          "time": 14.152753591537476
+        },
+        "knn": {
+          "accuracy": 0.4537037037037037,
+          "params": {
+            "n_neighbors": 17,
+            "weights": "distance",
+            "algorithm": "kd_tree"
+          },
+          "time": 0.3734261989593506
+        },
+        "xgboost": {
+          "accuracy": 0.4722222222222222,
+          "params": {
+            "n_estimators": 42,
+            "learning_rate": 0.20482841321496142,
+            "max_depth": 16,
+            "min_child_weight": 6.697391772939925,
+            "subsample": 0.7302551466671805,
+            "colsample_bytree": 0.282291814975415
+          },
+          "time": 6.8486692905426025
+        },
+        "svm": {
+          "accuracy": 0.5092592592592593,
+          "params": {
+            "C": 0.3,
+            "kernel": "rbf",
+            "degree": 2,
+            "gamma": "scale"
+          },
+          "time": 0.8384182453155518
+        },
+        "mlp": {
+          "error": "OneHotEncoder.__init__() got an unexpected keyword argument 'sparse'"
+        },
+        "nb": {
+          "accuracy": 0.3425925925925926,
+          "params": {
+            "var_smoothing": 4.9372741381855034e-08
+          },
+          "time": 0.2138512134552002
+        }
+      },
+      "wavelet": {
+        "logreg": {
+          "accuracy": 0.5648148148148148,
+          "params": {
+            "C": 0.1615525001793485,
+            "fit_intercept": true,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.6627137263949532
+          },
+          "time": 3.277968645095825
+        },
+        "dt": {
+          "accuracy": 0.5185185185185185,
+          "params": {
+            "max_depth": 11,
+            "criterion": "gini"
+          },
+          "time": 0.5106158256530762
+        },
+        "rf": {
+          "accuracy": 0.5370370370370371,
+          "params": {
+            "n_estimators": 155,
+            "max_depth": 5
+          },
+          "time": 10.110925674438477
+        },
+        "knn": {
+          "accuracy": 0.5555555555555556,
+          "params": {
+            "n_neighbors": 19,
+            "weights": "uniform",
+            "algorithm": "kd_tree"
+          },
+          "time": 0.3550572395324707
+        },
+        "xgboost": {
+          "accuracy": 0.5185185185185185,
+          "params": {
+            "n_estimators": 43,
+            "learning_rate": 0.04141152031650293,
+            "max_depth": 10,
+            "min_child_weight": 6.305919524142975,
+            "subsample": 0.9392694619401158,
+            "colsample_bytree": 0.36688537413395006
+          },
+          "time": 7.766234397888184
+        },
+        "svm": {
+          "accuracy": 0.5555555555555556,
+          "params": {
+            "C": 0.6,
+            "kernel": "rbf",
+            "degree": 3,
+            "gamma": "auto"
+          },
+          "time": 0.8144805431365967
+        },
+        "mlp": {
+          "error": "OneHotEncoder.__init__() got an unexpected keyword argument 'sparse'"
+        },
+        "nb": {
+          "accuracy": 0.4166666666666667,
+          "params": {
+            "var_smoothing": 1.1309546727768452e-11
+          },
+          "time": 0.19586896896362305
+        }
+      },
+      "fft": {
+        "logreg": {
+          "accuracy": 0.5277777777777778,
+          "params": {
+            "C": 0.10332841483699423,
+            "fit_intercept": true,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.5354715210166074
+          },
+          "time": 17.85056471824646
+        },
+        "dt": {
+          "accuracy": 0.5277777777777778,
+          "params": {
+            "max_depth": 3,
+            "criterion": "entropy"
+          },
+          "time": 0.6290302276611328
+        },
+        "rf": {
+          "accuracy": 0.49074074074074076,
+          "params": {
+            "n_estimators": 37,
+            "max_depth": 9
+          },
+          "time": 10.18468713760376
+        },
+        "knn": {
+          "accuracy": 0.5277777777777778,
+          "params": {
+            "n_neighbors": 11,
+            "weights": "distance",
+            "algorithm": "brute"
+          },
+          "time": 0.3773961067199707
+        },
+        "xgboost": {
+          "accuracy": 0.5555555555555556,
+          "params": {
+            "n_estimators": 87,
+            "learning_rate": 0.16571851131580062,
+            "max_depth": 7,
+            "min_child_weight": 5.860199402346463,
+            "subsample": 0.6976425250410883,
+            "colsample_bytree": 0.7906905432188477
+          },
+          "time": 11.285250425338745
+        },
+        "svm": {
+          "accuracy": 0.5370370370370371,
+          "params": {
+            "C": 1,
+            "kernel": "linear",
+            "degree": 2,
+            "gamma": "scale"
+          },
+          "time": 1.1403586864471436
+        },
+        "mlp": {
+          "error": "OneHotEncoder.__init__() got an unexpected keyword argument 'sparse'"
+        },
+        "nb": {
+          "accuracy": 0.39814814814814814,
+          "params": {
+            "var_smoothing": 0.0003580968424508274
+          },
+          "time": 0.2204434871673584
+        }
+      },
+      "autoencoder": {
+        "logreg": {
+          "accuracy": 0.5555555555555556,
+          "params": {
+            "C": 0.005591160278092101,
+            "fit_intercept": true,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.5866392444696817
+          },
+          "time": 2.470388412475586
+        },
+        "dt": {
+          "accuracy": 0.5092592592592593,
+          "params": {
+            "max_depth": 2,
+            "criterion": "entropy"
+          },
+          "time": 0.34256792068481445
+        },
+        "rf": {
+          "accuracy": 0.49074074074074076,
+          "params": {
+            "n_estimators": 136,
+            "max_depth": 2
+          },
+          "time": 10.521228313446045
+        },
+        "knn": {
+          "accuracy": 0.5277777777777778,
+          "params": {
+            "n_neighbors": 20,
+            "weights": "distance",
+            "algorithm": "auto"
+          },
+          "time": 0.3381657600402832
+        },
+        "xgboost": {
+          "accuracy": 0.5185185185185185,
+          "params": {
+            "n_estimators": 112,
+            "learning_rate": 0.19026421353008224,
+            "max_depth": 21,
+            "min_child_weight": 8.818150721592746,
+            "subsample": 0.16110560292856413,
+            "colsample_bytree": 0.996525444612162
+          },
+          "time": 5.089431285858154
+        },
+        "svm": {
+          "accuracy": 0.5370370370370371,
+          "params": {
+            "C": 1,
+            "kernel": "linear",
+            "degree": 4,
+            "gamma": "scale"
+          },
+          "time": 0.6844336986541748
+        },
+        "mlp": {
+          "error": "OneHotEncoder.__init__() got an unexpected keyword argument 'sparse'"
+        },
+        "nb": {
+          "accuracy": 0.4537037037037037,
+          "params": {
+            "var_smoothing": 0.0008504927869798064
+          },
+          "time": 0.21169471740722656
+        }
+      },
+      "umap": {
+        "logreg": {
+          "accuracy": 0.5,
+          "params": {
+            "C": 226.48115647969132,
+            "fit_intercept": true,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.3748082315952532
+          },
+          "time": 6.0122599601745605
+        },
+        "dt": {
+          "accuracy": 0.5277777777777778,
+          "params": {
+            "max_depth": 3,
+            "criterion": "gini"
+          },
+          "time": 0.3138298988342285
+        },
+        "rf": {
+          "accuracy": 0.5092592592592593,
+          "params": {
+            "n_estimators": 66,
+            "max_depth": 2
+          },
+          "time": 8.991333961486816
+        },
+        "knn": {
+          "accuracy": 0.5925925925925926,
+          "params": {
+            "n_neighbors": 18,
+            "weights": "uniform",
+            "algorithm": "ball_tree"
+          },
+          "time": 0.34232068061828613
+        },
+        "xgboost": {
+          "accuracy": 0.5370370370370371,
+          "params": {
+            "n_estimators": 29,
+            "learning_rate": 0.18806350913879202,
+            "max_depth": 31,
+            "min_child_weight": 9.388309477443581,
+            "subsample": 0.36888554716964617,
+            "colsample_bytree": 0.9958254688614238
+          },
+          "time": 2.9058239459991455
+        },
+        "svm": {
+          "accuracy": 0.5648148148148148,
+          "params": {
+            "C": 0.3,
+            "kernel": "rbf",
+            "degree": 5,
+            "gamma": "scale"
+          },
+          "time": 0.7464396953582764
+        },
+        "mlp": {
+          "error": "OneHotEncoder.__init__() got an unexpected keyword argument 'sparse'"
+        },
+        "nb": {
+          "accuracy": 0.5277777777777778,
+          "params": {
+            "var_smoothing": 1.031935485263378e-12
+          },
+          "time": 0.21225190162658691
+        }
+      },
+      "nnclr_cnn": {
+        "logreg": {
+          "accuracy": 0.5925925925925926,
+          "params": {
+            "C": 0.4631476933135303,
+            "fit_intercept": false,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.20680589153022952
+          },
+          "time": 76.73906755447388
+        },
+        "dt": {
+          "accuracy": 0.5277777777777778,
+          "params": {
+            "max_depth": 4,
+            "criterion": "gini"
+          },
+          "time": 1.867347240447998
+        },
+        "rf": {
+          "accuracy": 0.5462962962962963,
+          "params": {
+            "n_estimators": 55,
+            "max_depth": 16
+          },
+          "time": 10.900840997695923
+        },
+        "knn": {
+          "accuracy": 0.5462962962962963,
+          "params": {
+            "n_neighbors": 12,
+            "weights": "uniform",
+            "algorithm": "brute"
+          },
+          "time": 0.7784929275512695
+        },
+        "xgboost": {
+          "accuracy": 0.5,
+          "params": {
+            "n_estimators": 43,
+            "learning_rate": 0.3984015213891488,
+            "max_depth": 23,
+            "min_child_weight": 9.887779898652758,
+            "subsample": 0.10203448001128719,
+            "colsample_bytree": 0.9686857495127251
+          },
+          "time": 10.338266372680664
+        },
+        "svm": {
+          "accuracy": 0.6018518518518519,
+          "params": {
+            "C": 0.6,
+            "kernel": "linear",
+            "degree": 4,
+            "gamma": "auto"
+          },
+          "time": 1.1099574565887451
+        },
+        "mlp": {
+          "error": "OneHotEncoder.__init__() got an unexpected keyword argument 'sparse'"
+        },
+        "nb": {
+          "accuracy": 0.39814814814814814,
+          "params": {
+            "var_smoothing": 0.0001289436868938056
+          },
+          "time": 0.3624584674835205
+        }
+      },
+      "nnclr_lstm": {
+        "logreg": {
+          "accuracy": 0.5277777777777778,
+          "params": {
+            "C": 874.2502212744484,
+            "fit_intercept": true,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.9813662088038202
+          },
+          "time": 232.63609075546265
+        },
+        "dt": {
+          "accuracy": 0.4722222222222222,
+          "params": {
+            "max_depth": 7,
+            "criterion": "log_loss"
+          },
+          "time": 4.338199615478516
+        },
+        "rf": {
+          "accuracy": 0.5185185185185185,
+          "params": {
+            "n_estimators": 176,
+            "max_depth": 2
+          },
+          "time": 24.22598171234131
+        },
+        "knn": {
+          "accuracy": 0.5,
+          "params": {
+            "n_neighbors": 19,
+            "weights": "distance",
+            "algorithm": "brute"
+          },
+          "time": 0.7862546443939209
+        },
+        "xgboost": {
+          "accuracy": 0.49074074074074076,
+          "params": {
+            "n_estimators": 42,
+            "learning_rate": 0.5135696168664363,
+            "max_depth": 26,
+            "min_child_weight": 7.861610860461418,
+            "subsample": 0.8302400796429551,
+            "colsample_bytree": 0.31125136885238985
+          },
+          "time": 28.884753465652466
+        },
+        "svm": {
+          "accuracy": 0.5740740740740741,
+          "params": {
+            "C": 0.6,
+            "kernel": "rbf",
+            "degree": 4,
+            "gamma": "auto"
+          },
+          "time": 1.290811538696289
+        },
+        "mlp": {
+          "error": "OneHotEncoder.__init__() got an unexpected keyword argument 'sparse'"
+        },
+        "nb": {
+          "accuracy": 0.37037037037037035,
+          "params": {
+            "var_smoothing": 1.7732792902863776e-12
+          },
+          "time": 0.3730309009552002
+        }
+      }
+    }
+  },
+  "event_type_14": {
+    "dataset": "event_type_14",
+    "embedding_results": {
+      "pca": {
+        "time": 0.0020732879638671875,
+        "shape": [
+          396,
+          10
+        ]
+      },
+      "lle": {
+        "time": 0.12085914611816406,
+        "shape": [
+          396,
+          10
+        ]
+      },
+      "wavelet": {
+        "time": 0.0003116130828857422,
+        "shape": [
+          396,
+          15
+        ]
+      },
+      "fft": {
+        "time": 0.004331111907958984,
+        "shape": [
+          396,
+          29
+        ]
+      },
+      "autoencoder": {
+        "time": 4.270613193511963,
+        "shape": [
+          396,
+          4
+        ]
+      },
+      "graph": {
+        "error": "buffer source array is read-only"
+      },
+      "tda": {
+        "error": "object of type 'NoneType' has no len()"
+      },
+      "umap": {
+        "time": 0.3360927104949951,
+        "shape": [
+          396,
+          2
+        ]
+      },
+      "nnclr_cnn": {
+        "time": 0.33324503898620605,
+        "shape": [
+          396,
+          128
+        ]
+      },
+      "nnclr_lstm": {
+        "time": 0.7880580425262451,
+        "shape": [
+          396,
+          128
+        ]
+      }
+    },
+    "classifier_results": {},
+    "combined_results": {
+      "pca": {
+        "logreg": {
+          "accuracy": 0.6759259259259259,
+          "params": {
+            "C": 0.12074270181514316,
+            "fit_intercept": true,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.12539354740311104
+          },
+          "time": 2.8627066612243652
+        },
+        "dt": {
+          "accuracy": 0.6203703703703703,
+          "params": {
+            "max_depth": 4,
+            "criterion": "entropy"
+          },
+          "time": 0.545067310333252
+        },
+        "rf": {
+          "accuracy": 0.6296296296296297,
+          "params": {
+            "n_estimators": 57,
+            "max_depth": 31
+          },
+          "time": 13.166892528533936
+        },
+        "knn": {
+          "accuracy": 0.6759259259259259,
+          "params": {
+            "n_neighbors": 17,
+            "weights": "uniform",
+            "algorithm": "auto"
+          },
+          "time": 0.37516140937805176
+        },
+        "xgboost": {
+          "accuracy": 0.6574074074074074,
+          "params": {
+            "n_estimators": 174,
+            "learning_rate": 0.03785150809171212,
+            "max_depth": 12,
+            "min_child_weight": 7.565119535292096,
+            "subsample": 0.39280680139997426,
+            "colsample_bytree": 0.7617617969957964
+          },
+          "time": 12.69993543624878
+        },
+        "svm": {
+          "accuracy": 0.6759259259259259,
+          "params": {
+            "C": 0.6,
+            "kernel": "linear",
+            "degree": 3,
+            "gamma": "scale"
+          },
+          "time": 0.8437197208404541
+        },
+        "mlp": {
+          "error": "OneHotEncoder.__init__() got an unexpected keyword argument 'sparse'"
+        },
+        "nb": {
+          "accuracy": 0.6203703703703703,
+          "params": {
+            "var_smoothing": 0.0031063139388198407
+          },
+          "time": 0.20342159271240234
+        }
+      },
+      "lle": {
+        "logreg": {
+          "accuracy": 0.6481481481481481,
+          "params": {
+            "C": 4.353236567107285,
+            "fit_intercept": true,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.8173115145051307
+          },
+          "time": 2.8084118366241455
+        },
+        "dt": {
+          "accuracy": 0.5925925925925926,
+          "params": {
+            "max_depth": 12,
+            "criterion": "log_loss"
+          },
+          "time": 0.6155896186828613
+        },
+        "rf": {
+          "accuracy": 0.6111111111111112,
+          "params": {
+            "n_estimators": 132,
+            "max_depth": 31
+          },
+          "time": 17.431665182113647
+        },
+        "knn": {
+          "accuracy": 0.6111111111111112,
+          "params": {
+            "n_neighbors": 16,
+            "weights": "distance",
+            "algorithm": "kd_tree"
+          },
+          "time": 0.37590813636779785
+        },
+        "xgboost": {
+          "accuracy": 0.6759259259259259,
+          "params": {
+            "n_estimators": 14,
+            "learning_rate": 0.2718668264098407,
+            "max_depth": 24,
+            "min_child_weight": 9.603090923173836,
+            "subsample": 0.9021979154067019,
+            "colsample_bytree": 0.356134808175783
+          },
+          "time": 5.448209047317505
+        },
+        "svm": {
+          "accuracy": 0.6481481481481481,
+          "params": {
+            "C": 1,
+            "kernel": "rbf",
+            "degree": 2,
+            "gamma": "scale"
+          },
+          "time": 0.8080470561981201
+        },
+        "mlp": {
+          "error": "OneHotEncoder.__init__() got an unexpected keyword argument 'sparse'"
+        },
+        "nb": {
+          "accuracy": 0.5277777777777778,
+          "params": {
+            "var_smoothing": 2.76172714958499e-09
+          },
+          "time": 0.19856667518615723
+        }
+      },
+      "wavelet": {
+        "logreg": {
+          "accuracy": 0.6666666666666666,
+          "params": {
+            "C": 0.25768680157663104,
+            "fit_intercept": true,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.15425214784475427
+          },
+          "time": 4.327288627624512
+        },
+        "dt": {
+          "accuracy": 0.6574074074074074,
+          "params": {
+            "max_depth": 4,
+            "criterion": "log_loss"
+          },
+          "time": 0.6911892890930176
+        },
+        "rf": {
+          "accuracy": 0.6481481481481481,
+          "params": {
+            "n_estimators": 162,
+            "max_depth": 14
+          },
+          "time": 15.47008204460144
+        },
+        "knn": {
+          "accuracy": 0.6759259259259259,
+          "params": {
+            "n_neighbors": 11,
+            "weights": "uniform",
+            "algorithm": "auto"
+          },
+          "time": 0.3796820640563965
+        },
+        "xgboost": {
+          "accuracy": 0.5648148148148148,
+          "params": {
+            "n_estimators": 76,
+            "learning_rate": 0.3485018556541536,
+            "max_depth": 25,
+            "min_child_weight": 1.4298908136855748,
+            "subsample": 0.6007129160004996,
+            "colsample_bytree": 0.9595131007632516
+          },
+          "time": 10.90352487564087
+        },
+        "svm": {
+          "accuracy": 0.6759259259259259,
+          "params": {
+            "C": 1,
+            "kernel": "rbf",
+            "degree": 2,
+            "gamma": "auto"
+          },
+          "time": 0.9111626148223877
+        },
+        "mlp": {
+          "error": "OneHotEncoder.__init__() got an unexpected keyword argument 'sparse'"
+        },
+        "nb": {
+          "accuracy": 0.6111111111111112,
+          "params": {
+            "var_smoothing": 5.325376021587035e-08
+          },
+          "time": 0.20669198036193848
+        }
+      },
+      "fft": {
+        "logreg": {
+          "accuracy": 0.5462962962962963,
+          "params": {
+            "C": 0.017226901232773102,
+            "fit_intercept": true,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.7573779587854238
+          },
+          "time": 12.45885443687439
+        },
+        "dt": {
+          "accuracy": 0.5370370370370371,
+          "params": {
+            "max_depth": 2,
+            "criterion": "entropy"
+          },
+          "time": 0.9608230590820312
+        },
+        "rf": {
+          "accuracy": 0.5648148148148148,
+          "params": {
+            "n_estimators": 134,
+            "max_depth": 2
+          },
+          "time": 15.219738245010376
+        },
+        "knn": {
+          "accuracy": 0.5648148148148148,
+          "params": {
+            "n_neighbors": 15,
+            "weights": "distance",
+            "algorithm": "ball_tree"
+          },
+          "time": 0.426250696182251
+        },
+        "xgboost": {
+          "accuracy": 0.5740740740740741,
+          "params": {
+            "n_estimators": 17,
+            "learning_rate": 0.04706641362546774,
+            "max_depth": 7,
+            "min_child_weight": 8.898091445512435,
+            "subsample": 0.4425094921769077,
+            "colsample_bytree": 0.6381374690056979
+          },
+          "time": 5.875186920166016
+        },
+        "svm": {
+          "accuracy": 0.5833333333333334,
+          "params": {
+            "C": 0.6,
+            "kernel": "rbf",
+            "degree": 4,
+            "gamma": "scale"
+          },
+          "time": 1.4977426528930664
+        },
+        "mlp": {
+          "error": "OneHotEncoder.__init__() got an unexpected keyword argument 'sparse'"
+        },
+        "nb": {
+          "accuracy": 0.3611111111111111,
+          "params": {
+            "var_smoothing": 2.986401182706702e-08
+          },
+          "time": 0.21475863456726074
+        }
+      },
+      "autoencoder": {
+        "logreg": {
+          "accuracy": 0.6481481481481481,
+          "params": {
+            "C": 19.564201497939806,
+            "fit_intercept": true,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.08634710066242801
+          },
+          "time": 3.7561495304107666
+        },
+        "dt": {
+          "accuracy": 0.6481481481481481,
+          "params": {
+            "max_depth": 3,
+            "criterion": "log_loss"
+          },
+          "time": 0.37346529960632324
+        },
+        "rf": {
+          "accuracy": 0.6666666666666666,
+          "params": {
+            "n_estimators": 200,
+            "max_depth": 3
+          },
+          "time": 13.370492696762085
+        },
+        "knn": {
+          "accuracy": 0.6481481481481481,
+          "params": {
+            "n_neighbors": 5,
+            "weights": "uniform",
+            "algorithm": "kd_tree"
+          },
+          "time": 0.3430655002593994
+        },
+        "xgboost": {
+          "accuracy": 0.6759259259259259,
+          "params": {
+            "n_estimators": 65,
+            "learning_rate": 0.025026447931748342,
+            "max_depth": 14,
+            "min_child_weight": 7.33792118788441,
+            "subsample": 0.6581988697047936,
+            "colsample_bytree": 0.7577204029936822
+          },
+          "time": 4.901309967041016
+        },
+        "svm": {
+          "accuracy": 0.6481481481481481,
+          "params": {
+            "C": 1,
+            "kernel": "linear",
+            "degree": 2,
+            "gamma": "auto"
+          },
+          "time": 0.7107808589935303
+        },
+        "mlp": {
+          "error": "OneHotEncoder.__init__() got an unexpected keyword argument 'sparse'"
+        },
+        "nb": {
+          "accuracy": 0.6296296296296297,
+          "params": {
+            "var_smoothing": 0.009790711564090355
+          },
+          "time": 0.2368149757385254
+        }
+      },
+      "umap": {
+        "logreg": {
+          "accuracy": 0.5833333333333334,
+          "params": {
+            "C": 41.603166105042774,
+            "fit_intercept": false,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.9921456810457105
+          },
+          "time": 2.7845053672790527
+        },
+        "dt": {
+          "accuracy": 0.5740740740740741,
+          "params": {
+            "max_depth": 2,
+            "criterion": "entropy"
+          },
+          "time": 0.31670522689819336
+        },
+        "rf": {
+          "accuracy": 0.6203703703703703,
+          "params": {
+            "n_estimators": 157,
+            "max_depth": 6
+          },
+          "time": 12.011319160461426
+        },
+        "knn": {
+          "accuracy": 0.6296296296296297,
+          "params": {
+            "n_neighbors": 12,
+            "weights": "distance",
+            "algorithm": "kd_tree"
+          },
+          "time": 0.32847166061401367
+        },
+        "xgboost": {
+          "accuracy": 0.6203703703703703,
+          "params": {
+            "n_estimators": 15,
+            "learning_rate": 0.45840796488152347,
+            "max_depth": 5,
+            "min_child_weight": 9.649480823615304,
+            "subsample": 0.6895342526433218,
+            "colsample_bytree": 0.32158653442760327
+          },
+          "time": 3.9817256927490234
+        },
+        "svm": {
+          "accuracy": 0.6388888888888888,
+          "params": {
+            "C": 0.6,
+            "kernel": "rbf",
+            "degree": 4,
+            "gamma": "auto"
+          },
+          "time": 0.7587752342224121
+        },
+        "mlp": {
+          "error": "OneHotEncoder.__init__() got an unexpected keyword argument 'sparse'"
+        },
+        "nb": {
+          "accuracy": 0.6203703703703703,
+          "params": {
+            "var_smoothing": 2.3637770399076318e-05
+          },
+          "time": 0.22886037826538086
+        }
+      },
+      "nnclr_cnn": {
+        "logreg": {
+          "accuracy": 0.6574074074074074,
+          "params": {
+            "C": 49.872928611750396,
+            "fit_intercept": true,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.32784300394665084
+          },
+          "time": 104.86375594139099
+        },
+        "dt": {
+          "accuracy": 0.6111111111111112,
+          "params": {
+            "max_depth": 7,
+            "criterion": "gini"
+          },
+          "time": 2.0090513229370117
+        },
+        "rf": {
+          "accuracy": 0.6666666666666666,
+          "params": {
+            "n_estimators": 118,
+            "max_depth": 2
+          },
+          "time": 13.9992995262146
+        },
+        "knn": {
+          "accuracy": 0.6296296296296297,
+          "params": {
+            "n_neighbors": 19,
+            "weights": "uniform",
+            "algorithm": "auto"
+          },
+          "time": 0.7789299488067627
+        },
+        "xgboost": {
+          "accuracy": 0.6481481481481481,
+          "params": {
+            "n_estimators": 73,
+            "learning_rate": 0.014667605937946193,
+            "max_depth": 2,
+            "min_child_weight": 1.4283887373657316,
+            "subsample": 0.883829272912421,
+            "colsample_bytree": 0.9501839198156519
+          },
+          "time": 29.222472429275513
+        },
+        "svm": {
+          "accuracy": 0.6574074074074074,
+          "params": {
+            "C": 0.1,
+            "kernel": "linear",
+            "degree": 2,
+            "gamma": "auto"
+          },
+          "time": 1.0270345211029053
+        },
+        "mlp": {
+          "error": "OneHotEncoder.__init__() got an unexpected keyword argument 'sparse'"
+        },
+        "nb": {
+          "accuracy": 0.5833333333333334,
+          "params": {
+            "var_smoothing": 0.005450415569144752
+          },
+          "time": 0.34715795516967773
+        }
+      },
+      "nnclr_lstm": {
+        "logreg": {
+          "accuracy": 0.6481481481481481,
+          "params": {
+            "C": 183.53722462674025,
+            "fit_intercept": false,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.3621192707584908
+          },
+          "time": 170.64747714996338
+        },
+        "dt": {
+          "accuracy": 0.6018518518518519,
+          "params": {
+            "max_depth": 2,
+            "criterion": "log_loss"
+          },
+          "time": 3.636766195297241
+        },
+        "rf": {
+          "accuracy": 0.6203703703703703,
+          "params": {
+            "n_estimators": 157,
+            "max_depth": 4
+          },
+          "time": 31.875832319259644
+        },
+        "knn": {
+          "accuracy": 0.6481481481481481,
+          "params": {
+            "n_neighbors": 18,
+            "weights": "distance",
+            "algorithm": "ball_tree"
+          },
+          "time": 0.8350372314453125
+        },
+        "xgboost": {
+          "accuracy": 0.6296296296296297,
+          "params": {
+            "n_estimators": 164,
+            "learning_rate": 0.04047895396371112,
+            "max_depth": 7,
+            "min_child_weight": 4.34328012048184,
+            "subsample": 0.18070476538081653,
+            "colsample_bytree": 0.1297564971572874
+          },
+          "time": 39.00171875953674
+        },
+        "svm": {
+          "accuracy": 0.6481481481481481,
+          "params": {
+            "C": 1,
+            "kernel": "rbf",
+            "degree": 5,
+            "gamma": "scale"
+          },
+          "time": 1.1938340663909912
+        },
+        "mlp": {
+          "error": "OneHotEncoder.__init__() got an unexpected keyword argument 'sparse'"
+        },
+        "nb": {
+          "accuracy": 0.5462962962962963,
+          "params": {
+            "var_smoothing": 8.274519549826157e-07
+          },
+          "time": 0.3754734992980957
+        }
+      }
+    }
+  },
+  "event_type_30": {
+    "dataset": "event_type_30",
+    "embedding_results": {
+      "pca": {
+        "time": 0.0428464412689209,
+        "shape": [
+          396,
+          10
+        ]
+      },
+      "lle": {
+        "time": 0.15180683135986328,
+        "shape": [
+          396,
+          10
+        ]
+      },
+      "wavelet": {
+        "time": 0.00030612945556640625,
+        "shape": [
+          396,
+          31
+        ]
+      },
+      "fft": {
+        "time": 0.004549503326416016,
+        "shape": [
+          396,
+          61
+        ]
+      },
+      "autoencoder": {
+        "time": 4.297878742218018,
+        "shape": [
+          396,
+          4
+        ]
+      },
+      "graph": {
+        "error": "buffer source array is read-only"
+      },
+      "tda": {
+        "error": "buffer source array is read-only"
+      },
+      "umap": {
+        "time": 0.34926795959472656,
+        "shape": [
+          396,
+          2
+        ]
+      },
+      "nnclr_cnn": {
+        "time": 0.4277365207672119,
+        "shape": [
+          396,
+          128
+        ]
+      },
+      "nnclr_lstm": {
+        "time": 0.7878830432891846,
+        "shape": [
+          396,
+          128
+        ]
+      }
+    },
+    "classifier_results": {},
+    "combined_results": {
+      "pca": {
+        "logreg": {
+          "accuracy": 0.7222222222222222,
+          "params": {
+            "C": 545.4124969820325,
+            "fit_intercept": false,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.9222648375454525
+          },
+          "time": 4.285136461257935
+        },
+        "dt": {
+          "accuracy": 0.7129629629629629,
+          "params": {
+            "max_depth": 4,
+            "criterion": "entropy"
+          },
+          "time": 0.5470528602600098
+        },
+        "rf": {
+          "accuracy": 0.6851851851851852,
+          "params": {
+            "n_estimators": 44,
+            "max_depth": 26
+          },
+          "time": 13.91752290725708
+        },
+        "knn": {
+          "accuracy": 0.7407407407407407,
+          "params": {
+            "n_neighbors": 17,
+            "weights": "distance",
+            "algorithm": "auto"
+          },
+          "time": 0.37065553665161133
+        },
+        "xgboost": {
+          "accuracy": 0.6481481481481481,
+          "params": {
+            "n_estimators": 43,
+            "learning_rate": 0.34317820934408944,
+            "max_depth": 6,
+            "min_child_weight": 5.073429860646072,
+            "subsample": 0.26651965386824683,
+            "colsample_bytree": 0.7759466504350805
+          },
+          "time": 6.358760595321655
+        },
+        "svm": {
+          "accuracy": 0.7129629629629629,
+          "params": {
+            "C": 0.3,
+            "kernel": "linear",
+            "degree": 4,
+            "gamma": "auto"
+          },
+          "time": 0.9657702445983887
+        },
+        "mlp": {
+          "error": "OneHotEncoder.__init__() got an unexpected keyword argument 'sparse'"
+        },
+        "nb": {
+          "accuracy": 0.6759259259259259,
+          "params": {
+            "var_smoothing": 0.009250100154429494
+          },
+          "time": 0.2039015293121338
+        }
+      },
+      "lle": {
+        "logreg": {
+          "accuracy": 0.6851851851851852,
+          "params": {
+            "C": 5.3007773596938925,
+            "fit_intercept": true,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.9709957029680335
+          },
+          "time": 4.535631895065308
+        },
+        "dt": {
+          "accuracy": 0.6388888888888888,
+          "params": {
+            "max_depth": 2,
+            "criterion": "log_loss"
+          },
+          "time": 0.5083878040313721
+        },
+        "rf": {
+          "accuracy": 0.6851851851851852,
+          "params": {
+            "n_estimators": 117,
+            "max_depth": 6
+          },
+          "time": 12.565707683563232
+        },
+        "knn": {
+          "accuracy": 0.6851851851851852,
+          "params": {
+            "n_neighbors": 15,
+            "weights": "uniform",
+            "algorithm": "brute"
+          },
+          "time": 0.3704535961151123
+        },
+        "xgboost": {
+          "accuracy": 0.6574074074074074,
+          "params": {
+            "n_estimators": 90,
+            "learning_rate": 0.4320048987810886,
+            "max_depth": 3,
+            "min_child_weight": 9.144139933618103,
+            "subsample": 0.2824116553307207,
+            "colsample_bytree": 0.9546566703282592
+          },
+          "time": 5.579710245132446
+        },
+        "svm": {
+          "accuracy": 0.6944444444444444,
+          "params": {
+            "C": 1,
+            "kernel": "rbf",
+            "degree": 2,
+            "gamma": "scale"
+          },
+          "time": 0.7764911651611328
+        },
+        "mlp": {
+          "error": "OneHotEncoder.__init__() got an unexpected keyword argument 'sparse'"
+        },
+        "nb": {
+          "accuracy": 0.6759259259259259,
+          "params": {
+            "var_smoothing": 3.630190115369875e-05
+          },
+          "time": 0.22290658950805664
+        }
+      },
+      "wavelet": {
+        "logreg": {
+          "accuracy": 0.6851851851851852,
+          "params": {
+            "C": 0.22604188059787347,
+            "fit_intercept": true,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.6307091064456474
+          },
+          "time": 5.407407283782959
+        },
+        "dt": {
+          "accuracy": 0.6574074074074074,
+          "params": {
+            "max_depth": 2,
+            "criterion": "gini"
+          },
+          "time": 0.8470232486724854
+        },
+        "rf": {
+          "accuracy": 0.7037037037037037,
+          "params": {
+            "n_estimators": 51,
+            "max_depth": 31
+          },
+          "time": 14.015335083007812
+        },
+        "knn": {
+          "accuracy": 0.7129629629629629,
+          "params": {
+            "n_neighbors": 13,
+            "weights": "distance",
+            "algorithm": "brute"
+          },
+          "time": 0.4295065402984619
+        },
+        "xgboost": {
+          "accuracy": 0.7129629629629629,
+          "params": {
+            "n_estimators": 104,
+            "learning_rate": 0.1839169784848097,
+            "max_depth": 32,
+            "min_child_weight": 1.261199516953403,
+            "subsample": 0.9493377746686176,
+            "colsample_bytree": 0.2905435937639124
+          },
+          "time": 26.386834383010864
+        },
+        "svm": {
+          "accuracy": 0.7129629629629629,
+          "params": {
+            "C": 0.6,
+            "kernel": "rbf",
+            "degree": 5,
+            "gamma": "auto"
+          },
+          "time": 1.2460393905639648
+        },
+        "mlp": {
+          "error": "OneHotEncoder.__init__() got an unexpected keyword argument 'sparse'"
+        },
+        "nb": {
+          "accuracy": 0.6759259259259259,
+          "params": {
+            "var_smoothing": 0.002699170091230879
+          },
+          "time": 0.22854185104370117
+        }
+      },
+      "fft": {
+        "logreg": {
+          "accuracy": 0.6018518518518519,
+          "params": {
+            "C": 0.0018378111383746461,
+            "fit_intercept": true,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.7741819354803867
+          },
+          "time": 36.44224309921265
+        },
+        "dt": {
+          "accuracy": 0.5648148148148148,
+          "params": {
+            "max_depth": 3,
+            "criterion": "gini"
+          },
+          "time": 1.8049235343933105
+        },
+        "rf": {
+          "accuracy": 0.5740740740740741,
+          "params": {
+            "n_estimators": 40,
+            "max_depth": 13
+          },
+          "time": 11.368107318878174
+        },
+        "knn": {
+          "accuracy": 0.6203703703703703,
+          "params": {
+            "n_neighbors": 19,
+            "weights": "distance",
+            "algorithm": "auto"
+          },
+          "time": 0.5031969547271729
+        },
+        "xgboost": {
+          "accuracy": 0.5925925925925926,
+          "params": {
+            "n_estimators": 19,
+            "learning_rate": 0.27729290512819077,
+            "max_depth": 15,
+            "min_child_weight": 8.092213454048142,
+            "subsample": 0.415524092621687,
+            "colsample_bytree": 0.6724111338671622
+          },
+          "time": 20.592211484909058
+        },
+        "svm": {
+          "accuracy": 0.5925925925925926,
+          "params": {
+            "C": 0.6,
+            "kernel": "rbf",
+            "degree": 5,
+            "gamma": "scale"
+          },
+          "time": 5.435822248458862
+        },
+        "mlp": {
+          "error": "OneHotEncoder.__init__() got an unexpected keyword argument 'sparse'"
+        },
+        "nb": {
+          "accuracy": 0.3888888888888889,
+          "params": {
+            "var_smoothing": 7.955463186531794e-05
+          },
+          "time": 0.23169851303100586
+        }
+      },
+      "autoencoder": {
+        "logreg": {
+          "accuracy": 0.7037037037037037,
+          "params": {
+            "C": 0.18131123411879468,
+            "fit_intercept": true,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.9409096835987325
+          },
+          "time": 13.360563516616821
+        },
+        "dt": {
+          "accuracy": 0.7037037037037037,
+          "params": {
+            "max_depth": 2,
+            "criterion": "log_loss"
+          },
+          "time": 0.3654141426086426
+        },
+        "rf": {
+          "accuracy": 0.7314814814814815,
+          "params": {
+            "n_estimators": 117,
+            "max_depth": 5
+          },
+          "time": 12.000531673431396
+        },
+        "knn": {
+          "accuracy": 0.7314814814814815,
+          "params": {
+            "n_neighbors": 19,
+            "weights": "distance",
+            "algorithm": "brute"
+          },
+          "time": 0.363680362701416
+        },
+        "xgboost": {
+          "accuracy": 0.7129629629629629,
+          "params": {
+            "n_estimators": 132,
+            "learning_rate": 0.14209125213077345,
+            "max_depth": 27,
+            "min_child_weight": 5.391647900311568,
+            "subsample": 0.49149803791783697,
+            "colsample_bytree": 0.8140459522404517
+          },
+          "time": 12.445207595825195
+        },
+        "svm": {
+          "accuracy": 0.7222222222222222,
+          "params": {
+            "C": 1,
+            "kernel": "linear",
+            "degree": 3,
+            "gamma": "auto"
+          },
+          "time": 0.6565132141113281
+        },
+        "mlp": {
+          "error": "OneHotEncoder.__init__() got an unexpected keyword argument 'sparse'"
+        },
+        "nb": {
+          "accuracy": 0.7222222222222222,
+          "params": {
+            "var_smoothing": 0.0003718306565416492
+          },
+          "time": 0.2317485809326172
+        }
+      },
+      "umap": {
+        "logreg": {
+          "accuracy": 0.5648148148148148,
+          "params": {
+            "C": 0.3666601543571612,
+            "fit_intercept": true,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.8971184163341721
+          },
+          "time": 14.388887405395508
+        },
+        "dt": {
+          "accuracy": 0.6574074074074074,
+          "params": {
+            "max_depth": 3,
+            "criterion": "log_loss"
+          },
+          "time": 0.332535982131958
+        },
+        "rf": {
+          "accuracy": 0.6018518518518519,
+          "params": {
+            "n_estimators": 166,
+            "max_depth": 3
+          },
+          "time": 10.823174715042114
+        },
+        "knn": {
+          "accuracy": 0.6481481481481481,
+          "params": {
+            "n_neighbors": 19,
+            "weights": "uniform",
+            "algorithm": "kd_tree"
+          },
+          "time": 0.33778905868530273
+        },
+        "xgboost": {
+          "accuracy": 0.6296296296296297,
+          "params": {
+            "n_estimators": 33,
+            "learning_rate": 0.4097476484286313,
+            "max_depth": 32,
+            "min_child_weight": 9.999453185459522,
+            "subsample": 0.8034197395434078,
+            "colsample_bytree": 0.6925837277144661
+          },
+          "time": 4.805340051651001
+        },
+        "svm": {
+          "accuracy": 0.6759259259259259,
+          "params": {
+            "C": 0.6,
+            "kernel": "rbf",
+            "degree": 4,
+            "gamma": "auto"
+          },
+          "time": 0.7093961238861084
+        },
+        "mlp": {
+          "error": "OneHotEncoder.__init__() got an unexpected keyword argument 'sparse'"
+        },
+        "nb": {
+          "accuracy": 0.6203703703703703,
+          "params": {
+            "var_smoothing": 1.1245473739020005e-12
+          },
+          "time": 0.22089695930480957
+        }
+      },
+      "nnclr_cnn": {
+        "logreg": {
+          "accuracy": 0.6296296296296297,
+          "params": {
+            "C": 122.71686619110012,
+            "fit_intercept": false,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.9262393519865242
+          },
+          "time": 204.4987759590149
+        },
+        "dt": {
+          "accuracy": 0.6203703703703703,
+          "params": {
+            "max_depth": 2,
+            "criterion": "log_loss"
+          },
+          "time": 1.7969141006469727
+        },
+        "rf": {
+          "accuracy": 0.6203703703703703,
+          "params": {
+            "n_estimators": 63,
+            "max_depth": 7
+          },
+          "time": 14.7076256275177
+        },
+        "knn": {
+          "accuracy": 0.6388888888888888,
+          "params": {
+            "n_neighbors": 15,
+            "weights": "distance",
+            "algorithm": "ball_tree"
+          },
+          "time": 0.7755625247955322
+        },
+        "xgboost": {
+          "accuracy": 0.6203703703703703,
+          "params": {
+            "n_estimators": 107,
+            "learning_rate": 0.4001479415592097,
+            "max_depth": 13,
+            "min_child_weight": 9.53271573603923,
+            "subsample": 0.7123093488065582,
+            "colsample_bytree": 0.7120747845341143
+          },
+          "time": 23.744359493255615
+        },
+        "svm": {
+          "accuracy": 0.6203703703703703,
+          "params": {
+            "C": 1,
+            "kernel": "rbf",
+            "degree": 4,
+            "gamma": "scale"
+          },
+          "time": 1.0471584796905518
+        },
+        "mlp": {
+          "error": "OneHotEncoder.__init__() got an unexpected keyword argument 'sparse'"
+        },
+        "nb": {
+          "accuracy": 0.5277777777777778,
+          "params": {
+            "var_smoothing": 0.0027944658579974625
+          },
+          "time": 0.3652358055114746
+        }
+      },
+      "nnclr_lstm": {
+        "logreg": {
+          "accuracy": 0.6018518518518519,
+          "params": {
+            "C": 72.39022471915284,
+            "fit_intercept": true,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.9609740438480161
+          },
+          "time": 350.0142216682434
+        },
+        "dt": {
+          "accuracy": 0.6203703703703703,
+          "params": {
+            "max_depth": 2,
+            "criterion": "gini"
+          },
+          "time": 2.9904770851135254
+        },
+        "rf": {
+          "accuracy": 0.6111111111111112,
+          "params": {
+            "n_estimators": 70,
+            "max_depth": 4
+          },
+          "time": 13.744375944137573
+        },
+        "knn": {
+          "accuracy": 0.6111111111111112,
+          "params": {
+            "n_neighbors": 14,
+            "weights": "distance",
+            "algorithm": "kd_tree"
+          },
+          "time": 0.8205490112304688
+        },
+        "xgboost": {
+          "accuracy": 0.5925925925925926,
+          "params": {
+            "n_estimators": 180,
+            "learning_rate": 0.48050149910764367,
+            "max_depth": 15,
+            "min_child_weight": 6.3487782161835,
+            "subsample": 0.5942910687827734,
+            "colsample_bytree": 0.8366243253833298
+          },
+          "time": 48.62575578689575
+        },
+        "svm": {
+          "accuracy": 0.6018518518518519,
+          "params": {
+            "C": 0.6,
+            "kernel": "rbf",
+            "degree": 5,
+            "gamma": "auto"
+          },
+          "time": 1.2449421882629395
+        },
+        "mlp": {
+          "error": "OneHotEncoder.__init__() got an unexpected keyword argument 'sparse'"
+        },
+        "nb": {
+          "accuracy": 0.5833333333333334,
+          "params": {
+            "var_smoothing": 4.6212454013824946e-05
+          },
+          "time": 0.3736131191253662
+        }
+      }
+    }
+  },
+  "Continent_7": {
+    "dataset": "Continent_7",
+    "embedding_results": {
+      "pca": {
+        "time": 0.0012464523315429688,
+        "shape": [
+          400,
+          10
+        ]
+      },
+      "lle": {
+        "time": 0.07491946220397949,
+        "shape": [
+          400,
+          10
+        ]
+      },
+      "wavelet": {
+        "time": 0.0002694129943847656,
+        "shape": [
+          400,
+          8
+        ]
+      },
+      "fft": {
+        "time": 0.004357337951660156,
+        "shape": [
+          400,
+          15
+        ]
+      },
+      "autoencoder": {
+        "time": 4.126800775527954,
+        "shape": [
+          400,
+          4
+        ]
+      },
+      "graph": {
+        "error": "buffer source array is read-only"
+      },
+      "tda": {
+        "error": "object of type 'NoneType' has no len()"
+      },
+      "umap": {
+        "time": 0.3361937999725342,
+        "shape": [
+          400,
+          2
+        ]
+      },
+      "nnclr_cnn": {
+        "time": 0.30037665367126465,
+        "shape": [
+          400,
+          128
+        ]
+      },
+      "nnclr_lstm": {
+        "time": 0.7923972606658936,
+        "shape": [
+          400,
+          128
+        ]
+      }
+    },
+    "classifier_results": {},
+    "combined_results": {
+      "pca": {
+        "logreg": {
+          "accuracy": 0.4230769230769231,
+          "params": {
+            "C": 0.09637756627897733,
+            "fit_intercept": true,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.8500064282263746
+          },
+          "time": 2.1630330085754395
+        },
+        "dt": {
+          "accuracy": 0.4326923076923077,
+          "params": {
+            "max_depth": 5,
+            "criterion": "entropy"
+          },
+          "time": 0.6385800838470459
+        },
+        "rf": {
+          "accuracy": 0.46153846153846156,
+          "params": {
+            "n_estimators": 192,
+            "max_depth": 27
+          },
+          "time": 19.149688482284546
+        },
+        "knn": {
+          "accuracy": 0.3942307692307692,
+          "params": {
+            "n_neighbors": 16,
+            "weights": "uniform",
+            "algorithm": "brute"
+          },
+          "time": 0.3823082447052002
+        },
+        "xgboost": {
+          "accuracy": 0.4230769230769231,
+          "params": {
+            "n_estimators": 110,
+            "learning_rate": 0.014729530045043293,
+            "max_depth": 12,
+            "min_child_weight": 3.185796625749761,
+            "subsample": 0.8240196069002497,
+            "colsample_bytree": 0.8827520971348979
+          },
+          "time": 22.790759563446045
+        },
+        "svm": {
+          "accuracy": 0.40384615384615385,
+          "params": {
+            "C": 0.6,
+            "kernel": "rbf",
+            "degree": 4,
+            "gamma": "auto"
+          },
+          "time": 0.985985279083252
+        },
+        "mlp": {
+          "error": "OneHotEncoder.__init__() got an unexpected keyword argument 'sparse'"
+        },
+        "nb": {
+          "accuracy": 0.3557692307692308,
+          "params": {
+            "var_smoothing": 9.485183289519209e-12
+          },
+          "time": 0.22385859489440918
+        }
+      },
+      "lle": {
+        "logreg": {
+          "accuracy": 0.41346153846153844,
+          "params": {
+            "C": 2.0697420953494317,
+            "fit_intercept": true,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.5189132086989231
+          },
+          "time": 2.2482168674468994
+        },
+        "dt": {
+          "accuracy": 0.4423076923076923,
+          "params": {
+            "max_depth": 5,
+            "criterion": "gini"
+          },
+          "time": 0.5513041019439697
+        },
+        "rf": {
+          "accuracy": 0.4519230769230769,
+          "params": {
+            "n_estimators": 98,
+            "max_depth": 23
+          },
+          "time": 15.215384483337402
+        },
+        "knn": {
+          "accuracy": 0.46153846153846156,
+          "params": {
+            "n_neighbors": 13,
+            "weights": "distance",
+            "algorithm": "brute"
+          },
+          "time": 0.3868067264556885
+        },
+        "xgboost": {
+          "accuracy": 0.4519230769230769,
+          "params": {
+            "n_estimators": 92,
+            "learning_rate": 0.0699155553355115,
+            "max_depth": 13,
+            "min_child_weight": 3.718683720439998,
+            "subsample": 0.9821228949074652,
+            "colsample_bytree": 0.7288197003762467
+          },
+          "time": 21.04552721977234
+        },
+        "svm": {
+          "accuracy": 0.46153846153846156,
+          "params": {
+            "C": 0.6,
+            "kernel": "rbf",
+            "degree": 3,
+            "gamma": "scale"
+          },
+          "time": 0.999558687210083
+        },
+        "mlp": {
+          "error": "OneHotEncoder.__init__() got an unexpected keyword argument 'sparse'"
+        },
+        "nb": {
+          "accuracy": 0.36538461538461536,
+          "params": {
+            "var_smoothing": 2.7092062102913123e-07
+          },
+          "time": 0.22289204597473145
+        }
+      },
+      "wavelet": {
+        "logreg": {
+          "accuracy": 0.40384615384615385,
+          "params": {
+            "C": 5.498951141191536e-10,
+            "fit_intercept": false,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.19665082720748417
+          },
+          "time": 2.1259758472442627
+        },
+        "dt": {
+          "accuracy": 0.4423076923076923,
+          "params": {
+            "max_depth": 2,
+            "criterion": "gini"
+          },
+          "time": 0.45710229873657227
+        },
+        "rf": {
+          "accuracy": 0.41346153846153844,
+          "params": {
+            "n_estimators": 40,
+            "max_depth": 7
+          },
+          "time": 10.640160083770752
+        },
+        "knn": {
+          "accuracy": 0.375,
+          "params": {
+            "n_neighbors": 4,
+            "weights": "uniform",
+            "algorithm": "brute"
+          },
+          "time": 0.361954927444458
+        },
+        "xgboost": {
+          "accuracy": 0.4326923076923077,
+          "params": {
+            "n_estimators": 102,
+            "learning_rate": 0.04600808377890246,
+            "max_depth": 24,
+            "min_child_weight": 9.682079521492016,
+            "subsample": 0.18668876613976346,
+            "colsample_bytree": 0.8969818069678653
+          },
+          "time": 5.7267515659332275
+        },
+        "svm": {
+          "accuracy": 0.4326923076923077,
+          "params": {
+            "C": 1,
+            "kernel": "rbf",
+            "degree": 3,
+            "gamma": "scale"
+          },
+          "time": 0.9641120433807373
+        },
+        "mlp": {
+          "error": "OneHotEncoder.__init__() got an unexpected keyword argument 'sparse'"
+        },
+        "nb": {
+          "accuracy": 0.34615384615384615,
+          "params": {
+            "var_smoothing": 0.009956373888325038
+          },
+          "time": 0.20148515701293945
+        }
+      },
+      "fft": {
+        "logreg": {
+          "accuracy": 0.40384615384615385,
+          "params": {
+            "C": 5.5242220101567544e-05,
+            "fit_intercept": false,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.5048384995653172
+          },
+          "time": 4.858229398727417
+        },
+        "dt": {
+          "accuracy": 0.40384615384615385,
+          "params": {
+            "max_depth": 2,
+            "criterion": "gini"
+          },
+          "time": 0.6355116367340088
+        },
+        "rf": {
+          "accuracy": 0.34615384615384615,
+          "params": {
+            "n_estimators": 66,
+            "max_depth": 11
+          },
+          "time": 11.365446329116821
+        },
+        "knn": {
+          "accuracy": 0.4519230769230769,
+          "params": {
+            "n_neighbors": 9,
+            "weights": "uniform",
+            "algorithm": "kd_tree"
+          },
+          "time": 0.36708927154541016
+        },
+        "xgboost": {
+          "accuracy": 0.4423076923076923,
+          "params": {
+            "n_estimators": 130,
+            "learning_rate": 0.0038798524352468555,
+            "max_depth": 27,
+            "min_child_weight": 2.7832900467460266,
+            "subsample": 0.7181203211103885,
+            "colsample_bytree": 0.780081917992638
+          },
+          "time": 27.718173265457153
+        },
+        "svm": {
+          "accuracy": 0.4230769230769231,
+          "params": {
+            "C": 1,
+            "kernel": "rbf",
+            "degree": 4,
+            "gamma": "auto"
+          },
+          "time": 1.1351895332336426
+        },
+        "mlp": {
+          "error": "OneHotEncoder.__init__() got an unexpected keyword argument 'sparse'"
+        },
+        "nb": {
+          "accuracy": 0.2980769230769231,
+          "params": {
+            "var_smoothing": 0.007977229033702054
+          },
+          "time": 0.22133946418762207
+        }
+      },
+      "autoencoder": {
+        "logreg": {
+          "accuracy": 0.40384615384615385,
+          "params": {
+            "C": 6.193777490608948e-07,
+            "fit_intercept": true,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.34570992679528556
+          },
+          "time": 3.286560297012329
+        },
+        "dt": {
+          "accuracy": 0.3942307692307692,
+          "params": {
+            "max_depth": 10,
+            "criterion": "gini"
+          },
+          "time": 0.3731660842895508
+        },
+        "rf": {
+          "accuracy": 0.40384615384615385,
+          "params": {
+            "n_estimators": 57,
+            "max_depth": 3
+          },
+          "time": 9.060971975326538
+        },
+        "knn": {
+          "accuracy": 0.40384615384615385,
+          "params": {
+            "n_neighbors": 14,
+            "weights": "uniform",
+            "algorithm": "auto"
+          },
+          "time": 0.3349759578704834
+        },
+        "xgboost": {
+          "accuracy": 0.3942307692307692,
+          "params": {
+            "n_estimators": 116,
+            "learning_rate": 0.28620254963771663,
+            "max_depth": 32,
+            "min_child_weight": 9.440358640791029,
+            "subsample": 0.29367129857360585,
+            "colsample_bytree": 0.2606723780191411
+          },
+          "time": 8.760877132415771
+        },
+        "svm": {
+          "accuracy": 0.40384615384615385,
+          "params": {
+            "C": 0.3,
+            "kernel": "rbf",
+            "degree": 2,
+            "gamma": "auto"
+          },
+          "time": 0.963047981262207
+        },
+        "mlp": {
+          "error": "OneHotEncoder.__init__() got an unexpected keyword argument 'sparse'"
+        },
+        "nb": {
+          "accuracy": 0.41346153846153844,
+          "params": {
+            "var_smoothing": 0.005934589988346858
+          },
+          "time": 0.23904871940612793
+        }
+      },
+      "umap": {
+        "logreg": {
+          "accuracy": 0.40384615384615385,
+          "params": {
+            "C": 1.882799565838908e-05,
+            "fit_intercept": false,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.03594753330046763
+          },
+          "time": 3.05045223236084
+        },
+        "dt": {
+          "accuracy": 0.3942307692307692,
+          "params": {
+            "max_depth": 4,
+            "criterion": "gini"
+          },
+          "time": 0.34852075576782227
+        },
+        "rf": {
+          "accuracy": 0.38461538461538464,
+          "params": {
+            "n_estimators": 60,
+            "max_depth": 2
+          },
+          "time": 8.30284833908081
+        },
+        "knn": {
+          "accuracy": 0.375,
+          "params": {
+            "n_neighbors": 17,
+            "weights": "uniform",
+            "algorithm": "ball_tree"
+          },
+          "time": 0.34270763397216797
+        },
+        "xgboost": {
+          "accuracy": 0.41346153846153844,
+          "params": {
+            "n_estimators": 139,
+            "learning_rate": 0.009959513856627671,
+            "max_depth": 15,
+            "min_child_weight": 8.830885109416943,
+            "subsample": 0.3205033933400744,
+            "colsample_bytree": 0.1940578072770618
+          },
+          "time": 12.11078143119812
+        },
+        "svm": {
+          "accuracy": 0.40384615384615385,
+          "params": {
+            "C": 0.1,
+            "kernel": "linear",
+            "degree": 2,
+            "gamma": "scale"
+          },
+          "time": 0.7105865478515625
+        },
+        "mlp": {
+          "error": "OneHotEncoder.__init__() got an unexpected keyword argument 'sparse'"
+        },
+        "nb": {
+          "accuracy": 0.38461538461538464,
+          "params": {
+            "var_smoothing": 5.459472829897617e-11
+          },
+          "time": 0.20994257926940918
+        }
+      },
+      "nnclr_cnn": {
+        "logreg": {
+          "accuracy": 0.4519230769230769,
+          "params": {
+            "C": 0.2942068577892686,
+            "fit_intercept": true,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.025507264138826764
+          },
+          "time": 85.09608697891235
+        },
+        "dt": {
+          "accuracy": 0.40384615384615385,
+          "params": {
+            "max_depth": 2,
+            "criterion": "log_loss"
+          },
+          "time": 2.4385221004486084
+        },
+        "rf": {
+          "accuracy": 0.38461538461538464,
+          "params": {
+            "n_estimators": 182,
+            "max_depth": 2
+          },
+          "time": 20.671568393707275
+        },
+        "knn": {
+          "accuracy": 0.38461538461538464,
+          "params": {
+            "n_neighbors": 8,
+            "weights": "uniform",
+            "algorithm": "brute"
+          },
+          "time": 0.8365235328674316
+        },
+        "xgboost": {
+          "accuracy": 0.3557692307692308,
+          "params": {
+            "n_estimators": 52,
+            "learning_rate": 0.17146177926326595,
+            "max_depth": 5,
+            "min_child_weight": 9.343395393284643,
+            "subsample": 0.15592400248488397,
+            "colsample_bytree": 0.16830622871902529
+          },
+          "time": 11.865634679794312
+        },
+        "svm": {
+          "accuracy": 0.4230769230769231,
+          "params": {
+            "C": 1,
+            "kernel": "rbf",
+            "degree": 3,
+            "gamma": "scale"
+          },
+          "time": 1.548870325088501
+        },
+        "mlp": {
+          "error": "OneHotEncoder.__init__() got an unexpected keyword argument 'sparse'"
+        },
+        "nb": {
+          "accuracy": 0.22115384615384615,
+          "params": {
+            "var_smoothing": 0.0021092297100700295
+          },
+          "time": 0.3726365566253662
+        }
+      },
+      "nnclr_lstm": {
+        "logreg": {
+          "accuracy": 0.40384615384615385,
+          "params": {
+            "C": 39.591057782620915,
+            "fit_intercept": false,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.5159519894200973
+          },
+          "time": 55.907710790634155
+        },
+        "dt": {
+          "accuracy": 0.36538461538461536,
+          "params": {
+            "max_depth": 4,
+            "criterion": "gini"
+          },
+          "time": 4.1496453285217285
+        },
+        "rf": {
+          "accuracy": 0.3557692307692308,
+          "params": {
+            "n_estimators": 71,
+            "max_depth": 2
+          },
+          "time": 22.593795776367188
+        },
+        "knn": {
+          "accuracy": 0.3942307692307692,
+          "params": {
+            "n_neighbors": 18,
+            "weights": "distance",
+            "algorithm": "ball_tree"
+          },
+          "time": 0.7989511489868164
+        },
+        "xgboost": {
+          "accuracy": 0.38461538461538464,
+          "params": {
+            "n_estimators": 35,
+            "learning_rate": 0.5601967837443161,
+            "max_depth": 23,
+            "min_child_weight": 9.883831169309646,
+            "subsample": 0.16202018438128338,
+            "colsample_bytree": 0.2742919562461709
+          },
+          "time": 11.832026481628418
+        },
+        "svm": {
+          "accuracy": 0.40384615384615385,
+          "params": {
+            "C": 1,
+            "kernel": "rbf",
+            "degree": 5,
+            "gamma": "auto"
+          },
+          "time": 1.8150880336761475
+        },
+        "mlp": {
+          "error": "OneHotEncoder.__init__() got an unexpected keyword argument 'sparse'"
+        },
+        "nb": {
+          "accuracy": 0.15384615384615385,
+          "params": {
+            "var_smoothing": 0.0029919163237043618
+          },
+          "time": 0.38545846939086914
+        }
+      }
+    }
+  },
+  "Continent_14": {
+    "dataset": "Continent_14",
+    "embedding_results": {
+      "pca": {
+        "time": 0.0027234554290771484,
+        "shape": [
+          400,
+          10
+        ]
+      },
+      "lle": {
+        "time": 0.13913583755493164,
+        "shape": [
+          400,
+          10
+        ]
+      },
+      "wavelet": {
+        "time": 0.0002868175506591797,
+        "shape": [
+          400,
+          15
+        ]
+      },
+      "fft": {
+        "time": 0.003913164138793945,
+        "shape": [
+          400,
+          29
+        ]
+      },
+      "autoencoder": {
+        "time": 4.142513751983643,
+        "shape": [
+          400,
+          4
+        ]
+      },
+      "graph": {
+        "error": "buffer source array is read-only"
+      },
+      "tda": {
+        "error": "object of type 'NoneType' has no len()"
+      },
+      "umap": {
+        "time": 0.3378875255584717,
+        "shape": [
+          400,
+          2
+        ]
+      },
+      "nnclr_cnn": {
+        "time": 0.5080430507659912,
+        "shape": [
+          400,
+          128
+        ]
+      },
+      "nnclr_lstm": {
+        "time": 0.5923454761505127,
+        "shape": [
+          400,
+          128
+        ]
+      }
+    },
+    "classifier_results": {},
+    "combined_results": {
+      "pca": {
+        "logreg": {
+          "accuracy": 0.40384615384615385,
+          "params": {
+            "C": 3.649726521551928e-07,
+            "fit_intercept": true,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.440924423061163
+          },
+          "time": 2.1053898334503174
+        },
+        "dt": {
+          "accuracy": 0.40384615384615385,
+          "params": {
+            "max_depth": 2,
+            "criterion": "entropy"
+          },
+          "time": 0.5572969913482666
+        },
+        "rf": {
+          "accuracy": 0.34615384615384615,
+          "params": {
+            "n_estimators": 13,
+            "max_depth": 7
+          },
+          "time": 9.370505094528198
+        },
+        "knn": {
+          "accuracy": 0.47115384615384615,
+          "params": {
+            "n_neighbors": 20,
+            "weights": "distance",
+            "algorithm": "brute"
+          },
+          "time": 0.38973402976989746
+        },
+        "xgboost": {
+          "accuracy": 0.3557692307692308,
+          "params": {
+            "n_estimators": 13,
+            "learning_rate": 0.07648959741855112,
+            "max_depth": 28,
+            "min_child_weight": 7.608643561130599,
+            "subsample": 0.6498444521595146,
+            "colsample_bytree": 0.5278548782479142
+          },
+          "time": 5.5510573387146
+        },
+        "svm": {
+          "accuracy": 0.4423076923076923,
+          "params": {
+            "C": 0.6,
+            "kernel": "rbf",
+            "degree": 4,
+            "gamma": "auto"
+          },
+          "time": 1.0586330890655518
+        },
+        "mlp": {
+          "error": "OneHotEncoder.__init__() got an unexpected keyword argument 'sparse'"
+        },
+        "nb": {
+          "accuracy": 0.3942307692307692,
+          "params": {
+            "var_smoothing": 0.008866322624391472
+          },
+          "time": 0.21795082092285156
+        }
+      },
+      "lle": {
+        "logreg": {
+          "accuracy": 0.40384615384615385,
+          "params": {
+            "C": 2.6480601217233134e-06,
+            "fit_intercept": true,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.28108955184752116
+          },
+          "time": 2.0371479988098145
+        },
+        "dt": {
+          "accuracy": 0.41346153846153844,
+          "params": {
+            "max_depth": 6,
+            "criterion": "entropy"
+          },
+          "time": 0.6308062076568604
+        },
+        "rf": {
+          "accuracy": 0.40384615384615385,
+          "params": {
+            "n_estimators": 41,
+            "max_depth": 22
+          },
+          "time": 13.321614503860474
+        },
+        "knn": {
+          "accuracy": 0.38461538461538464,
+          "params": {
+            "n_neighbors": 15,
+            "weights": "distance",
+            "algorithm": "brute"
+          },
+          "time": 0.3813667297363281
+        },
+        "xgboost": {
+          "accuracy": 0.375,
+          "params": {
+            "n_estimators": 115,
+            "learning_rate": 0.617258195878092,
+            "max_depth": 17,
+            "min_child_weight": 3.0703247584281286,
+            "subsample": 0.5251499916407607,
+            "colsample_bytree": 0.24477147531767304
+          },
+          "time": 23.885252714157104
+        },
+        "svm": {
+          "accuracy": 0.41346153846153844,
+          "params": {
+            "C": 1,
+            "kernel": "rbf",
+            "degree": 2,
+            "gamma": "scale"
+          },
+          "time": 0.978611946105957
+        },
+        "mlp": {
+          "error": "OneHotEncoder.__init__() got an unexpected keyword argument 'sparse'"
+        },
+        "nb": {
+          "accuracy": 0.3269230769230769,
+          "params": {
+            "var_smoothing": 0.0001551913150239062
+          },
+          "time": 0.23253369331359863
+        }
+      },
+      "wavelet": {
+        "logreg": {
+          "accuracy": 0.40384615384615385,
+          "params": {
+            "C": 1.794540942916323e-05,
+            "fit_intercept": true,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.17632573129597584
+          },
+          "time": 2.1317546367645264
+        },
+        "dt": {
+          "accuracy": 0.40384615384615385,
+          "params": {
+            "max_depth": 3,
+            "criterion": "entropy"
+          },
+          "time": 0.7203836441040039
+        },
+        "rf": {
+          "accuracy": 0.40384615384615385,
+          "params": {
+            "n_estimators": 24,
+            "max_depth": 10
+          },
+          "time": 8.848780870437622
+        },
+        "knn": {
+          "accuracy": 0.4326923076923077,
+          "params": {
+            "n_neighbors": 11,
+            "weights": "uniform",
+            "algorithm": "ball_tree"
+          },
+          "time": 0.38319826126098633
+        },
+        "xgboost": {
+          "accuracy": 0.2980769230769231,
+          "params": {
+            "n_estimators": 88,
+            "learning_rate": 0.9851914861377148,
+            "max_depth": 13,
+            "min_child_weight": 5.829753321630623,
+            "subsample": 0.828776072405346,
+            "colsample_bytree": 0.4222774208872465
+          },
+          "time": 10.93532943725586
+        },
+        "svm": {
+          "accuracy": 0.4230769230769231,
+          "params": {
+            "C": 0.6,
+            "kernel": "rbf",
+            "degree": 3,
+            "gamma": "auto"
+          },
+          "time": 1.2509913444519043
+        },
+        "mlp": {
+          "error": "OneHotEncoder.__init__() got an unexpected keyword argument 'sparse'"
+        },
+        "nb": {
+          "accuracy": 0.3269230769230769,
+          "params": {
+            "var_smoothing": 2.1103569460436898e-07
+          },
+          "time": 0.2271568775177002
+        }
+      },
+      "fft": {
+        "logreg": {
+          "accuracy": 0.41346153846153844,
+          "params": {
+            "C": 0.00034505325397566803,
+            "fit_intercept": false,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.00542516049454015
+          },
+          "time": 3.2779526710510254
+        },
+        "dt": {
+          "accuracy": 0.4230769230769231,
+          "params": {
+            "max_depth": 4,
+            "criterion": "gini"
+          },
+          "time": 0.9811093807220459
+        },
+        "rf": {
+          "accuracy": 0.3942307692307692,
+          "params": {
+            "n_estimators": 33,
+            "max_depth": 5
+          },
+          "time": 13.26579213142395
+        },
+        "knn": {
+          "accuracy": 0.3942307692307692,
+          "params": {
+            "n_neighbors": 14,
+            "weights": "uniform",
+            "algorithm": "ball_tree"
+          },
+          "time": 0.41945552825927734
+        },
+        "xgboost": {
+          "accuracy": 0.4230769230769231,
+          "params": {
+            "n_estimators": 23,
+            "learning_rate": 0.015693043793597226,
+            "max_depth": 12,
+            "min_child_weight": 2.0531636952856176,
+            "subsample": 0.3997521462474195,
+            "colsample_bytree": 0.7165769921785019
+          },
+          "time": 12.601444482803345
+        },
+        "svm": {
+          "accuracy": 0.4423076923076923,
+          "params": {
+            "C": 1,
+            "kernel": "rbf",
+            "degree": 2,
+            "gamma": "auto"
+          },
+          "time": 2.417497396469116
+        },
+        "mlp": {
+          "error": "OneHotEncoder.__init__() got an unexpected keyword argument 'sparse'"
+        },
+        "nb": {
+          "accuracy": 0.2403846153846154,
+          "params": {
+            "var_smoothing": 0.0005179859309187277
+          },
+          "time": 0.22159695625305176
+        }
+      },
+      "autoencoder": {
+        "logreg": {
+          "accuracy": 0.4230769230769231,
+          "params": {
+            "C": 2.889460939468622,
+            "fit_intercept": false,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.30076094528613306
+          },
+          "time": 4.206763744354248
+        },
+        "dt": {
+          "accuracy": 0.4326923076923077,
+          "params": {
+            "max_depth": 7,
+            "criterion": "gini"
+          },
+          "time": 0.4180581569671631
+        },
+        "rf": {
+          "accuracy": 0.3942307692307692,
+          "params": {
+            "n_estimators": 104,
+            "max_depth": 11
+          },
+          "time": 12.57186484336853
+        },
+        "knn": {
+          "accuracy": 0.40384615384615385,
+          "params": {
+            "n_neighbors": 8,
+            "weights": "uniform",
+            "algorithm": "kd_tree"
+          },
+          "time": 0.3439321517944336
+        },
+        "xgboost": {
+          "accuracy": 0.4519230769230769,
+          "params": {
+            "n_estimators": 160,
+            "learning_rate": 0.02099836686741852,
+            "max_depth": 14,
+            "min_child_weight": 3.7970991896080775,
+            "subsample": 0.37163654616146613,
+            "colsample_bytree": 0.8631412985296193
+          },
+          "time": 29.541443824768066
+        },
+        "svm": {
+          "accuracy": 0.40384615384615385,
+          "params": {
+            "C": 0.1,
+            "kernel": "rbf",
+            "degree": 2,
+            "gamma": "scale"
+          },
+          "time": 0.9133210182189941
+        },
+        "mlp": {
+          "error": "OneHotEncoder.__init__() got an unexpected keyword argument 'sparse'"
+        },
+        "nb": {
+          "accuracy": 0.3557692307692308,
+          "params": {
+            "var_smoothing": 6.678467052215269e-09
+          },
+          "time": 0.23103713989257812
+        }
+      },
+      "umap": {
+        "logreg": {
+          "accuracy": 0.40384615384615385,
+          "params": {
+            "C": 1.3021386319885088e-05,
+            "fit_intercept": false,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.7940353499774968
+          },
+          "time": 4.053898811340332
+        },
+        "dt": {
+          "accuracy": 0.40384615384615385,
+          "params": {
+            "max_depth": 3,
+            "criterion": "gini"
+          },
+          "time": 0.3284127712249756
+        },
+        "rf": {
+          "accuracy": 0.41346153846153844,
+          "params": {
+            "n_estimators": 56,
+            "max_depth": 6
+          },
+          "time": 8.064251899719238
+        },
+        "knn": {
+          "accuracy": 0.38461538461538464,
+          "params": {
+            "n_neighbors": 16,
+            "weights": "uniform",
+            "algorithm": "auto"
+          },
+          "time": 0.332747220993042
+        },
+        "xgboost": {
+          "accuracy": 0.41346153846153844,
+          "params": {
+            "n_estimators": 14,
+            "learning_rate": 0.05301180385236922,
+            "max_depth": 10,
+            "min_child_weight": 9.242126379112657,
+            "subsample": 0.9035739301575405,
+            "colsample_bytree": 0.21150282924684466
+          },
+          "time": 4.841305732727051
+        },
+        "svm": {
+          "accuracy": 0.40384615384615385,
+          "params": {
+            "C": 1,
+            "kernel": "linear",
+            "degree": 4,
+            "gamma": "scale"
+          },
+          "time": 0.7150311470031738
+        },
+        "mlp": {
+          "error": "OneHotEncoder.__init__() got an unexpected keyword argument 'sparse'"
+        },
+        "nb": {
+          "accuracy": 0.3942307692307692,
+          "params": {
+            "var_smoothing": 0.0058126348788622
+          },
+          "time": 0.22090816497802734
+        }
+      },
+      "nnclr_cnn": {
+        "logreg": {
+          "accuracy": 0.4230769230769231,
+          "params": {
+            "C": 2.7874275204057075,
+            "fit_intercept": true,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.024113872424253863
+          },
+          "time": 56.798906087875366
+        },
+        "dt": {
+          "accuracy": 0.3942307692307692,
+          "params": {
+            "max_depth": 4,
+            "criterion": "gini"
+          },
+          "time": 1.896383285522461
+        },
+        "rf": {
+          "accuracy": 0.36538461538461536,
+          "params": {
+            "n_estimators": 63,
+            "max_depth": 25
+          },
+          "time": 13.14525055885315
+        },
+        "knn": {
+          "accuracy": 0.4230769230769231,
+          "params": {
+            "n_neighbors": 7,
+            "weights": "uniform",
+            "algorithm": "ball_tree"
+          },
+          "time": 0.7667238712310791
+        },
+        "xgboost": {
+          "accuracy": 0.36538461538461536,
+          "params": {
+            "n_estimators": 16,
+            "learning_rate": 0.0874029766414752,
+            "max_depth": 15,
+            "min_child_weight": 9.68353384648107,
+            "subsample": 0.6184123271729322,
+            "colsample_bytree": 0.7970982264762025
+          },
+          "time": 13.753344774246216
+        },
+        "svm": {
+          "accuracy": 0.40384615384615385,
+          "params": {
+            "C": 0.6,
+            "kernel": "linear",
+            "degree": 4,
+            "gamma": "scale"
+          },
+          "time": 1.4149210453033447
+        },
+        "mlp": {
+          "error": "OneHotEncoder.__init__() got an unexpected keyword argument 'sparse'"
+        },
+        "nb": {
+          "accuracy": 0.2692307692307692,
+          "params": {
+            "var_smoothing": 0.009962472789128212
+          },
+          "time": 0.3640453815460205
+        }
+      },
+      "nnclr_lstm": {
+        "logreg": {
+          "accuracy": 0.40384615384615385,
+          "params": {
+            "C": 1.4070114698507132e-07,
+            "fit_intercept": false,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.019554962769578133
+          },
+          "time": 20.370711088180542
+        },
+        "dt": {
+          "accuracy": 0.3942307692307692,
+          "params": {
+            "max_depth": 5,
+            "criterion": "gini"
+          },
+          "time": 3.48500657081604
+        },
+        "rf": {
+          "accuracy": 0.40384615384615385,
+          "params": {
+            "n_estimators": 87,
+            "max_depth": 12
+          },
+          "time": 16.994699716567993
+        },
+        "knn": {
+          "accuracy": 0.41346153846153844,
+          "params": {
+            "n_neighbors": 14,
+            "weights": "uniform",
+            "algorithm": "kd_tree"
+          },
+          "time": 0.832442045211792
+        },
+        "xgboost": {
+          "accuracy": 0.4230769230769231,
+          "params": {
+            "n_estimators": 199,
+            "learning_rate": 0.06960890938365003,
+            "max_depth": 6,
+            "min_child_weight": 7.696707610175916,
+            "subsample": 0.10168675611614286,
+            "colsample_bytree": 0.4654752026077327
+          },
+          "time": 38.30021357536316
+        },
+        "svm": {
+          "accuracy": 0.40384615384615385,
+          "params": {
+            "C": 1,
+            "kernel": "linear",
+            "degree": 2,
+            "gamma": "scale"
+          },
+          "time": 2.0523698329925537
+        },
+        "mlp": {
+          "error": "OneHotEncoder.__init__() got an unexpected keyword argument 'sparse'"
+        },
+        "nb": {
+          "accuracy": 0.21153846153846154,
+          "params": {
+            "var_smoothing": 3.0929509618907024e-07
+          },
+          "time": 0.36389708518981934
+        }
+      }
+    }
+  },
+  "Continent_30": {
+    "dataset": "Continent_30",
+    "embedding_results": {
+      "pca": {
+        "time": 0.03928041458129883,
+        "shape": [
+          400,
+          10
+        ]
+      },
+      "lle": {
+        "time": 0.11356782913208008,
+        "shape": [
+          400,
+          10
+        ]
+      },
+      "wavelet": {
+        "time": 0.0002911090850830078,
+        "shape": [
+          400,
+          31
+        ]
+      },
+      "fft": {
+        "time": 0.004809141159057617,
+        "shape": [
+          400,
+          61
+        ]
+      },
+      "autoencoder": {
+        "time": 4.202287912368774,
+        "shape": [
+          400,
+          4
+        ]
+      },
+      "graph": {
+        "error": "buffer source array is read-only"
+      },
+      "tda": {
+        "error": "buffer source array is read-only"
+      },
+      "umap": {
+        "time": 0.33443403244018555,
+        "shape": [
+          400,
+          2
+        ]
+      },
+      "nnclr_cnn": {
+        "time": 0.30986952781677246,
+        "shape": [
+          400,
+          128
+        ]
+      },
+      "nnclr_lstm": {
+        "time": 0.78448486328125,
+        "shape": [
+          400,
+          128
+        ]
+      }
+    },
+    "classifier_results": {},
+    "combined_results": {
+      "pca": {
+        "logreg": {
+          "accuracy": 0.47115384615384615,
+          "params": {
+            "C": 0.14987276642369923,
+            "fit_intercept": true,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.988844912775059
+          },
+          "time": 3.0679306983947754
+        },
+        "dt": {
+          "accuracy": 0.49038461538461536,
+          "params": {
+            "max_depth": 8,
+            "criterion": "gini"
+          },
+          "time": 0.5630331039428711
+        },
+        "rf": {
+          "accuracy": 0.46153846153846156,
+          "params": {
+            "n_estimators": 32,
+            "max_depth": 25
+          },
+          "time": 9.435046672821045
+        },
+        "knn": {
+          "accuracy": 0.4230769230769231,
+          "params": {
+            "n_neighbors": 20,
+            "weights": "distance",
+            "algorithm": "auto"
+          },
+          "time": 0.36825108528137207
+        },
+        "xgboost": {
+          "accuracy": 0.4423076923076923,
+          "params": {
+            "n_estimators": 19,
+            "learning_rate": 0.05514309116052242,
+            "max_depth": 13,
+            "min_child_weight": 7.190575367337731,
+            "subsample": 0.7127725591190122,
+            "colsample_bytree": 0.9436065910248786
+          },
+          "time": 5.020121097564697
+        },
+        "svm": {
+          "accuracy": 0.4423076923076923,
+          "params": {
+            "C": 1,
+            "kernel": "rbf",
+            "degree": 3,
+            "gamma": "auto"
+          },
+          "time": 1.2530298233032227
+        },
+        "mlp": {
+          "error": "OneHotEncoder.__init__() got an unexpected keyword argument 'sparse'"
+        },
+        "nb": {
+          "accuracy": 0.38461538461538464,
+          "params": {
+            "var_smoothing": 5.990937433679048e-11
+          },
+          "time": 0.22301077842712402
+        }
+      },
+      "lle": {
+        "logreg": {
+          "accuracy": 0.40384615384615385,
+          "params": {
+            "C": 0.0132959773286338,
+            "fit_intercept": false,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.6027952399331908
+          },
+          "time": 2.4106695652008057
+        },
+        "dt": {
+          "accuracy": 0.41346153846153844,
+          "params": {
+            "max_depth": 2,
+            "criterion": "gini"
+          },
+          "time": 0.4848957061767578
+        },
+        "rf": {
+          "accuracy": 0.34615384615384615,
+          "params": {
+            "n_estimators": 185,
+            "max_depth": 22
+          },
+          "time": 15.46279239654541
+        },
+        "knn": {
+          "accuracy": 0.4326923076923077,
+          "params": {
+            "n_neighbors": 10,
+            "weights": "uniform",
+            "algorithm": "brute"
+          },
+          "time": 0.3739163875579834
+        },
+        "xgboost": {
+          "accuracy": 0.33653846153846156,
+          "params": {
+            "n_estimators": 129,
+            "learning_rate": 0.8062561950799366,
+            "max_depth": 20,
+            "min_child_weight": 1.4659380980344994,
+            "subsample": 0.5518749471167765,
+            "colsample_bytree": 0.8892383389782318
+          },
+          "time": 18.511475801467896
+        },
+        "svm": {
+          "accuracy": 0.4519230769230769,
+          "params": {
+            "C": 1,
+            "kernel": "rbf",
+            "degree": 2,
+            "gamma": "scale"
+          },
+          "time": 0.9518098831176758
+        },
+        "mlp": {
+          "error": "OneHotEncoder.__init__() got an unexpected keyword argument 'sparse'"
+        },
+        "nb": {
+          "accuracy": 0.2692307692307692,
+          "params": {
+            "var_smoothing": 0.009089344991695444
+          },
+          "time": 0.2172229290008545
+        }
+      },
+      "wavelet": {
+        "logreg": {
+          "accuracy": 0.4423076923076923,
+          "params": {
+            "C": 0.09087828640627298,
+            "fit_intercept": true,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.6131736930186603
+          },
+          "time": 14.35507845878601
+        },
+        "dt": {
+          "accuracy": 0.375,
+          "params": {
+            "max_depth": 9,
+            "criterion": "gini"
+          },
+          "time": 1.1468493938446045
+        },
+        "rf": {
+          "accuracy": 0.4807692307692308,
+          "params": {
+            "n_estimators": 184,
+            "max_depth": 15
+          },
+          "time": 20.495670080184937
+        },
+        "knn": {
+          "accuracy": 0.46153846153846156,
+          "params": {
+            "n_neighbors": 4,
+            "weights": "distance",
+            "algorithm": "auto"
+          },
+          "time": 0.41794347763061523
+        },
+        "xgboost": {
+          "accuracy": 0.4519230769230769,
+          "params": {
+            "n_estimators": 165,
+            "learning_rate": 0.07924534869768324,
+            "max_depth": 30,
+            "min_child_weight": 2.3742209090448267,
+            "subsample": 0.6678476689663454,
+            "colsample_bytree": 0.33777949433486365
+          },
+          "time": 48.786768674850464
+        },
+        "svm": {
+          "accuracy": 0.4423076923076923,
+          "params": {
+            "C": 0.6,
+            "kernel": "rbf",
+            "degree": 2,
+            "gamma": "scale"
+          },
+          "time": 1.8627283573150635
+        },
+        "mlp": {
+          "error": "OneHotEncoder.__init__() got an unexpected keyword argument 'sparse'"
+        },
+        "nb": {
+          "accuracy": 0.34615384615384615,
+          "params": {
+            "var_smoothing": 0.009074810165438863
+          },
+          "time": 0.22310209274291992
+        }
+      },
+      "fft": {
+        "logreg": {
+          "accuracy": 0.46153846153846156,
+          "params": {
+            "C": 0.03347615740754309,
+            "fit_intercept": false,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.6374769096665853
+          },
+          "time": 56.972010135650635
+        },
+        "dt": {
+          "accuracy": 0.36538461538461536,
+          "params": {
+            "max_depth": 2,
+            "criterion": "gini"
+          },
+          "time": 1.5699408054351807
+        },
+        "rf": {
+          "accuracy": 0.47115384615384615,
+          "params": {
+            "n_estimators": 170,
+            "max_depth": 11
+          },
+          "time": 30.151893854141235
+        },
+        "knn": {
+          "accuracy": 0.4519230769230769,
+          "params": {
+            "n_neighbors": 13,
+            "weights": "uniform",
+            "algorithm": "auto"
+          },
+          "time": 0.45427870750427246
+        },
+        "xgboost": {
+          "accuracy": 0.4807692307692308,
+          "params": {
+            "n_estimators": 156,
+            "learning_rate": 0.02473921408023222,
+            "max_depth": 9,
+            "min_child_weight": 1.488304155531875,
+            "subsample": 0.30613062332992086,
+            "colsample_bytree": 0.8036570388100694
+          },
+          "time": 46.246718645095825
+        },
+        "svm": {
+          "accuracy": 0.4519230769230769,
+          "params": {
+            "C": 1,
+            "kernel": "rbf",
+            "degree": 5,
+            "gamma": "scale"
+          },
+          "time": 11.566432237625122
+        },
+        "mlp": {
+          "error": "OneHotEncoder.__init__() got an unexpected keyword argument 'sparse'"
+        },
+        "nb": {
+          "accuracy": 0.3269230769230769,
+          "params": {
+            "var_smoothing": 0.006133555643788183
+          },
+          "time": 0.23108792304992676
+        }
+      },
+      "autoencoder": {
+        "logreg": {
+          "accuracy": 0.41346153846153844,
+          "params": {
+            "C": 0.04764077747068666,
+            "fit_intercept": true,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.09926719958119934
+          },
+          "time": 3.230147123336792
+        },
+        "dt": {
+          "accuracy": 0.4326923076923077,
+          "params": {
+            "max_depth": 4,
+            "criterion": "gini"
+          },
+          "time": 0.35762453079223633
+        },
+        "rf": {
+          "accuracy": 0.40384615384615385,
+          "params": {
+            "n_estimators": 168,
+            "max_depth": 2
+          },
+          "time": 12.377314567565918
+        },
+        "knn": {
+          "accuracy": 0.3942307692307692,
+          "params": {
+            "n_neighbors": 4,
+            "weights": "uniform",
+            "algorithm": "auto"
+          },
+          "time": 0.3262166976928711
+        },
+        "xgboost": {
+          "accuracy": 0.36538461538461536,
+          "params": {
+            "n_estimators": 184,
+            "learning_rate": 0.6552014959811123,
+            "max_depth": 25,
+            "min_child_weight": 7.465782819896466,
+            "subsample": 0.6292693807951966,
+            "colsample_bytree": 0.5893104817933057
+          },
+          "time": 10.154490947723389
+        },
+        "svm": {
+          "accuracy": 0.40384615384615385,
+          "params": {
+            "C": 0.1,
+            "kernel": "linear",
+            "degree": 3,
+            "gamma": "scale"
+          },
+          "time": 0.8413228988647461
+        },
+        "mlp": {
+          "error": "OneHotEncoder.__init__() got an unexpected keyword argument 'sparse'"
+        },
+        "nb": {
+          "accuracy": 0.3269230769230769,
+          "params": {
+            "var_smoothing": 0.00872480537714154
+          },
+          "time": 0.20600128173828125
+        }
+      },
+      "umap": {
+        "logreg": {
+          "accuracy": 0.4230769230769231,
+          "params": {
+            "C": 13.082782031757132,
+            "fit_intercept": false,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.29359799166094946
+          },
+          "time": 2.594172954559326
+        },
+        "dt": {
+          "accuracy": 0.4230769230769231,
+          "params": {
+            "max_depth": 7,
+            "criterion": "gini"
+          },
+          "time": 0.3251941204071045
+        },
+        "rf": {
+          "accuracy": 0.4423076923076923,
+          "params": {
+            "n_estimators": 194,
+            "max_depth": 2
+          },
+          "time": 9.346647262573242
+        },
+        "knn": {
+          "accuracy": 0.4423076923076923,
+          "params": {
+            "n_neighbors": 20,
+            "weights": "uniform",
+            "algorithm": "ball_tree"
+          },
+          "time": 0.34212803840637207
+        },
+        "xgboost": {
+          "accuracy": 0.3557692307692308,
+          "params": {
+            "n_estimators": 17,
+            "learning_rate": 0.35578558046665976,
+            "max_depth": 10,
+            "min_child_weight": 9.625849730346884,
+            "subsample": 0.4910302926974611,
+            "colsample_bytree": 0.35230952706756613
+          },
+          "time": 3.9982054233551025
+        },
+        "svm": {
+          "accuracy": 0.4519230769230769,
+          "params": {
+            "C": 0.6,
+            "kernel": "rbf",
+            "degree": 2,
+            "gamma": "auto"
+          },
+          "time": 0.809410810470581
+        },
+        "mlp": {
+          "error": "OneHotEncoder.__init__() got an unexpected keyword argument 'sparse'"
+        },
+        "nb": {
+          "accuracy": 0.38461538461538464,
+          "params": {
+            "var_smoothing": 0.009796951792705228
+          },
+          "time": 0.2040269374847412
+        }
+      },
+      "nnclr_cnn": {
+        "logreg": {
+          "accuracy": 0.40384615384615385,
+          "params": {
+            "C": 26.1937871768609,
+            "fit_intercept": false,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.9963528277656366
+          },
+          "time": 164.3452718257904
+        },
+        "dt": {
+          "accuracy": 0.4807692307692308,
+          "params": {
+            "max_depth": 4,
+            "criterion": "log_loss"
+          },
+          "time": 2.431037425994873
+        },
+        "rf": {
+          "accuracy": 0.4423076923076923,
+          "params": {
+            "n_estimators": 97,
+            "max_depth": 17
+          },
+          "time": 21.5986647605896
+        },
+        "knn": {
+          "accuracy": 0.46153846153846156,
+          "params": {
+            "n_neighbors": 10,
+            "weights": "distance",
+            "algorithm": "kd_tree"
+          },
+          "time": 0.7933382987976074
+        },
+        "xgboost": {
+          "accuracy": 0.47115384615384615,
+          "params": {
+            "n_estimators": 76,
+            "learning_rate": 0.07870001760211176,
+            "max_depth": 31,
+            "min_child_weight": 1.2487749427053765,
+            "subsample": 0.5233509149454489,
+            "colsample_bytree": 0.2610940513797866
+          },
+          "time": 41.69241547584534
+        },
+        "svm": {
+          "accuracy": 0.4423076923076923,
+          "params": {
+            "C": 1,
+            "kernel": "linear",
+            "degree": 4,
+            "gamma": "scale"
+          },
+          "time": 1.2851436138153076
+        },
+        "mlp": {
+          "error": "OneHotEncoder.__init__() got an unexpected keyword argument 'sparse'"
+        },
+        "nb": {
+          "accuracy": 0.21153846153846154,
+          "params": {
+            "var_smoothing": 0.00012692719860850428
+          },
+          "time": 0.38025808334350586
+        }
+      },
+      "nnclr_lstm": {
+        "logreg": {
+          "accuracy": 0.4230769230769231,
+          "params": {
+            "C": 154.70549718207977,
+            "fit_intercept": false,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.32636161892662097
+          },
+          "time": 325.1693284511566
+        },
+        "dt": {
+          "accuracy": 0.4423076923076923,
+          "params": {
+            "max_depth": 4,
+            "criterion": "log_loss"
+          },
+          "time": 4.355433702468872
+        },
+        "rf": {
+          "accuracy": 0.41346153846153844,
+          "params": {
+            "n_estimators": 200,
+            "max_depth": 4
+          },
+          "time": 24.085975885391235
+        },
+        "knn": {
+          "accuracy": 0.3942307692307692,
+          "params": {
+            "n_neighbors": 18,
+            "weights": "distance",
+            "algorithm": "kd_tree"
+          },
+          "time": 0.8054296970367432
+        },
+        "xgboost": {
+          "accuracy": 0.3942307692307692,
+          "params": {
+            "n_estimators": 184,
+            "learning_rate": 0.005411626885372356,
+            "max_depth": 13,
+            "min_child_weight": 8.252392787467802,
+            "subsample": 0.43280590554282944,
+            "colsample_bytree": 0.9237698689914965
+          },
+          "time": 61.27259564399719
+        },
+        "svm": {
+          "accuracy": 0.4423076923076923,
+          "params": {
+            "C": 1,
+            "kernel": "rbf",
+            "degree": 3,
+            "gamma": "scale"
+          },
+          "time": 1.7493131160736084
+        },
+        "mlp": {
+          "error": "OneHotEncoder.__init__() got an unexpected keyword argument 'sparse'"
+        },
+        "nb": {
+          "accuracy": 0.23076923076923078,
+          "params": {
+            "var_smoothing": 4.510781234785957e-06
+          },
+          "time": 0.3723289966583252
+        }
+      }
+    }
+  }
+}
