@@ -42,6 +42,7 @@ from gtda.homology import VietorisRipsPersistence
 from gtda.diagrams import Amplitude
 from sklearn.decomposition import PCA
 
+
 import ts2vg
 
 from keras.layers import Input, Dense, Conv1D, MaxPooling1D, Flatten, Dropout, concatenate
@@ -56,6 +57,7 @@ import numpy as np
 from gudhi.wasserstein import wasserstein_distance
 from gudhi.bottleneck import bottleneck_distance
 from gudhi.representations import Landscape
+
 
 #creating the overlapping steps
 

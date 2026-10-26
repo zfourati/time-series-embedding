@@ -21,6 +21,9 @@ from .nnclr import (
     nnclr_lstm_embedding
 )
 
+from .foundation_models import (mantis_embedding , chronos_embedding
+                                ,tivit_embedding,concat_embeddings, ts2vec_embedding)
+
 __all__ = [
     'pca_embedding',
     'lle_embedding',
@@ -31,5 +34,10 @@ __all__ = [
     'graph_embedding',
     'tda_embedding',
     'nnclr_cnn_embedding',
-    'nnclr_lstm_embedding'
+    'nnclr_lstm_embedding',
+    'mantis_embedding',
+    'chronos_embedding',
+    'tivit_embedding',
+    'concat_embeddings',
+    'ts2vec_embedding'
 ]

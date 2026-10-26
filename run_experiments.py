@@ -21,7 +21,8 @@ from src.embeddings import (
     pca_embedding, lle_embedding, umap_embedding, 
     wavelet_embedding, fft_embedding, AE_embedding,
     graph_embedding, tda_embedding, 
-    nnclr_cnn_embedding, nnclr_lstm_embedding
+    nnclr_cnn_embedding, nnclr_lstm_embedding, mantis_embedding, chronos_embedding,
+    tivit_embedding, concat_embeddings, ts2vec_embedding
 )
 from src.classifiers import (
     optimize_LOGRG, optimize_DT, optimize_RF, optimize_KNN, 
@@ -33,6 +34,24 @@ from src.utils.evaluation import (
     compare_classifiers, generate_classification_report
 )
 from src.utils.visualization import umap_plt, plot_embedding_comparison
+
+
+MANTIS_METHODS = {
+    'Mantis-8M':    'mantis',
+    'MantisPlus':   'mantis_plus',
+    'Mantis-Utica': 'utica',
+    'MantisV2':     'mantis_v2',
+}
+
+CHRONOS_CHECKPOINTS = {
+    'Chronos-T5-small':  'amazon/chronos-t5-small',
+    'Chronos-Bolt-base': 'amazon/chronos-bolt-base',
+}
+
+TIVIT_CHECKPOINTS = {
+    'TiViT-CLIP-B16': ('openai/clip-vit-base-patch16', 7),   # (checkpoint, layer)
+    'TiViT-CLIP-H14': ('laion/CLIP-ViT-H-14-laion2B-s32B-b79K', 14),  # layer used in the repo's example
+}
 
 
 def run_embedding_experiment(X_train, X_val, X_test, y_train, y_val, y_test, embedding_method, **kwargs):
@@ -143,7 +162,38 @@ def run_embedding_experiment(X_train, X_val, X_test, y_train, y_val, y_test, emb
             y_train, y_val, y_test,
             width, n_classes
         )
+    elif embedding_method in MANTIS_METHODS:
+        train_emb, val_emb, test_emb = mantis_embedding(
+            MANTIS_METHODS[embedding_method],
+            X_train, X_val, X_test, np.asarray(y_train).ravel(),
+            fine_tune=kwargs.get('fine_tune', True),
+            num_epochs=kwargs.get('num_epochs', 30),
+            lr=kwargs.get('lr', 2e-5),
+            target_len=kwargs.get('target_len', 512),
+        )
+    elif embedding_method in CHRONOS_CHECKPOINTS:
+        train_emb, val_emb, test_emb = chronos_embedding(
+            CHRONOS_CHECKPOINTS[embedding_method], X_train, X_val, X_test)
+    elif embedding_method in TIVIT_CHECKPOINTS:
+        ckpt, layer = TIVIT_CHECKPOINTS[embedding_method]
+        train_emb, val_emb, test_emb = tivit_embedding(
+            ckpt, kwargs.get('layer', layer), X_train, X_val, X_test)
         
+    elif embedding_method == 'TiViT+MantisV2':
+        ckpt, layer = TIVIT_CHECKPOINTS['TiViT-CLIP-B16']
+        blocks = [
+            tivit_embedding(ckpt, kwargs.get('layer', layer), X_train, X_val, X_test),
+            mantis_embedding('mantis_v2', X_train, X_val, X_test,
+                             np.asarray(y_train).ravel(), fine_tune=False),
+        ]
+        train_emb, val_emb, test_emb = concat_embeddings(blocks)
+    elif embedding_method == 'TS2Vec':
+        train_emb, val_emb, test_emb = ts2vec_embedding(
+            X_train, X_val, X_test,
+            output_dims=kwargs.get('output_dims', 320),
+            n_epochs=kwargs.get('n_epochs'),
+            n_iters=kwargs.get('n_iters'),
+        )
     else:
         raise ValueError(f"Unknown embedding method: {embedding_method}")
     
