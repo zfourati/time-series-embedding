@@ -81,7 +81,7 @@ def optimize_MLP(x_train, x_val, x_test, y_train, y_val, y_test,namee, labels=No
 
     classification_rep = classification_report(y_test_labels, y_pred_labels, target_names=labels)
     current_time = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-    filename = f"{namee}_classification_report_{current_time}.txt"
+    filename = f"{namee}_classification_report.txt"
     with open(filename, 'w') as file:
         file.write(classification_rep)
 
@@ -126,7 +126,7 @@ def optimize_NB(x_train, x_val, x_test, y_train, y_val, y_test,namee, labels=Non
 
     classification_rep = classification_report(y_test, y_pred, target_names=labels)
     current_time = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-    filename = f"{namee}_classification_report_{current_time}.txt"
+    filename = f"{namee}_classification_report.txt"
     with open(filename, 'w') as file:
         file.write(classification_rep)
 
