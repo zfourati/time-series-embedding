@@ -32,7 +32,7 @@ import torch.nn as nn
 import torch.optim as optim
 from torch.utils.data import DataLoader, TensorDataset
 
-def optimize_LOGRG(x_train, x_val, x_test, y_train, y_val, y_test, namee):
+def optimize_LOGRG(x_train, x_val, x_test, y_train, y_val, y_test, namee,labels=None):
     max_iter=10000
 
     def objective_LOGRG(trial):
@@ -64,7 +64,7 @@ def optimize_LOGRG(x_train, x_val, x_test, y_train, y_val, y_test, namee):
     test_score = accuracy_score(y_test, y_pred)
     end=time.time()
     print(end-start, " seconds")
-    classification_rep = classification_report(y_test, y_pred)
+    classification_rep = classification_report(y_test, y_pred, target_names=labels)
 
     current_time = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
     filename = f"{namee}_classification_report.txt"
@@ -77,7 +77,7 @@ def optimize_LOGRG(x_train, x_val, x_test, y_train, y_val, y_test, namee):
 
 
 
-def optimize_DT(x_train, x_val, x_test, y_train, y_val, y_test,namee):
+def optimize_DT(x_train, x_val, x_test, y_train, y_val, y_test,namee,labels=None):
     #just import libraries
     def objective_DT(trial):
         #n_estimators = trial.suggest_int('n_estimators', 10, 200)
@@ -107,7 +107,7 @@ def optimize_DT(x_train, x_val, x_test, y_train, y_val, y_test,namee):
     test_score = accuracy_score(y_test, y_pred)
     end=time.time()
     print(end-start, " seconds")
-    classification_rep = classification_report(y_test, y_pred)
+    classification_rep = classification_report(y_test, y_pred, target_names=labels)
     current_time = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
     filename = f"{namee}_classification_report.txt"
     with open(filename, 'w') as file:
@@ -117,7 +117,7 @@ def optimize_DT(x_train, x_val, x_test, y_train, y_val, y_test,namee):
 
     return best_params, test_score
 
-def optimize_RF(x_train, x_val, x_test, y_train, y_val, y_test,namee):
+def optimize_RF(x_train, x_val, x_test, y_train, y_val, y_test,namee,labels=None):
     #just import libraries
     def objective_RF(trial):
         n_estimators = trial.suggest_int('n_estimators', 10, 200)
@@ -146,7 +146,7 @@ def optimize_RF(x_train, x_val, x_test, y_train, y_val, y_test,namee):
     test_score = accuracy_score(y_test, y_pred)
     end=time.time()
     print(end-start, " seconds")
-    classification_rep = classification_report(y_test, y_pred)
+    classification_rep = classification_report(y_test, y_pred, target_names=labels)
     current_time = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
     filename = f"{namee}_classification_report.txt"
     with open(filename, 'w') as file:
@@ -156,7 +156,7 @@ def optimize_RF(x_train, x_val, x_test, y_train, y_val, y_test,namee):
 
     return best_params, test_score
 
-def optimize_KNN(x_train, x_val, x_test, y_train, y_val, y_test,namee):
+def optimize_KNN(x_train, x_val, x_test, y_train, y_val, y_test,namee,labels=None):
     #just import libraries
     def objective_KNN(trial):
         n_neighbors = trial.suggest_int('n_neighbors', 1, 20)
@@ -184,7 +184,7 @@ def optimize_KNN(x_train, x_val, x_test, y_train, y_val, y_test,namee):
     test_score = accuracy_score(y_test, y_pred)
     end=time.time()
     print(end-start, " seconds")
-    classification_rep = classification_report(y_test, y_pred)
+    classification_rep = classification_report(y_test, y_pred, target_names=labels)
     current_time = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
     filename = f"{namee}_classification_report.txt"
     with open(filename, 'w') as file:
@@ -194,7 +194,7 @@ def optimize_KNN(x_train, x_val, x_test, y_train, y_val, y_test,namee):
 
     return best_params, test_score
 
-def optimize_XGBOOST(x_train, x_val, x_test, y_train, y_val, y_test,namee):
+def optimize_XGBOOST(x_train, x_val, x_test, y_train, y_val, y_test,namee,labels=None):
     #import libraries
     def objective_XGBOOST(trial):
         n_estimators = trial.suggest_int('n_estimators', 10, 200)
@@ -234,7 +234,7 @@ def optimize_XGBOOST(x_train, x_val, x_test, y_train, y_val, y_test,namee):
     test_score = accuracy_score(y_test, y_pred)
     end=time.time()
     print(end-start, " seconds")
-    classification_rep = classification_report(y_test, y_pred)
+    classification_rep = classification_report(y_test, y_pred, target_names=labels)
     current_time = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
     filename = f"{namee}_classification_report.txt"
     with open(filename, 'w') as file:
@@ -246,7 +246,7 @@ def optimize_XGBOOST(x_train, x_val, x_test, y_train, y_val, y_test,namee):
 
 
 
-def optimize_SVM(x_train, x_val, x_test, y_train, y_val, y_test, namee):
+def optimize_SVM(x_train, x_val, x_test, y_train, y_val, y_test, namee,labels=None):
     def objective_SVM(trial):
         # Limit C to specific values
         C = trial.suggest_categorical('C', [0.1, 0.3, 0.6, 1])
@@ -275,7 +275,7 @@ def optimize_SVM(x_train, x_val, x_test, y_train, y_val, y_test, namee):
     end = time.time()
     print(end - start, " seconds")
     
-    classification_rep = classification_report(y_test, y_pred)
+    classification_rep = classification_report(y_test, y_pred, target_names=labels)
     current_time = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
     filename = f"{namee}_classification_report.txt"
     with open(filename, 'w') as file:
@@ -287,7 +287,7 @@ def optimize_SVM(x_train, x_val, x_test, y_train, y_val, y_test, namee):
 
 
 
-def NB_CLFY(x_train, x_test, y_train, y_test, namee):
+def NB_CLFY(x_train, x_test, y_train, y_test, namee,labels=None):
     #naive bayesian
     y_train = np.array(y_train)
     
@@ -299,7 +299,7 @@ def NB_CLFY(x_train, x_test, y_train, y_test, namee):
     score = accuracy_score(y_test, y_pred)
     end=time.time()
     print(end-start, " seconds")
-    classification_rep = classification_report(y_test, y_pred)
+    classification_rep = classification_report(y_test, y_pred, target_names=labels)
     current_time = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
     filename = f"{namee}_classification_report.txt"
     with open(filename, 'w') as file:
@@ -310,7 +310,7 @@ def NB_CLFY(x_train, x_test, y_train, y_test, namee):
 
 
 
-def optimize_MLP(x_train, x_val, x_test, y_train, y_val, y_test, namee):
+def optimize_MLP(x_train, x_val, x_test, y_train, y_val, y_test, namee,labels=None):
     # multi-layer perceptron
     #Just import libraries
     encoder = OneHotEncoder(sparse=False)
@@ -356,7 +356,7 @@ def optimize_MLP(x_train, x_val, x_test, y_train, y_val, y_test, namee):
     test_score = accuracy_score(y_test_en, y_pred)
     end=time.time()
     print(end-start, " seconds")
-    classification_rep = classification_report(y_test, y_pred)
+    classification_rep = classification_report(y_test, y_pred, target_names=labels)
     current_time = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
     filename = f"{namee}_classification_report.txt"
     with open(filename, 'w') as file:

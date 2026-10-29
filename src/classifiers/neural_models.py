@@ -16,7 +16,7 @@ import optuna
 from sklearn.naive_bayes import GaussianNB
 
 
-def optimize_MLP(x_train, x_val, x_test, y_train, y_val, y_test,namee):
+def optimize_MLP(x_train, x_val, x_test, y_train, y_val, y_test,namee, labels=None):
     # One-hot encode the target labels
     encoder = OneHotEncoder(sparse=False)
     y_train_en = encoder.fit_transform(np.array(y_train).reshape(-1, 1))
@@ -61,7 +61,7 @@ def optimize_MLP(x_train, x_val, x_test, y_train, y_val, y_test,namee):
     y_test_labels = np.argmax(y_test_en, axis=1)
     test_score = accuracy_score(y_test_labels, y_pred_labels)
 
-    classification_rep = classification_report(y_test_labels, y_pred_labels)
+    classification_rep = classification_report(y_test_labels, y_pred_labels, target_names=labels)
     current_time = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
     filename = f"{namee}_classification_report_{current_time}.txt"
     with open(filename, 'w') as file:
@@ -72,7 +72,7 @@ def optimize_MLP(x_train, x_val, x_test, y_train, y_val, y_test,namee):
     return best_params, test_score
 
 
-def optimize_NB(x_train, x_val, x_test, y_train, y_val, y_test,namee):
+def optimize_NB(x_train, x_val, x_test, y_train, y_val, y_test,namee, labels=None):
 
     def objective_NB(trial):
         var_smoothing = trial.suggest_float('var_smoothing', 1e-12, 1e-2, log=True)
@@ -102,7 +102,7 @@ def optimize_NB(x_train, x_val, x_test, y_train, y_val, y_test,namee):
     print(f"Test accuracy: {test_score}")
     print(f"Time taken: {end-start} seconds")
 
-    classification_rep = classification_report(y_test, y_pred)
+    classification_rep = classification_report(y_test, y_pred, target_names=labels)
     current_time = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
     filename = f"{namee}_classification_report_{current_time}.txt"
     with open(filename, 'w') as file:
