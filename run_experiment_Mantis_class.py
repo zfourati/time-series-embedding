@@ -9,7 +9,7 @@ import time
 from datetime import datetime
 import matplotlib.pyplot as plt
 import seaborn as sns
-from sklearn.metrics import accuracy_score, precision_recall_fscore_support
+from sklearn.metrics import accuracy_score, precision_recall_fscore_support, classification_report, ConfusionMatrixDisplay, confusion_matrix
 import geopandas as gpd
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
@@ -371,16 +371,7 @@ def calculate_window(ntl_data, cases, d_window):
     return case_ids, new_ntl, cases_window
 
 
-#embedding_methods = ['Mantis-8M', 'MantisPlus', 'Mantis-Utica', 'MantisV2']
-#embedding_methods = ['Chronos-T5-small','Chronos-Bolt-base']
-"""
-embedding_methods_dict ={'event_type': ['No-embed', 'pca', 'lle','wavelet', 'fft', 'autoencoder', 'graph', 'tda', 'umap','nnclr_cnn','nnclr_lstm','TiViT-CLIP-B16', 'TiViT-CLIP-H14', 'TiViT+MantisV2', 'TS2Vec' ,
-                     'Chronos-T5-small','Chronos-Bolt-base', 'Mantis-8M', 'MantisPlus', 'Mantis-Utica', 'MantisV2', 'Mantis-8M_pretrain_continued', 'MantisPlus_pretrain_continued', 'Mantis-Utica_pretrain_continued', 'MantisV2_pretrain_continued',
-                                                   'Mantis-8M_pretrain_scratch',  'MantisV2_pretrain_scratch'],
-                         'Continent': ['No-embed', 'Mantis-8M', 'MantisPlus', 'Mantis-Utica', 'MantisV2', 
-                             'Mantis-8M_pretrain_continued', 'MantisPlus_pretrain_continued', 'Mantis-Utica_pretrain_continued', 'MantisV2_pretrain_continued',
-                              'Mantis-8M_pretrain_scratch',  'MantisV2_pretrain_scratch']}
-                              """
+
 #%%                      
 embedding_methods =['Mantis-8M', 'MantisPlus', 'Mantis-Utica', 'MantisV2', 
                              'Mantis-8M_pretrain_continued', 'MantisPlus_pretrain_continued', 'Mantis-Utica_pretrain_continued', 'MantisV2_pretrain_continued',
@@ -401,6 +392,8 @@ result_log.loc[timestamp] = 'run with fixed window and embed and classifiy using
 result_log.to_csv('result_log.csv')
 
 os.makedirs("ft_checkpoints", exist_ok=True)
+
+results = []
 
 for feature in feature_list:
     
@@ -423,12 +416,7 @@ for feature in feature_list:
     
     for d_window in [7, 14, 30]:
         case_ids,  ntl_window, cases_window = calculate_window(ntl_data, cases, d_window)
-        results = {
-                'dataset': feature + '_' + str(d_window),
-                'embedding_results': {},
-                'classifier_results': {},
-                'combined_results': {}
-            }
+        
         X_train_norm = ntl_window[ntl_window[f'split_{feature}'] == 'train'].pivot(index='case_id', columns='time_step', values='ntl_std').dropna()
         X_val_norm = ntl_window[ntl_window[f'split_{feature}'] == 'val'].pivot(index='case_id', columns='time_step', values='ntl_std').dropna()
         X_test_norm = X_val_norm
@@ -481,15 +469,47 @@ for feature in feature_list:
                         open(f"{tag}_meta.json", "w"))
 
                 score = accuracy_score(y_val, y_pred)
-
-                # Store embedding results
-                #results['embedding_results'][embed_name] = {
-                #'time': embed_time,
-                #'shape': train_emb.shape if hasattr(train_emb, 'shape') else None
-                #}
-
+                
+                
+                # Generate classification report
+                classification_rep = classification_report(y_val, y_pred, target_names=feature_dict[feature].keys())
+                
+                namee = f'{dataset_path}_{embed_name}'
+                
+                filename = f"{namee}_classification_report.txt"
+                with open(filename, 'w') as file:
+                    file.write(classification_rep)
+                
+                print(f"Classification report saved as {filename}")
+                # Generate and plot confusion matrix
+                cm = confusion_matrix(y_val, y_pred)
+                disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=feature_dict[feature].keys())
+                
+                plt.Figure(figsize=(10, 8))
+                disp.plot()
+                plt.title(f'Confusion matrix: feature = {feature}, window = {d_window}, embedding and classification method = {embed_name}')
+                plt.tight_layout()
+                plt.savefig(f'{namee}_confusion_matrix.png', dpi=300, bbox_inches='tight')
+                plt.close()
+                
+                
+                print(f"    Accuracy: {score:.4f}, Time: {time_taken:.2f}s")
+                
+                # Store results
+                results.append({
+                    'feature': feature,
+                    'window': d_window,
+                    'embedding': embed_name,
+                    'classifier': embed_name,
+                    'accuracy': score,
+                    'time': time_taken,
+                    'params': tag,
+                    'error': None
+                })
                 del model
                 torch.cuda.empty_cache()
+
+                
                 # Visualize embeddings
                 try:
                     # For other methods, use visualize_embeddings from evaluation module
@@ -502,65 +522,28 @@ for feature in feature_list:
                 except Exception as viz_error:
                     print(f"  - Warning: Visualization failed: {viz_error}")
 
-                # Run classifier experiments
-                for clf_name in classifiers:
-                    print(f"  - Testing classifier: {clf_name}")
-
-                    experiment_name = f"{dataset_path}_{embed_name}_{clf_name}"
-
-                    try:
-                        best_params, test_score, clf_time = run_classifier_experiment(
-                train_emb, val_emb, test_emb, y_train, y_val, y_test, 
-                clf_name, experiment_name
-                    )
-
-                        # Store results
-                        if embed_method not in results['combined_results']:
-                            results['combined_results'][embed_name] = {}
-
-                        results['combined_results'][embed_method][clf_name] = {
-                    'accuracy': test_score,
-                    'params': best_params,
-                    'time': clf_time
-                        }
-
-                        print(f"    Accuracy: {test_score:.4f}, Time: {clf_time:.2f}s")
-
-                    except Exception as e:
-                        print(f"    Error with classifier {clf_name}: {e}")
-                        results['combined_results'][embed_method][clf_name] = {
-                    'error': str(e)
-                    }
+                
                     
-
             except Exception as e:
                 print(f"Error with embedding method {embed_method}: {e}")
-                results['embedding_results'][embed_method] = {
-                'error': str(e)
-                    }
                 
+                results.append({
+                                    'feature': feature,
+                                    'window': d_window,
+                                    'embedding': embed_name,
+                                    'classifier': embed_name,
+                                    'accuracy': None,
+                                    'time': None,
+                                    'params': None,
+                                    'error': str(e)
+                                })
+
                 
-        # Save results
-        all_results[feature + '_' +str( d_window)] = results
-        for emb, clfs in results['combined_results'].items():
-            for clf, m in clfs.items():
-                all_rows.append({
-                        'feature': feature,
-                        'window': d_window,
-                        'embedding': emb,
-                        'classifier': clf,
-                        'accuracy': m.get('accuracy'),
-                        'time': m.get('time'),
-                        'params': m.get('params'),
-                        'error': m.get('error'),
-                    })
         
 
 
 
+# Save results
 
-pd.DataFrame(all_rows).to_csv(f'results_{timestamp}/all_results.csv', index=False)
+pd.DataFrame(results).to_csv(f'results_{timestamp}/all_results.csv', index=False)
 
-with open(f'results_{timestamp}/all_results.json', 'w') as f:
-    json.dump(all_results, f, indent=2, default=str)   # default=str handles numpy types / params
-        
