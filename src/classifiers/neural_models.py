@@ -9,14 +9,32 @@ including hyperparameter optimization via Optuna.
 import time
 from datetime import datetime
 import numpy as np
-from sklearn.metrics import accuracy_score, classification_report
+from sklearn.metrics import accuracy_score, classification_report, ConfusionMatrixDisplay, confusion_matrix
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.neural_network import MLPClassifier
 import optuna
 from sklearn.naive_bayes import GaussianNB
 
+import matplotlib.pyplot as plt
 
-def optimize_MLP(x_train, x_val, x_test, y_train, y_val, y_test,namee, labels=None):
+def plot_confusion_matrix(y_val, y_pred, namee, labels=None):
+    cm = confusion_matrix(y_val, y_pred)
+    disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=labels)
+    
+    feature = namee.split('/')[1]
+    d = namee.split('/')[-1].split('_')[1]
+    emb_method = " ".join(namee.split('/')[-1].split('_')[2:-1])
+    classifier = namee.split('/')[-1].split('_')[-1]
+    
+    plt.Figure(figsize=(10, 8))
+    disp.plot()
+    plt.title(f'Confusion matrix: feature = {feature}, window = {d}, embedding method = {emb_method}, classifier = {classifier}')
+    plt.tight_layout()
+    plt.savefig(f'{namee}_confusion_matrix.png', dpi=300, bbox_inches='tight')
+    plt.close()
+    
+    
+def optimize_MLP(x_train, x_val, x_test, y_train, y_val, y_test,namee, labels=None, confusion_matrix=False):
     # One-hot encode the target labels
     encoder = OneHotEncoder(sparse=False)
     y_train_en = encoder.fit_transform(np.array(y_train).reshape(-1, 1))
@@ -68,11 +86,15 @@ def optimize_MLP(x_train, x_val, x_test, y_train, y_val, y_test,namee, labels=No
         file.write(classification_rep)
 
     print(f"Classification report saved as {filename}")
+    
+    if confusion_matrix:
+        plot_confusion_matrix(y_val, y_pred, namee, labels=labels)
+        print(f"Confusion matrix saved as {namee}_confusion_matrix.png")
 
     return best_params, test_score
 
 
-def optimize_NB(x_train, x_val, x_test, y_train, y_val, y_test,namee, labels=None):
+def optimize_NB(x_train, x_val, x_test, y_train, y_val, y_test,namee, labels=None, confusion_matrix=False):
 
     def objective_NB(trial):
         var_smoothing = trial.suggest_float('var_smoothing', 1e-12, 1e-2, log=True)
@@ -109,6 +131,11 @@ def optimize_NB(x_train, x_val, x_test, y_train, y_val, y_test,namee, labels=Non
         file.write(classification_rep)
 
     print(f"Classification report saved as {filename}")
+    
+    if confusion_matrix:
+            plot_confusion_matrix(y_val, y_pred, namee, labels=labels)
+            print(f"Confusion matrix saved as {namee}_confusion_matrix.png")
+    
 
     return best_params, test_score
 

@@ -14,7 +14,8 @@ import torch
 from datetime import datetime
 
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import accuracy_score, confusion_matrix,classification_report
+from sklearn.metrics import accuracy_score, confusion_matrix,classification_report,  ConfusionMatrixDisplay
+from sklearn.preprocessing import OneHotEncoder
 from sklearn.preprocessing import StandardScaler, OneHotEncoder
 
 from sklearn.linear_model import LogisticRegression
@@ -32,7 +33,27 @@ import torch.nn as nn
 import torch.optim as optim
 from torch.utils.data import DataLoader, TensorDataset
 
-def optimize_LOGRG(x_train, x_val, x_test, y_train, y_val, y_test, namee,labels=None):
+import matplotlib.pyplot as plt
+
+def plot_confusion_matrix(y_val, y_pred, namee, labels=None, confusion_matrix=False):
+    cm = confusion_matrix(y_val, y_pred)
+    disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=labels)
+    
+    feature = namee.split('/')[1]
+    d = namee.split('/')[-1].split('_')[1]
+    emb_method = " ".join(namee.split('/')[-1].split('_')[2:-1])
+    classifier = namee.split('/')[-1].split('_')[-1]
+    
+    plt.Figure(figsize=(10, 8))
+    disp.plot()
+    plt.title(f'Confusion matrix: feature = {feature}, window = {d}, embedding method = {emb_method}, classifier = {classifier}')
+    plt.tight_layout()
+    plt.savefig(f'{namee}_confusion_matrix.png', dpi=300, bbox_inches='tight')
+    plt.close()
+    
+    
+
+def optimize_LOGRG(x_train, x_val, x_test, y_train, y_val, y_test, namee,labels=None, confusion_matrix=False):
     max_iter=10000
 
     def objective_LOGRG(trial):
@@ -72,12 +93,17 @@ def optimize_LOGRG(x_train, x_val, x_test, y_train, y_val, y_test, namee,labels=
         file.write(classification_rep)
 
     print(f"Classification report saved as {filename}")
+    
+    if confusion_matrix:
+        plot_confusion_matrix(y_val, y_pred, namee, labels=labels)
+        print(f"Confusion matrix saved as {namee}_confusion_matrix.png")
+
 
     return best_params, test_score
 
 
 
-def optimize_DT(x_train, x_val, x_test, y_train, y_val, y_test,namee,labels=None):
+def optimize_DT(x_train, x_val, x_test, y_train, y_val, y_test,namee,labels=None, confusion_matrix=False):
     #just import libraries
     def objective_DT(trial):
         #n_estimators = trial.suggest_int('n_estimators', 10, 200)
@@ -114,10 +140,15 @@ def optimize_DT(x_train, x_val, x_test, y_train, y_val, y_test,namee,labels=None
         file.write(classification_rep)
 
     print(f"Classification report saved as {filename}")
+    
+    if confusion_matrix:
+        plot_confusion_matrix(y_val, y_pred, namee, labels=labels)
+        print(f"Confusion matrix saved as {namee}_confusion_matrix.png")
+
 
     return best_params, test_score
 
-def optimize_RF(x_train, x_val, x_test, y_train, y_val, y_test,namee,labels=None):
+def optimize_RF(x_train, x_val, x_test, y_train, y_val, y_test,namee,labels=None, confusion_matrix=False):
     #just import libraries
     def objective_RF(trial):
         n_estimators = trial.suggest_int('n_estimators', 10, 200)
@@ -153,10 +184,15 @@ def optimize_RF(x_train, x_val, x_test, y_train, y_val, y_test,namee,labels=None
         file.write(classification_rep)
 
     print(f"Classification report saved as {filename}")
+    
+    if confusion_matrix:
+        plot_confusion_matrix(y_val, y_pred, namee, labels=labels)
+        print(f"Confusion matrix saved as {namee}_confusion_matrix.png")
+
 
     return best_params, test_score
 
-def optimize_KNN(x_train, x_val, x_test, y_train, y_val, y_test,namee,labels=None):
+def optimize_KNN(x_train, x_val, x_test, y_train, y_val, y_test,namee,labels=None, confusion_matrix=False):
     #just import libraries
     def objective_KNN(trial):
         n_neighbors = trial.suggest_int('n_neighbors', 1, 20)
@@ -191,10 +227,15 @@ def optimize_KNN(x_train, x_val, x_test, y_train, y_val, y_test,namee,labels=Non
         file.write(classification_rep)
 
     print(f"Classification report saved as {filename}")
+    
+    if confusion_matrix:
+        plot_confusion_matrix(y_val, y_pred, namee, labels=labels)
+        print(f"Confusion matrix saved as {namee}_confusion_matrix.png")
+
 
     return best_params, test_score
 
-def optimize_XGBOOST(x_train, x_val, x_test, y_train, y_val, y_test,namee,labels=None):
+def optimize_XGBOOST(x_train, x_val, x_test, y_train, y_val, y_test,namee,labels=None, confusion_matrix=False):
     #import libraries
     def objective_XGBOOST(trial):
         n_estimators = trial.suggest_int('n_estimators', 10, 200)
@@ -241,12 +282,17 @@ def optimize_XGBOOST(x_train, x_val, x_test, y_train, y_val, y_test,namee,labels
         file.write(classification_rep)
 
     print(f"Classification report saved as {filename}")
+    
+    if confusion_matrix:
+        plot_confusion_matrix(y_val, y_pred, namee, labels=labels)
+        print(f"Confusion matrix saved as {namee}_confusion_matrix.png")
+
 
     return best_params, test_score
 
 
 
-def optimize_SVM(x_train, x_val, x_test, y_train, y_val, y_test, namee,labels=None):
+def optimize_SVM(x_train, x_val, x_test, y_train, y_val, y_test, namee,labels=None, confusion_matrix=False):
     def objective_SVM(trial):
         # Limit C to specific values
         C = trial.suggest_categorical('C', [0.1, 0.3, 0.6, 1])
@@ -282,12 +328,17 @@ def optimize_SVM(x_train, x_val, x_test, y_train, y_val, y_test, namee,labels=No
         file.write(classification_rep)
 
     print(f"Classification report saved as {filename}")
+    
+    if confusion_matrix:
+        plot_confusion_matrix(y_val, y_pred, namee, labels=labels)
+        print(f"Confusion matrix saved as {namee}_confusion_matrix.png")
+
 
     return best_params, test_score
 
 
 
-def NB_CLFY(x_train, x_test, y_train, y_test, namee,labels=None):
+def NB_CLFY(x_train, x_test, y_train, y_test, namee,labels=None, confusion_matrix=False):
     #naive bayesian
     y_train = np.array(y_train)
     
@@ -306,11 +357,16 @@ def NB_CLFY(x_train, x_test, y_train, y_test, namee,labels=None):
         file.write(classification_rep)
 
     print(f"Classification report saved as {filename}")
+    
+    if confusion_matrix:
+        plot_confusion_matrix(y_test, y_pred, namee, labels=labels)
+        print(f"Confusion matrix saved as {namee}_confusion_matrix.png")
+
     return score
 
 
 
-def optimize_MLP(x_train, x_val, x_test, y_train, y_val, y_test, namee,labels=None):
+def optimize_MLP(x_train, x_val, x_test, y_train, y_val, y_test, namee,labels=None, confusion_matrix=False):
     # multi-layer perceptron
     #Just import libraries
     encoder = OneHotEncoder(sparse=False)
@@ -363,6 +419,11 @@ def optimize_MLP(x_train, x_val, x_test, y_train, y_val, y_test, namee,labels=No
         file.write(classification_rep)
 
     print(f"Classification report saved as {filename}")
+    
+    if confusion_matrix:
+        plot_confusion_matrix(y_val, y_pred, namee, labels=labels)
+        print(f"Confusion matrix saved as {namee}_confusion_matrix.png")
+
 
     return best_params, test_score
 

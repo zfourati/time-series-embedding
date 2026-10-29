@@ -449,7 +449,7 @@ for feature in feature_list:
                     try:
                         best_params, test_score, clf_time = run_classifier_experiment(
                 train_emb, val_emb, test_emb, y_train, y_val, y_test, 
-                clf_name, experiment_name
+                clf_name, experiment_name, labels = feature_dict[feature].keys() , confusion_matrix=True
                     )
 
                         # Store results

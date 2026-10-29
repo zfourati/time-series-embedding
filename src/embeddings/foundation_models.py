@@ -17,32 +17,49 @@ CHECKPOINTS = {
     "mantis_plus": (Mantis8M, "paris-noah/MantisPlus", None),
     "utica":       (Mantis8M, "fegounna/Utica", "3cff4f954191b5bf9839b7a41117e2b24e7693ab"),
     "mantis_v2":   (MantisV2, "paris-noah/MantisV2", None),
+    'Mantis-8M_pretrain_continued_7' : (Mantis8M, "mantis_checkpoints/mantis_7d_continued.pt", None),
+    'MantisPlus_pretrain_continued_7' : (Mantis8M, "mantis_checkpoints/mantis_7d_continued.pt", None),
+    'Mantis-Utica_pretrain_continued_7' : (Mantis8M, "mantis_checkpoints/utica_7d_continued.pt", None),
+    'MantisV2_pretrain_continued_7' : (MantisV2, "mantis_checkpoints/mantis_v2_7d_continued.pt", None),
+    'Mantis-8M_pretrain_scratch_7' : (Mantis8M, "mantis_checkpoints/mantis_7d_scratch.pt", None),
+    'MantisV2_pretrain_scratch_7' : (MantisV2, "mantis_checkpoints/mantis_v2_7d_scratch.pt", None),
+    'Mantis-8M_pretrain_continued_14' : (Mantis8M, "mantis_checkpoints/mantis_14d_continued.pt", None),
+    'MantisPlus_pretrain_continued_14' : (Mantis8M, "mantis_checkpoints/mantis_14d_continued.pt", None),
+    'Mantis-Utica_pretrain_continued_14' : (Mantis8M, "mantis_checkpoints/utica_14d_continued.pt", None),
+    'MantisV2_pretrain_continued_14' : (MantisV2, "mantis_checkpoints/mantis_v2_14d_continued.pt", None),
+    'Mantis-8M_pretrain_scratch_14' : (Mantis8M, "mantis_checkpoints/mantis_14d_scratch.pt", None),
+    'MantisV2_pretrain_scratch_14' : (MantisV2, "mantis_checkpoints/mantis_v2_14d_scratch.pt", None),
+    'Mantis-8M_pretrain_continued_30' : (Mantis8M, "mantis_checkpoints/mantis_30d_continued.pt", None),
+    'MantisPlus_pretrain_continued_30' : (Mantis8M, "mantis_checkpoints/mantis_30d_continued.pt", None),
+    'Mantis-Utica_pretrain_continued_30' : (Mantis8M, "mantis_checkpoints/utica_30d_continued.pt", None),
+    'MantisV2_pretrain_continued_30' : (MantisV2, "mantis_checkpoints/mantis_v2_30d_continued.pt", None),
+    'Mantis-8M_pretrain_scratch_30' : (Mantis8M, "mantis_checkpoints/mantis_30d_scratch.pt", None),
+    'MantisV2_pretrain_scratch_30' : (MantisV2, "mantis_checkpoints/mantis_v2_30d_scratch.pt", None)
 }
 
-def to_mantis_input(X_df, target_len=512):
-    X = torch.tensor(X_df.values, dtype=torch.float32).unsqueeze(1)   # (N, 1, T)
-    X = F.interpolate(X, size=target_len, mode="linear", align_corners=False)
-    return X.numpy()
+def to_mantis_input(X, target_len=512):
+    X = torch.tensor(np.asarray(X, dtype=np.float32)).unsqueeze(1)
+    return F.interpolate(X, size=target_len, mode="linear", align_corners=False).numpy()
 
 def build_trainer(name):
     cls, ckpt, rev = CHECKPOINTS[name]
     net = cls(device=device)
-    net = net.from_pretrained(ckpt, revision=rev) if rev else net.from_pretrained(ckpt)
+    if ckpt.endswith(".pt"):
+        state = torch.load(ckpt, map_location=device)
+        net.load_state_dict(state)          # if this fails on keys, inspect `state.keys()`
+    else:
+        net = net.from_pretrained(ckpt, revision=rev) if rev else net.from_pretrained(ckpt)
     return MantisTrainer(device=device, network=net)
 
-def mantis_embedding(name, X_train, X_val, X_test, y_train,
-                     fine_tune=True, num_epochs=30, lr=2e-5, target_len=512):
+def mantis_embedding(name, X_train, X_val, X_test, target_len=512, batch_size=64):
     trainer = build_trainer(name)
-    Xtr, Xva, Xte = (to_mantis_input(X, target_len) for X in (X_train, X_val, X_test))
-
-    if fine_tune:
-        w = compute_class_weight("balanced", classes=np.unique(y_train), y=y_train)
-        criterion = torch.nn.CrossEntropyLoss(
-            weight=torch.tensor(w, dtype=torch.float32, device=device))
-        trainer.fit(Xtr, y_train, fine_tuning_type="full", num_epochs=num_epochs,
-                    batch_size=64, base_learning_rate=lr, criterion=criterion)
-
-    return trainer.transform(Xtr), trainer.transform(Xva), trainer.transform(Xte)
+    with torch.no_grad():
+        train_embed = trainer.transform(to_mantis_input(X_train, target_len), batch_size=batch_size)
+        val_embed = trainer.transform(to_mantis_input(X_val, target_len), batch_size=batch_size)
+        test_embed = trainer.transform(to_mantis_input(X_test, target_len), batch_size=batch_size)
+    del trainer
+    torch.cuda.empty_cache() 
+    return train_embed, val_embed, test_embed
 
 from chronos import BaseChronosPipeline
 

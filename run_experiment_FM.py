@@ -209,10 +209,12 @@ cases =  pd.concat([cases, peaceful_cities.set_index('case_id')],ignore_index=Fa
 
 ntl_data = pd.concat([ntl_data, ntl_peaceful_cities], ignore_index=True)
 
+cases['event_type'] = cases['event_type'].apply(lambda x : 'disaster' if x in ['earthquake', 'cyclone', 'flood'] else x)
+
 #%%
 
 feature_list = ['event_type', 'Continent']
-feature_dict = {'event_type': {'earthquake': 0, 'cyclone': 1, 'flood': 2, 'conflict': 3, 'peace': 4},
+feature_dict = {'event_type': {'disaster': 0, 'conflict': 1, 'peace': 2},
  'Continent': {'Asia': 0,
   'South America': 1,
   'North America': 2,
@@ -230,7 +232,7 @@ colors = {'Continent': {
             'North America': 'blue',
             'South America': 'darkorange',
             'Oceania': 'mediumturquoise'}, 
-            'event_type': {'conflict': 'tomato', 'cyclone': 'cadetblue', 'earthquake': 'mediumseagreen', 'flood': 'dodgerblue', 'peace': 'deeppink'}}
+            'event_type': {'conflict': 'tomato',  'disaster': 'mediumseagreen',  'peace': 'deeppink'}}
 
 def calculate_window(ntl_data, cases, d_window):
     case_ids = dict()
@@ -298,13 +300,24 @@ def calculate_window(ntl_data, cases, d_window):
 
 #embedding_methods = ['Mantis-8M', 'MantisPlus', 'Mantis-Utica', 'MantisV2']
 #embedding_methods = ['Chronos-T5-small','Chronos-Bolt-base']
-embedding_methods = ['pca', 'lle','wavelet', 'fft', 'autoencoder', 'graph', 'tda', 'umap','nnclr_cnn','nnclr_lstm','TiViT-CLIP-B16', 'TiViT-CLIP-H14', 'TiViT+MantisV2', 'TS2Vec' ]
-classifiers = ['logreg', 'dt', 'rf', 'knn','xgboost', 'svm', 'mlp','nb']
+"""
+embedding_methods_dict ={'event_type': ['No-embed', 'pca', 'lle','wavelet', 'fft', 'autoencoder', 'graph', 'tda', 'umap','nnclr_cnn','nnclr_lstm','TiViT-CLIP-B16', 'TiViT-CLIP-H14', 'TiViT+MantisV2', 'TS2Vec' ,
+                     'Chronos-T5-small','Chronos-Bolt-base', 'Mantis-8M', 'MantisPlus', 'Mantis-Utica', 'MantisV2', 'Mantis-8M_pretrain_continued', 'MantisPlus_pretrain_continued', 'Mantis-Utica_pretrain_continued', 'MantisV2_pretrain_continued',
+                                                   'Mantis-8M_pretrain_scratch',  'MantisV2_pretrain_scratch'],
+                         'Continent': ['No-embed', 'Mantis-8M', 'MantisPlus', 'Mantis-Utica', 'MantisV2', 
+                             'Mantis-8M_pretrain_continued', 'MantisPlus_pretrain_continued', 'Mantis-Utica_pretrain_continued', 'MantisV2_pretrain_continued',
+                              'Mantis-8M_pretrain_scratch',  'MantisV2_pretrain_scratch']}
+                              """
+                              
+embedding_methods_dict ={'event_type': ['graph', 'tda']}
+classifiers = ['logreg', 'dt', 'rf', 'knn','xgboost', 'svm','nb']
 
 all_results = {}   # {"<feature>_<window>": results_dict}
 all_rows = []      # flat rows for one combined CSV
 timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-for feature in feature_list:
+for feature in feature_list[:1]:
+    
+    embedding_methods = embedding_methods_dict[feature]
     train_idx, val_idx = train_test_split(
         cases.index,
         test_size=train_val_ratio,
@@ -322,7 +335,7 @@ for feature in feature_list:
     how='left')
             
     
-    for d_window in [7, 14, 30]:
+    for d_window in [7, 14]: #, 30]:
         case_ids,  ntl_window, cases_window = calculate_window(ntl_data, cases, d_window)
         results = {
                 'dataset': feature + '_' + str(d_window),
@@ -354,16 +367,17 @@ for feature in feature_list:
             print(f"\nEvaluating embedding method: {embed_method}")
             # Run embedding
             try:
-                if 'Mantis' in embed_method:
+                if embed_method == 'No-embed':
+                    train_emb, val_emb, test_emb, embed_time = X_train_norm, X_val_norm, X_test_norm, 0
+                elif 'Mantis' in embed_method:
+                    name = embed_method + '_' + str(d_window) if 'pretrain' in embed_method else embed_method
                     train_emb, val_emb, test_emb, embed_time = run_embedding_experiment(
-            X_train_norm, X_val_norm, X_test_norm, y_train, y_val, y_test, embed_method
-                )
+                        X_train_norm, X_val_norm, X_test_norm, y_train, y_val, y_test, name)
                 else:
                     train_emb, val_emb, test_emb, embed_time = run_embedding_experiment(
-                                X_train_norm.values, X_val_norm.values, X_test_norm, y_train, y_val, y_test, embed_method
-                                    )
+                        X_train_norm.values, X_val_norm.values, X_test_norm.values,
+                        y_train, y_val, y_test, embed_method)
                     
-
                 # Store embedding results
                 results['embedding_results'][embed_method] = {
                 'time': embed_time,
@@ -399,7 +413,7 @@ for feature in feature_list:
                     try:
                         best_params, test_score, clf_time = run_classifier_experiment(
                 train_emb, val_emb, test_emb, y_train, y_val, y_test, 
-                clf_name, experiment_name
+                clf_name, experiment_name, labels = feature_dict[feature].keys() , confusion_matrix=True
                     )
 
                         # Store results

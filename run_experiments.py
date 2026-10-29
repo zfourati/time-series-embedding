@@ -41,6 +41,24 @@ MANTIS_METHODS = {
     'MantisPlus':   'mantis_plus',
     'Mantis-Utica': 'utica',
     'MantisV2':     'mantis_v2',
+    'Mantis-8M_pretrain_continued_7' : 'Mantis-8M_pretrain_continued_7',
+    'MantisPlus_pretrain_continued_7' : 'MantisPlus_pretrain_continued_7',
+    'Mantis-Utica_pretrain_continued_7' : 'Mantis-Utica_pretrain_continued_7',
+    'MantisV2_pretrain_continued_7' : 'MantisV2_pretrain_continued_7',
+    'Mantis-8M_pretrain_scratch_7' : 'Mantis-8M_pretrain_scratch_7',
+    'MantisV2_pretrain_scratch_7' : 'MantisV2_pretrain_scratch_7',
+    'Mantis-8M_pretrain_continued_14' : 'Mantis-8M_pretrain_continued_14',
+    'MantisPlus_pretrain_continued_14' : 'MantisPlus_pretrain_continued_14',
+    'Mantis-Utica_pretrain_continued_14' : 'Mantis-Utica_pretrain_continued_14',
+    'MantisV2_pretrain_continued_14' : 'MantisV2_pretrain_continued_14',
+    'Mantis-8M_pretrain_scratch_14' : 'Mantis-8M_pretrain_scratch_14',
+    'MantisV2_pretrain_scratch_14' : 'MantisV2_pretrain_scratch_14',
+    'Mantis-8M_pretrain_continued_30' : 'Mantis-8M_pretrain_continued_30',
+    'MantisPlus_pretrain_continued_30' : 'MantisPlus_pretrain_continued_30',
+    'Mantis-Utica_pretrain_continued_30' : 'Mantis-Utica_pretrain_continued_30',
+    'MantisV2_pretrain_continued_30' : 'MantisV2_pretrain_continued_30',
+    'Mantis-8M_pretrain_scratch_30' : 'Mantis-8M_pretrain_scratch_30',
+    'MantisV2_pretrain_scratch_30' : 'MantisV2_pretrain_scratch_30'
 }
 
 CHRONOS_CHECKPOINTS = {
@@ -165,11 +183,7 @@ def run_embedding_experiment(X_train, X_val, X_test, y_train, y_val, y_test, emb
     elif embedding_method in MANTIS_METHODS:
         train_emb, val_emb, test_emb = mantis_embedding(
             MANTIS_METHODS[embedding_method],
-            X_train, X_val, X_test, np.asarray(y_train).ravel(),
-            fine_tune=kwargs.get('fine_tune', True),
-            num_epochs=kwargs.get('num_epochs', 30),
-            lr=kwargs.get('lr', 2e-5),
-            target_len=kwargs.get('target_len', 512),
+            X_train, X_val, X_test
         )
     elif embedding_method in CHRONOS_CHECKPOINTS:
         train_emb, val_emb, test_emb = chronos_embedding(
@@ -183,8 +197,8 @@ def run_embedding_experiment(X_train, X_val, X_test, y_train, y_val, y_test, emb
         ckpt, layer = TIVIT_CHECKPOINTS['TiViT-CLIP-B16']
         blocks = [
             tivit_embedding(ckpt, kwargs.get('layer', layer), X_train, X_val, X_test),
-            mantis_embedding('mantis_v2', X_train, X_val, X_test,
-                             np.asarray(y_train).ravel(), fine_tune=False),
+            mantis_embedding('mantis_v2', X_train, X_val, X_test
+                             ),
         ]
         train_emb, val_emb, test_emb = concat_embeddings(blocks)
     elif embedding_method == 'TS2Vec':
@@ -204,7 +218,7 @@ def run_embedding_experiment(X_train, X_val, X_test, y_train, y_val, y_test, emb
 
 
 def run_classifier_experiment(train_emb, val_emb, test_emb, y_train, y_val, y_test, 
-                            classifier_name, experiment_name):
+                            classifier_name, experiment_name,labels=None, confusion_matrix=False ):
     """
     Run an experiment for a specific classifier on embedded data.
     
@@ -237,42 +251,42 @@ def run_classifier_experiment(train_emb, val_emb, test_emb, y_train, y_val, y_te
     # Apply the selected classifier
     if classifier_name == 'logreg':
         best_params, test_score = optimize_LOGRG(
-            train_emb, val_emb, test_emb, y_train, y_val, y_test, experiment_name
+            train_emb, val_emb, test_emb, y_train, y_val, y_test, experiment_name, labels=labels, confusion_matrix=confusion_matrix
         )
         
     elif classifier_name == 'dt':
         best_params, test_score = optimize_DT(
-            train_emb, val_emb, test_emb, y_train, y_val, y_test, experiment_name
+            train_emb, val_emb, test_emb, y_train, y_val, y_test, experiment_name, labels=labels, confusion_matrix=confusion_matrix
         )
         
     elif classifier_name == 'rf':
         best_params, test_score = optimize_RF(
-            train_emb, val_emb, test_emb, y_train, y_val, y_test, experiment_name
+            train_emb, val_emb, test_emb, y_train, y_val, y_test, experiment_name, labels=labels, confusion_matrix=confusion_matrix
         )
         
     elif classifier_name == 'knn':
         best_params, test_score = optimize_KNN(
-            train_emb, val_emb, test_emb, y_train, y_val, y_test, experiment_name
+            train_emb, val_emb, test_emb, y_train, y_val, y_test, experiment_name, labels=labels, confusion_matrix=confusion_matrix
         )
         
     elif classifier_name == 'xgboost':
         best_params, test_score = optimize_XGBOOST(
-            train_emb, val_emb, test_emb, y_train, y_val, y_test, experiment_name
+            train_emb, val_emb, test_emb, y_train, y_val, y_test, experiment_name, labels=labels, confusion_matrix=confusion_matrix
         )
         
     elif classifier_name == 'svm':
         best_params, test_score = optimize_SVM(
-            train_emb, val_emb, test_emb, y_train, y_val, y_test, experiment_name
+            train_emb, val_emb, test_emb, y_train, y_val, y_test, experiment_name, labels=labels, confusion_matrix=confusion_matrix
         )
         
     elif classifier_name == 'mlp':
         best_params, test_score = optimize_MLP(
-            train_emb, val_emb, test_emb, y_train, y_val, y_test, experiment_name
+            train_emb, val_emb, test_emb, y_train, y_val, y_test, experiment_name, labels=labels, confusion_matrix=confusion_matrix
         )
         
     elif classifier_name == 'nb':
         best_params, test_score = optimize_NB(
-            train_emb, val_emb, test_emb, y_train, y_val, y_test, experiment_name
+            train_emb, val_emb, test_emb, y_train, y_val, y_test, experiment_name, labels=labels, confusion_matrix=confusion_matrix
         )
         
     else:

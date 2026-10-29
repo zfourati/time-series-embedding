@@ -79,8 +79,7 @@ def umap_plt(train_emb, val_emb, test_emb, ny_train, ny_val, ny_test, name, colo
     # Save the figure
     plt.savefig(filename, dpi=600, bbox_inches="tight")
     
-    # Display the plot
-    plt.show()
+    plt.close()
 
 def plot_embedding_comparison(embeddings_dict, labels, method='tsne', figsize=(15, 10)):
     """
