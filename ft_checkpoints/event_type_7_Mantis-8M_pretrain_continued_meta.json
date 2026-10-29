@@ -1,0 +1,1 @@
+{"feature": "event_type", "d_window": 7, "method": "Mantis-8M_pretrain_continued", "fine_tuning_type": "full", "n_classes": 3, "target_len": 512, "classes": {"disaster": 0, "conflict": 1, "peace": 2}}

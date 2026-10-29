@@ -1,0 +1,100 @@
+{
+  "event_type_7": {
+    "dataset": "event_type_7",
+    "embedding_results": {
+      "graph": {
+        "error": "'graph'"
+      },
+      "tda": {
+        "error": "object of type 'NoneType' has no len()"
+      }
+    },
+    "classifier_results": {},
+    "combined_results": {}
+  },
+  "event_type_14": {
+    "dataset": "event_type_14",
+    "embedding_results": {
+      "graph": {
+        "time": 3.692958354949951,
+        "shape": [
+          243,
+          23
+        ]
+      },
+      "tda": {
+        "error": "object of type 'NoneType' has no len()"
+      }
+    },
+    "classifier_results": {},
+    "combined_results": {
+      "graph": {
+        "logreg": {
+          "accuracy": 0.7164750957854407,
+          "params": {
+            "C": 0.11529496922901411,
+            "fit_intercept": false,
+            "solver": "saga",
+            "penalty": "elasticnet",
+            "l1_ratio": 0.13381293026777696
+          },
+          "time": 15.157813310623169
+        },
+        "dt": {
+          "accuracy": 0.7049808429118773,
+          "params": {
+            "max_depth": 9,
+            "criterion": "gini"
+          },
+          "time": 0.49419641494750977
+        },
+        "rf": {
+          "accuracy": 0.7547892720306514,
+          "params": {
+            "n_estimators": 141,
+            "max_depth": 4
+          },
+          "time": 13.848734855651855
+        },
+        "knn": {
+          "accuracy": 0.7241379310344828,
+          "params": {
+            "n_neighbors": 18,
+            "weights": "distance",
+            "algorithm": "brute"
+          },
+          "time": 0.5325725078582764
+        },
+        "xgboost": {
+          "accuracy": 0.7318007662835249,
+          "params": {
+            "n_estimators": 186,
+            "learning_rate": 0.12158386947310931,
+            "max_depth": 32,
+            "min_child_weight": 3.949778304404816,
+            "subsample": 0.1629663556740148,
+            "colsample_bytree": 0.8306091057729539
+          },
+          "time": 9.627032279968262
+        },
+        "svm": {
+          "accuracy": 0.7279693486590039,
+          "params": {
+            "C": 0.1,
+            "kernel": "linear",
+            "degree": 5,
+            "gamma": "auto"
+          },
+          "time": 0.5780324935913086
+        },
+        "nb": {
+          "accuracy": 0.7432950191570882,
+          "params": {
+            "var_smoothing": 5.86950916872236e-12
+          },
+          "time": 0.2404947280883789
+        }
+      }
+    }
+  }
+}

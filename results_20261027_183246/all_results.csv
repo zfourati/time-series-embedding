@@ -1,0 +1,8 @@
+feature,window,embedding,classifier,accuracy,time,params,error
+event_type,14,graph,logreg,0.7164750957854407,15.157813310623169,"{'C': 0.11529496922901411, 'fit_intercept': False, 'solver': 'saga', 'penalty': 'elasticnet', 'l1_ratio': 0.13381293026777696}",
+event_type,14,graph,dt,0.7049808429118773,0.49419641494750977,"{'max_depth': 9, 'criterion': 'gini'}",
+event_type,14,graph,rf,0.7547892720306514,13.848734855651855,"{'n_estimators': 141, 'max_depth': 4}",
+event_type,14,graph,knn,0.7241379310344828,0.5325725078582764,"{'n_neighbors': 18, 'weights': 'distance', 'algorithm': 'brute'}",
+event_type,14,graph,xgboost,0.7318007662835249,9.627032279968262,"{'n_estimators': 186, 'learning_rate': 0.12158386947310931, 'max_depth': 32, 'min_child_weight': 3.949778304404816, 'subsample': 0.1629663556740148, 'colsample_bytree': 0.8306091057729539}",
+event_type,14,graph,svm,0.7279693486590039,0.5780324935913086,"{'C': 0.1, 'kernel': 'linear', 'degree': 5, 'gamma': 'auto'}",
+event_type,14,graph,nb,0.7432950191570882,0.2404947280883789,{'var_smoothing': 5.86950916872236e-12},
